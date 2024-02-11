@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 
-import ButtonRound from '../Buttons/ButtonRound'
+import Button from '../Buttons'
 import { Sun, Moon, Contrast, Auto } from '../Icons'
 import './header.css'
 
@@ -22,19 +22,39 @@ const Header = ({ dispatch, theme, contrast }) => {
   return (
     <header className="Header">
       <hgroup className="Header__Group">
-        <h1 className="Header__Logo">Typed</h1>
+        <h1 className="Header__Logo">
+          <span style={{ fontWeight: '800' }}>r</span>
+          <span style={{ fontWeight: '715' }}>h</span>
+          <span style={{ fontWeight: '630' }}>y</span>
+          <span style={{ fontWeight: '545' }}>t</span>
+          <span style={{ fontWeight: '460' }}>h</span>
+          <span style={{ fontWeight: '375' }}>m</span>
+          <span style={{ fontWeight: '290' }}>i</span>
+          <span style={{ fontWeight: '200' }}>c</span>
+        </h1>
         <p className="Header__Tagline">Satisfying type made easy</p>
       </hgroup>
 
       <div className="Header__Icons">
-        <ButtonRound id="theme" handleClick={() => dispatch({ type: 'TOGGLE_THEME' })}>
+        <Button
+          id="theme"
+          modifiers="round tooltip-persist tooltip-bottom"
+          data-tooltip={`${theme === 'auto' ? 'system' : theme} theme`}
+          handleClick={() => dispatch({ type: 'TOGGLE_THEME' })}
+        >
           <ThemeIcon aria-hidden /><span className="sr-only">{NextThemeLabel}</span>
-        </ButtonRound>
+        </Button>
 
-        <ButtonRound id="preview" handleClick={() => dispatch({ type: 'TOGGLE_CONTRAST' })} active={contrast}>
+        <Button
+          id="preview"
+          modifiers="round tooltip-persist tooltip-bottom"
+          data-tooltip={contrast ? 'Contrast Mode' : 'Contrast Off'}
+          handleClick={() => dispatch({ type: 'TOGGLE_CONTRAST' })}
+          active={contrast}
+        >
           <Contrast aria-hidden />
           <span className="sr-only">Toggle {contrastLabel}</span>
-        </ButtonRound>
+        </Button>
       </div>
     </header>
   )

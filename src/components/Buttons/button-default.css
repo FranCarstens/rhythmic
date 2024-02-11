@@ -1,0 +1,12 @@
+.btn.default {
+  border-color: var(--color-border);
+  color: var(--color-foreground);
+
+  &:active,
+  &:focus,
+  &:hover,
+  &.active {
+    background-color: var(--color-base-shadow);
+    color: var(--color-primary);
+  }
+}

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import ButtonRound from '../Buttons/ButtonRound'
+import Button from '../Buttons'
 import { Clipboard, Check } from '../Icons'
 import { jsObjToCss } from '../../utils/convertJStoCSS'
 import './output.css'
@@ -8,6 +8,12 @@ import './output.css'
 const Output = ({ className, styles }) => {
   const [copied, setCopied] = useState(0)
   const style = formatCSS(jsObjToCss(styles))
+
+  const copyText = {
+    0: 'Copy to clipboard',
+    1: 'Copied!',
+    2: 'Something went wrong 😕.'
+  }[copied]
 
   const handleClick = () => {
     navigator.clipboard.writeText(style).then(() => {
@@ -27,23 +33,24 @@ const Output = ({ className, styles }) => {
 
   return (
     <aside className={`Output ${className}`}>
-      <ButtonRound id="clipboard" className="Output__Button" handleClick={handleClick}>
-        {copied === 1 && (
-          <>
+      <span className="Output__Clipboard">
+        <Button
+          id="clipboard"
+          className="Output__Button"
+          modifiers="round tooltip-persist tooltip-left"
+          ariaLabel={copyText}
+          data-tooltip={copyText}
+          handleClick={handleClick}
+        >
+          {copied === 1 && (
             <Check className="Output__Icon" aria-hidden />
-            <span className="sr-only">Copied successfully</span>
-          </>
-        )}
+          )}
 
-        {copied === 0 && (
-          <>
+          {copied === 0 && (
             <Clipboard className="Output__Icon" aria-hidden />
-            <span className="sr-only">Copy to clipboard</span>
-          </>
-        )}
-
-        {copied === -1 && <span>Something went wrong 😕.</span>}
-      </ButtonRound>
+          )}
+        </Button>
+      </span>
       <pre>{style}</pre>
     </aside >
   )

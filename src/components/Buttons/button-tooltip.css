@@ -1,0 +1,145 @@
+.btn.tooltip {
+  position: relative;
+
+  &:not(.tooltip-persist):hover .btn__tooltip {
+    animation: fadeInOut 2.5s ease-in-out forwards;
+  }
+
+  &.tooltip-persist:hover .btn__tooltip {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.btn__tooltip {
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+
+  line-height: var(--baseline);
+  height: var(--baseline);
+  font-size: 0.66rem;
+  padding: 0 calc(var(--baseline) * .5);
+  border-radius: calc(var(--baseline) * .5);
+  background: var(--color-base-shadow);
+  color: var(--color-foreground);
+  width: max-content;
+
+  &::before {
+    content: "";
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* position the tooltip */
+.btn {
+  --offset: calc(100% + calc(var(--baseline) * 3/8));
+
+  .btn__tooltip {
+    position: absolute;
+    display: block;
+
+    &::before {
+      position: absolute;
+      border: var(--grid) solid transparent;
+    }
+  }
+
+  &.tooltip-top,
+  &.tooltip-bottom {
+    .btn__tooltip {
+      left: 50%;
+      transform: translateX(-50%);
+
+      &::before {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+  }
+
+  &.tooltip-top {
+    .btn__tooltip {
+      bottom: var(--offset);
+
+      &::before {
+        top: 100%;
+        border-top-color: var(--color-base-shadow);
+      }
+    }
+  }
+
+  &.tooltip-bottom {
+    .btn__tooltip {
+      top: var(--offset);
+
+      &::before {
+        bottom: 100%;
+        border-bottom-color: var(--color-base-shadow);
+      }
+    }
+  }
+
+  &.tooltip-left,
+  &.tooltip-right {
+    .btn__tooltip {
+      top: 50%;
+      transform: translateY(-50%);
+
+      &::before {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+    }
+  }
+
+  &.tooltip-left {
+    .btn__tooltip {
+      right: var(--offset);
+
+      &::before {
+        left: 100%;
+        border-left-color: var(--color-base-shadow);
+      }
+    }
+  }
+
+  &.tooltip-right {
+    .btn__tooltip {
+      left: var(--offset);
+
+      &::before {
+        right: 100%;
+        border-top-color: var(--color-base-shadow);
+      }
+    }
+  }
+}
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  99% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}

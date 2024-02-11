@@ -26,7 +26,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           id="clear"
           className="Baseliner__button"
           handleClick={() => dispatch({ type: 'CLEAR' })}
-          modifiers="icon"
+          modifiers="icon tooltip-top"
           data-tooltip="Start over"
         >
           <Trash aria-hidden />
@@ -37,7 +37,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           id="sample"
           className="Baseliner__button"
           handleClick={() => dispatch({ type: 'LOAD_SAMPLE' })}
-          modifiers="icon"
+          modifiers="icon tooltip-top"
           data-tooltip="Load Sample Data"
         >
           <Droplet aria-hidden />
@@ -47,6 +47,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="golden"
           className="Baseliner__button"
+          modifiers="button tooltip-top"
           handleClick={() => handleChange({ id: 'scale', value: 1.618 })}
           data-tooltip="Load Golden Ratio Preset"
         >
@@ -56,6 +57,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="minor-third"
           className="Baseliner__button"
+          modifiers="button tooltip-top"
           handleClick={() => handleChange({ id: 'scale', value: 1.2 })}
           data-tooltip="Load Minor Third Preset"
         >
@@ -93,7 +95,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         className="Baseliner__button"
         handleClick={() => dispatch({ type: 'GENERATE', payload: { scale, baseRem, heading } })}
         id="generate"
-        modifiers="primary"
+        modifiers="highlight button"
       >
         Generate
       </Button>

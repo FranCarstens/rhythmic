@@ -13,7 +13,8 @@
 }
 
 .Header__Logo {
-  font-family: Bungee;
+  font-family: var(--font-body);
+  text-transform: uppercase;
   color: var(--color-foreground);
 }
 
@@ -26,13 +27,3 @@
   margin: 0;
 
 }
-
-/* 
-#Button--preview.Button--active {
-  background: var(--color-foreground);
-}
-
-#Button--preview.Button--active svg {
-  fill: var(--color-foreground);
-  stroke: var(--color-background);
-} */

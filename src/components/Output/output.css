@@ -1,11 +1,11 @@
 .Output {}
 
-.Output__Button {
+.Output__Clipboard {
   position: absolute;
   top: calc(var(--baseline) * 0.5);
   right: calc(var(--baseline) * 0.5);
-  padding: var(--grid);
-  overflow: visible;
+  /* padding: var(--grid); */
+  /* overflow: visible; */
 }
 
 .Output__Icon {

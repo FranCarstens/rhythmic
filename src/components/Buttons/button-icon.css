@@ -1,0 +1,14 @@
+.btn.icon {
+  border-width: 1px;
+  border-style: solid;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--grid) * 1);
+  border-radius: 50%;
+  transition: var(--transition-fast);
+  height: calc(var(--baseline) * 1.25);
+  width: calc(var(--baseline) * 1.25);
+  min-height: calc(var(--baseline) * 1.25);
+  min-width: calc(var(--baseline) * 1.25);
+}

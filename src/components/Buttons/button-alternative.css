@@ -1,0 +1,12 @@
+.btn.alternative {
+  background-color: var(--color-secondary);
+  border-color: var(--color-secondary);
+  color: var(--color-background);
+
+  &:active,
+  &:focus,
+  &:hover,
+  &.active {
+    background-color: var(--color-secondary-hover);
+  }
+}

@@ -4,7 +4,7 @@ import Fieldset from '../Fieldset'
 import Selector from './Selector'
 import { FormItem, Input } from '../Form'
 import { Plus } from '../Icons'
-import ButtonRound from '../Buttons/ButtonRound'
+import Button from '../Buttons'
 import ButtonHelp from '../Buttons/ButtonHelp'
 
 import './selectors.css'
@@ -31,9 +31,9 @@ const Selectors = ({ current, dispatch, selectors, }) => {
           onChange={handleChange}
           value={value}
         />
-        <ButtonRound id="add-selector" handleClick={handleAdd}>
+        <Button id="add-selector" modifiers="round" handleClick={handleAdd}>
           <Plus aria-hidden /><span className="sr-only">Add</span>
-        </ButtonRound>
+        </Button>
       </FormItem>
       <ul className="Selectors__List">
         {selectors

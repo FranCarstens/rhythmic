@@ -1,8 +1,6 @@
-.Button--Round {
+.btn.round {
   align-items: center;
   border-radius: 50%;
-  border-color: var(--color-background);
-  color: var(--color-foreground);
   display: inline-flex;
   height: calc(var(--baseline) * 1.5);
   justify-content: center;
@@ -11,12 +9,4 @@
   padding: calc(var(--grid) * 1.5);
   transition: var(--transition-fast);
   width: calc(var(--baseline) * 1.5);
-}
-
-.Button--Round:hover,
-.Button--Round:active,
-.Button--Round:focus,
-.Button--Round.Button--active {
-  color: var(--color-primary);
-  background-color: var(--color-background);
 }

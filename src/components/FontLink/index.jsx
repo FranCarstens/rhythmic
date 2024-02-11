@@ -6,7 +6,7 @@ import Fieldset from '../Fieldset'
 import { FormItem, Input } from '../Form'
 import { Plus } from '../Icons'
 import ButtonHelp from '../Buttons/ButtonHelp'
-import ButtonRound from '../Buttons/ButtonRound'
+import Button from '../Buttons'
 import Wrapper from '../Wrapper'
 
 import './fontLink.css'
@@ -63,9 +63,9 @@ const FontLink = ({ fonts, dispatch }) => {
             />
           </FormItem></form>
 
-        <ButtonRound id="add-font" handleClick={handleAddFont} >
+        <Button id="add-font" modifiers="round" handleClick={handleAddFont} >
           <Plus aria-hidden /><span className="sr-only">Add</span>
-        </ButtonRound>
+        </Button>
       </Wrapper>
       <p>Selected Fonts</p>
       <ul>

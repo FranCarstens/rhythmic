@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types'
-import Button from '.'
 import { Help } from '../Icons'
-import './buttonHelp.css'
+import './button-help.css'
 
 // eslint-disable-next-line no-unused-vars
 const ButtonHelp = ({ section, dispatch }) => {
@@ -10,15 +9,14 @@ const ButtonHelp = ({ section, dispatch }) => {
   }
 
   return (
-    <Button
+    <button
       id={`help-${section}`}
-      className="Button--Help"
-      handleClick={handleClick}
-      modifiers="help"
+      className="ButtonHelp"
+      onClick={handleClick}
     >
       <Help aria-hidden />
       <span className="sr-only">Help</span>
-    </Button>
+    </button>
   )
 }
 
