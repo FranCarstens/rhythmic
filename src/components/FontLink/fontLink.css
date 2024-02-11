@@ -1,0 +1,5 @@
+.FontLink .Wrapper {
+  display: flex;
+  gap: var(--grid);
+  align-items: flex-end;
+}

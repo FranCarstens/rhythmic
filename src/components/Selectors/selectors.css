@@ -1,0 +1,12 @@
+.Selectors {}
+
+.Selectors__List {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--grid);
+}
+
+.Selectors__AddSelector .FormItem__Children {
+  display: flex;
+  gap: var(--grid);
+}

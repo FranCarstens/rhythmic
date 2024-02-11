@@ -1,0 +1,56 @@
+.App {
+  display: flex;
+  flex-direction: row;
+  height: 100vh;
+  max-height: 100vh;
+  width: 100vw;
+  flex-wrap: wrap;
+}
+
+.App__Control {
+  width: calc(var(--baseline) * 17);
+  height: calc(100vh - 75px);
+
+  flex-direction: column;
+  flex-grow: 1;
+  max-height: 100%;
+}
+
+.App__Control>* {
+  margin-bottom: var(--baseline);
+  height: 100%;
+  overflow-y: scroll;
+}
+
+.App__Control fieldset>.Wrapper {
+  padding: calc(var(--baseline) * 1) calc(var(--baseline) * 3);
+}
+
+
+.App__Control fieldset>.Wrapper>*:nth-child(1n + 2) {
+  margin-top: var(--grid);
+}
+
+.App__Control legend {
+  padding: calc(var(--baseline) * 2) calc(var(--baseline) * 3) calc(var(--baseline) * 1);
+  background: var(--color-background);
+}
+
+.App__View {
+  position: relative;
+  flex-direction: column;
+  flex-grow: 1;
+  width: calc(100vw - calc(var(--baseline) * 36.5));
+  height: calc(100vh - 75px);
+  max-height: 100%;
+}
+
+.App__Output {
+  position: relative;
+  padding: calc(var(--baseline) * 2) calc(var(--baseline) * 3);
+  font-family: monospace;
+  text-align: left;
+  width: calc(var(--baseline) * 17);
+  height: calc(100vh - 75px);
+  overflow-y: scroll;
+}

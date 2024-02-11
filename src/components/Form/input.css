@@ -1,0 +1,7 @@
+.Input {
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  padding: 0 calc(var(--grid) * 1.5);
+  line-height: calc(var(--baseline) * 1.25);
+  min-height: calc(var(--baseline) * 1.25);
+}

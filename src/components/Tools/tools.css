@@ -1,0 +1,57 @@
+.Tools {
+  width: calc(var(--baseline) * 2.5);
+  padding-top: calc(var(--baseline) * 4/3);
+}
+
+.Tools__Button {
+  position: relative;
+}
+
+.Tools__Button.Tools__Toggle .Checkbox__Input+.Checkbox__Label {
+  color: var(--color-primary-inactive);
+  opacity: 1;
+}
+
+.Tools__Button.Tools__Toggle:hover .Checkbox__Input+.Checkbox__Label,
+.Tools__Button.Tools__Toggle .Checkbox__Input:active+.Checkbox__Label {
+  color: var(--color-primary-hover);
+}
+
+.Tools__Button.Tools__Toggle .Checkbox__Input:checked+.Checkbox__Label,
+.Tools__Button.Tools__Toggle:hover .Checkbox__Input:checked+.Checkbox__Label,
+.Tools__Button.Tools__Toggle .Checkbox__Input:checked:active+.Checkbox__Label {
+  color: var(--color-primary);
+}
+
+.Tools__Button .Checkbox__Label {
+  width: calc(var(--baseline) * 2.5);
+  height: calc(var(--baseline) * 2);
+  padding: calc(var(--baseline) * 2/3) 0 calc(var(--baseline) * 2/3) calc(var(--baseline) * 1.75);
+}
+
+.Tools__Button::before {
+  /* background: var(--color-gray-light); */
+  background: var(--color-base-high);
+  border-radius: calc(var(--baseline) * .5);
+  content: attr(data-tooltip);
+  display: block;
+  font-size: 0.66rem;
+  height: var(--baseline);
+  left: calc(var(--baseline) * 3);
+  line-height: var(--baseline);
+  opacity: 0;
+  padding: 0 calc(var(--baseline) * .5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: var(--transition-medium);
+  visibility: hidden;
+  white-space: nowrap;
+}
+
+.Tools__Button:hover::before,
+.Tools__Button:active::before {
+  left: calc(var(--baseline) * 2.75);
+  opacity: 1;
+  visibility: visible;
+}

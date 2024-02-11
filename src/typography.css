@@ -1,0 +1,12 @@
+.typography ul,
+.typography ol {
+  list-style-position: inside;
+}
+
+.typography ul {
+  list-style-type: disc;
+}
+
+.typography ol {
+  list-style-type: decimal;
+}

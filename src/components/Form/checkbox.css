@@ -1,0 +1,30 @@
+.Checkbox {}
+
+.Checkbox__Label {
+  cursor: pointer
+}
+
+.Checkbox--button .Checkbox__Input {
+  display: none;
+}
+
+.Checkbox--button .Checkbox__Label {
+  display: block;
+  color: var(--color-foreground);
+  opacity: 0.3;
+  padding: calc(var(--grid) * 1.5);
+  transition: var(--transition-fast);
+  height: calc(var(--baseline) * 1.5);
+  width: calc(var(--baseline) * 1.5);
+}
+
+.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label {
+  opacity: 1;
+}
+
+.Checkbox--button .Checkbox__Label:hover,
+.Checkbox--button .Checkbox__Label:focus,
+.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label:hover,
+.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label:focus {
+  opacity: 0.6;
+}

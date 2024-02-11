@@ -1,0 +1,38 @@
+.Header {
+  width: 100%;
+  height: 75px;
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--color-border);
+  align-items: center;
+}
+
+.Header__Group {
+  line-height: 1;
+}
+
+.Header__Logo {
+  font-family: Bungee;
+  color: var(--color-foreground);
+}
+
+.Header__Tagline {
+  font-size: 0.66rem;
+}
+
+.Header__Logo,
+.Header__Tagline {
+  margin: 0;
+
+}
+
+/* 
+#Button--preview.Button--active {
+  background: var(--color-foreground);
+}
+
+#Button--preview.Button--active svg {
+  fill: var(--color-foreground);
+  stroke: var(--color-background);
+} */

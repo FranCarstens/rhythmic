@@ -1,0 +1,9 @@
+.Select {
+  display: inline-block;
+  background: var(--color-background);
+  color: var(--color-foreground);
+  border: 1px solid var(--color-border);
+  padding: 0 calc(var(--grid) * 1.5);
+  line-height: calc(var(--baseline) * 1.25);
+  min-height: calc(var(--baseline) * 1.25);
+}

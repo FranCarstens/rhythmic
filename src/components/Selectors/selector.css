@@ -1,0 +1,58 @@
+.Selector {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0 calc(var(--baseline) / 2);
+  line-height: var(--baseline);
+  border-radius: calc(var(--baseline) / 2);
+  border: 1px solid var(--color-border);
+}
+
+.Selector:hover,
+.Selector:focus {
+  background: var(--color-primary-hover);
+  border-color: var(--color-primary-hover);
+}
+
+.Selector--current {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+}
+
+
+.Selector__Select {
+  padding: 0 calc(var(--baseline) / 2);
+  margin-left: calc(var(--baseline) / -2);
+  color: var(--color-primary);
+}
+
+.Selector:hover .Selector__Select,
+.Selector:focus .Selector__Select,
+.Selector--current .Selector__Select {
+  color: var(--color-background);
+}
+
+.Selector__Remove {
+  margin-right: calc(var(--grid) * -1.5);
+  width: calc(var(--baseline) - var(--grid));
+  height: calc(var(--baseline) - var(--grid));
+  border-radius: calc(var(--baseline) / 2);
+  color: var(--color-primary-shadow);
+}
+
+.Selector:hover .Selector__Remove {
+  color: var(--color-primary-inactive);
+}
+
+.Selector:hover .Selector__Remove:hover,
+.Selector:hover .Selector__Remove:focus {
+  color: var(--color-background);
+}
+
+
+
+.Selector__Remove svg {
+  width: 12px;
+  stroke-width: 3px;
+  margin: auto;
+}

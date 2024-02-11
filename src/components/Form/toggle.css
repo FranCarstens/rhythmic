@@ -1,0 +1,45 @@
+.Toggle {
+  /* display: none; */
+}
+
+.Toggle--toggle {
+  position: relative;
+  border-radius: calc(var(--baseline) * 1);
+  height: calc(var(--baseline) * .75);
+  width: calc(var(--baseline) * 1.25);
+  background: red;
+  border-radius: calc(var(--baseline) * .375);
+  overflow: hidden;
+
+  /* text-indent: -9999px; */
+}
+
+.Toggle--toggle .Toggle__Label {
+  padding: 9999px;
+}
+
+.Toggle--toggle .Toggle__Label::after {
+  content: '';
+  transition: var(--transition-fast);
+
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+
+  height: calc(calc(var(--baseline) * .75) - 2px);
+  width: calc(calc(var(--baseline) * .75) - 2px);
+
+  border-radius: 50%;
+  background: blue;
+  border-color: orange;
+}
+
+.Toggle--toggle .Toggle__Input:checked+.Toggle__Label::after {
+  background: green;
+  left: calc(calc(var(--baseline) * 1.25) - calc(calc(var(--baseline) * .75) - 2px) - 1px);
+}
+
+.Toggle--toggle .Toggle__Input {
+  display: none;
+}

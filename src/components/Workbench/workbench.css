@@ -1,0 +1,21 @@
+.Workbench {
+  height: 100%;
+}
+
+.typography *.Workbench__Sample,
+.typography .Workbench__Box {
+  margin-top: 0;
+}
+
+.Workbench__Box {
+  background: hsla(var(--blue-gray), 0.3);
+  height: 100%;
+}
+
+.Workbench__Box.margin {
+  background: hsla(var(--red-bright), 0.3);
+}
+
+.Workbench__Box:nth-child(-n + 3) {
+  height: 24px;
+}

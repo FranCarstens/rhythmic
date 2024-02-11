@@ -1,0 +1,12 @@
+.Baseliner .Wrapper>*:nth-child(1n + 2) {
+  margin-left: var(--grid);
+}
+
+.Baseliner__Actions {
+  display: flex;
+  gap: var(--grid);
+}
+
+.Baseliner .Wrapper>* {
+  vertical-align: middle;
+}

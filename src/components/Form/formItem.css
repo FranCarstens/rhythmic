@@ -1,0 +1,32 @@
+.FormItem {
+  display: flex;
+  width: 100%;
+  gap: 1rem;
+  align-items: center;
+}
+
+.FormItem--column {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0;
+}
+
+.FormItem__Label {
+  min-width: 100px;
+}
+
+.FormItem--column .FormItem__Label {
+  font-size: 0.75rem;
+  /* 12px */
+}
+
+.FormItem__Children {
+  display: flex;
+  width: 100%;
+}
+
+.FormItem .Input,
+.FormItem .Select {
+  flex-grow: 1;
+  width: 100%;
+}

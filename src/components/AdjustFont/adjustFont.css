@@ -1,0 +1,69 @@
+.AdjustFont {}
+
+.AdjustFont__Unit {
+  justify-content: flex-end;
+  font-size: 0.75rem;
+}
+
+.AdjustFont__Unit .FormItem__Label {
+  min-width: auto;
+}
+
+.AdjustFont__Unit .FormItem__Children {
+  width: auto
+}
+
+.AdjustFont-Toggle {
+  --toggle-slider-height: calc(var(--baseline) * .75);
+  --toggle-slider-width: calc(var(--baseline) * 1.75);
+  --toggle-puck-height: calc(var(--toggle-slider-height) - 2px);
+  --toggle-puck-width: var(--toggle-puck-height);
+}
+
+.AdjustFont-Toggle--toggle {
+  position: relative;
+  border-radius: calc(var(--baseline) * 1);
+  height: var(--toggle-slider-height);
+  width: var(--toggle-slider-width);
+  background: hsla(var(--blue-gray), 0.3);
+  border-radius: calc(var(--baseline) * .375);
+  overflow: hidden;
+}
+
+.AdjustFont-Toggle__Input+.AdjustFont-Toggle__Label {
+  font-size: 0.67rem;
+  width: 100%;
+  padding: 0 0 0 calc(var(--toggle-puck-width) - 2px);
+  line-height: var(--toggle-slider-height);
+  display: block;
+  text-align: center;
+}
+
+.AdjustFont-Toggle__Input:checked+.AdjustFont-Toggle__Label {
+  padding: 0 calc(var(--toggle-puck-width) - 2px) 0 0;
+}
+
+.AdjustFont-Toggle--toggle .AdjustFont-Toggle__Label::after {
+  content: '';
+  transition: var(--transition-fast);
+
+  display: block;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+
+  height: var(--toggle-puck-height);
+  width: var(--toggle-puck-width);
+
+  border-radius: 50%;
+  background: var(--color-blue-gray);
+  border-color: var(--color-foreground);
+}
+
+.AdjustFont-Toggle--toggle .AdjustFont-Toggle__Input:checked+.AdjustFont-Toggle__Label::after {
+  left: calc(var(--toggle-slider-width) - var(--toggle-puck-width) - 1px);
+}
+
+.AdjustFont-Toggle--toggle .AdjustFont-Toggle__Input {
+  display: none;
+}

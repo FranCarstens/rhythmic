@@ -1,0 +1,112 @@
+.Typo {
+  display: flex;
+  height: 100%;
+  font-size: 16px;
+}
+
+.Typo__heading {
+  font-size: 0.6889rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  color: var(--color-primary);
+  padding: calc(var(--baseline) * 1) 0;
+}
+
+.Typo>div:first-of-type {
+  width: 250px;
+}
+
+.Typo>*:last-of-type {
+  width: calc(100% - 250px);
+}
+
+.Typo__edit {
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.Typo__textarea-label {
+  position: absolute;
+  font-size: 0.67rem;
+  padding: var(--grid) calc(var(--grid) * 1.5);
+  background: var(--color-background);
+  top: calc(var(--baseline) * -1);
+  right: calc(var(--baseline) * -1);
+  z-index: 2;
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+}
+
+.Typo__edit textarea {
+  font-family: var(--font-code);
+  color: var(--color-foreground);
+  font-size: 0.83rem;
+  display: block;
+  position: relative;
+  z-index: 1;
+  margin: 0 calc((var(--baseline)) * -1);
+  padding: var(--baseline);
+  border-radius: var(--border-radius);
+  border-top-right-radius: 0;
+  width: calc(100% + (var(--baseline) * 2));
+  height: 100%;
+  background-color: var(--color-background);
+  border: none;
+}
+
+.Typo__edit button {
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  backdrop-filter: blur(3px);
+  background: hsla(var(--base), 95%, 0.5);
+}
+
+@media (prefers-color-scheme: dark) {
+  .Typo__edit button {
+    background: hsla(var(--base), 19%, 0.5);
+  }
+}
+
+.dark .Typo__edit button {
+  background: hsla(var(--base), 19%, 0.5);
+}
+
+.Typo__markdown {
+  color: var(--color-foreground);
+  text-align: left;
+  min-height: 100%;
+  width: 100%;
+  padding-bottom: calc(var(--baseline) * 2);
+}
+
+.Typo__markdown::after {
+  content: 'Click to edit';
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  top: calc(calc(var(--workbox-baseline) * -1) + var(--grid));
+  right: var(--grid);
+  transform: translateX(-50%);
+  border-radius: calc(var(--border-radius) * 2);
+  border-bottom-left-radius: 0;
+  font-size: 0.83rem;
+
+  padding: var(--grid) calc(var(--grid) * 2);
+  background: var(--color-primary);
+  color: var(--color-background);
+  z-index: 2;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+}
+
+.Typo__markdown:hover::after {
+  opacity: 1;
+}
