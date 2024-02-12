@@ -74,7 +74,7 @@ function App () {
   }, [lang])
 
   return (<>
-    {/* <button onClick={() => setDesign(!design)}>Design</button> */}
+    <button onClick={() => setDesign(!design)}>Design</button>
     {!design ? <div className={`App ${themeClass} ${contrastClass}`}>
       <Header contrast={contrast} dispatch={dispatch} theme={theme} />
       <Tools tools={tools} dispatch={dispatch} />

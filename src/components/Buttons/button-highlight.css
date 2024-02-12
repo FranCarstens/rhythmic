@@ -8,5 +8,17 @@
   &:hover,
   &.active {
     background-color: var(--color-primary-hover);
+    border-color: var(--color-primary-hover);
+  }
+
+  .contrast & {
+
+    &:active,
+    &:focus,
+    &:hover,
+    &.active {
+      background-color: var(--color-background);
+      color: var(--color-foreground);
+    }
   }
 }

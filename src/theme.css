@@ -2,8 +2,6 @@
   background: hsl(153, 47%, 49%);
 }
 
-
-
 .second-color {
   background: hsl(180, 38%, 33%);
 }
@@ -14,22 +12,23 @@
 
 .fourth-color {
   background: hsl(9, 100%, 70%);
-} */
-.color {
-  background: rgb(255, 125, 102);
 }
+
+.color {
+  background: hsl(9, 100%, 70%);
+} */
 
 :root {
   /* hsl base colors */
-  --white: 0, 0%, 100%;
-  --black: 0, 0%, 0%;
   --base: 0, 0%;
+  --white: var(--base), 100%;
+  --black: var(--base), 0%;
   --primary: 153, 74.5%;
-  --primary-hover: 153, 75%, 50%;
   --secondary: 9, 100%;
-  --secondary-hover: 9, 85%, 65%;
+
   --baseline: 1.5rem;
   --grid: 0.375rem;
+
   --border-radius: var(--grid);
 
   --font-brand: 'Bungee', sans-serif;
@@ -40,8 +39,6 @@
   /* flat colors */
   --color-white: hsl(var(--white));
   --color-black: hsl(var(--black));
-  --color-primary: hsl(var(--primary), 49%);
-  --color-secondary: hsl(var(--secondary), 70%);
 
   /* animation */
   --transition-slow: all 0.5s ease-in-out;
@@ -49,67 +46,112 @@
   --transition-fast: all 0.1s ease-in-out;
 }
 
-.contrast {
-  --color-primary: color-foreground;
-  --color-secondary: color-foreground;
-}
-
-.constrast.dark {}
-
 .App {
-  --color-foreground: hsl(var(--base), 13%);
-  --color-background: hsl(var(--base), 100%);
-  --color-base-low: hsl(var(--base), 18%);
-  --color-base-medium: hsl(var(--base), 56.5%);
-  --color-base-high: hsl(var(--base), 95%);
-  --color-base-shadow: hsl(var(--base), 98%);
 
-  --color-primary-hover: hsl(var(--primary), 59%);
-  --color-primary-inactive: hsl(var(--primary), 79%);
-  --color-primary-shadow: hsl(var(--primary), 94%);
+  &,
+  &.dark {
+    --color-primary: hsl(var(--primary), 49%);
+    --color-secondary: hsl(var(--secondary), 70%);
+  }
 
-  --color-secondary-hover: hsl(var(--secondary), 78%);
-  --color-secondary-inactive: hsl(var(--secondary), 87%);
-  --color-secondary-shadow: hsl(var(--secondary), 96%);
+  &.light {
+    --color-foreground: hsl(var(--base), 13%);
+    --color-background: hsl(var(--base), 100%);
 
-  --color-border: var(--color-base-high);
-}
+    --color-base-low: hsl(var(--base), 18%);
+    --color-base-medium: hsl(var(--base), 56.5%);
+    --color-base-high: hsl(var(--base), 95%);
+    --color-base-shadow: hsl(var(--base), 98%);
 
-@media (prefers-color-scheme: dark) {
-  .App {
+    --color-primary-hover: hsl(var(--primary), 59%);
+    --color-primary-inactive: hsl(var(--primary), 79%);
+    --color-primary-shadow: hsl(var(--primary), 94%);
+  }
+
+  &.dark {
     --color-foreground: hsl(var(--base), 100%);
     --color-background: hsl(var(--base), 13%);
+
     --color-base-low: hsl(var(--base), 95%);
+    --color-base-medium: hsl(var(--base), 56.5%);
     --color-base-high: hsl(var(--base), 19%);
     --color-base-shadow: hsl(var(--base), 15%);
 
     --color-primary-hover: hsl(var(--primary), 39%);
     --color-primary-inactive: hsl(var(--primary), 26%);
     --color-primary-shadow: hsl(var(--primary), 13%);
+  }
+
+  &.light.contrast {
+    --color-foreground: hsl(var(--base), 0%);
+    --color-background: hsl(var(--base), 100%);
+  }
+
+  &.dark.contrast {
+    --color-foreground: hsl(var(--base), 100%);
+    --color-background: hsl(var(--base), 0%);
+  }
+
+  &.dark.contrast,
+  &.light.contrast {
+    --color-primary: var(--color-foreground);
+    --color-primary-hover: hsl(var(--base), 50%);
+    --color-primary-inactive: hsl(var(--secondary), 70%);
+    --color-primary-shadow: var(--color-background);
+
+    --color-secondary: var(--color-primary);
+    --color-secondary-hover: var(--color-primary-hover);
+    --color-secondary-inactive: var(--color-primary-inactive);
+    --color-secondary-shadow: var(--color-primary-shadow);
+
+    --color-base-low: var(--color-background);
+    --color-base-medium: hsl(var(--base), 50%);
+    --color-base-high: var(--color-foreground);
+    --color-base-shadow: var(--color-foreground);
+
+    --color-border: var(--color-foreground);
+  }
+}
+
+.App {
+
+
+  --color-secondary-hover: hsl(var(--secondary), 78%);
+  --color-secondary-inactive: hsl(var(--secondary), 87%);
+  --color-secondary-shadow: hsl(var(--secondary), 96%);
+
+  --color-border: var(--color-base-high);
+
+  &.dark {
+
 
     --color-secondary-hover: hsl(var(--secondary), 62%);
     --color-secondary-inactive: hsl(var(--secondary), 34%);
     --color-secondary-shadow: hsl(var(--secondary), 17%);
   }
+
+  @media (prefers-color-scheme: dark) {
+    & {
+      --color-foreground: hsl(var(--base), 100%);
+      --color-background: hsl(var(--base), 13%);
+      --color-base-low: hsl(var(--base), 95%);
+      --color-base-high: hsl(var(--base), 19%);
+      --color-base-shadow: hsl(var(--base), 15%);
+
+      --color-primary-hover: hsl(var(--primary), 39%);
+      --color-primary-inactive: hsl(var(--primary), 26%);
+      --color-primary-shadow: hsl(var(--primary), 13%);
+
+      --color-secondary-hover: hsl(var(--secondary), 62%);
+      --color-secondary-inactive: hsl(var(--secondary), 34%);
+      --color-secondary-shadow: hsl(var(--secondary), 17%);
+    }
+  }
 }
 
 .light {}
 
-.dark {
-  --color-foreground: hsl(var(--base), 100%);
-  --color-background: hsl(var(--base), 13%);
-  --color-base-low: hsl(var(--base), 95%);
-  --color-base-high: hsl(var(--base), 19%);
-  --color-base-shadow: hsl(var(--base), 15%);
 
-  --color-primary-hover: hsl(var(--primary), 39%);
-  --color-primary-inactive: hsl(var(--primary), 26%);
-  --color-primary-shadow: hsl(var(--primary), 13%);
-
-  --color-secondary-hover: hsl(var(--secondary), 62%);
-  --color-secondary-inactive: hsl(var(--secondary), 34%);
-  --color-secondary-shadow: hsl(var(--secondary), 17%);
-}
 
 body {
   font-family: var(--font-body);
