@@ -2,8 +2,18 @@
   height: calc(var(--grid) * 2);
   width: calc(var(--grid) * 2);
   color: var(--color-base-medium);
-}
+  border-radius: 50%;
 
-.ButtonHelp:hover {
-  color: var(--color-primary);
+  &:hover {
+    color: var(--color-primary);
+  }
+
+  .contrast & {
+    color: var(--color-primary);
+
+    &:hover {
+      color: var(--color-background);
+      background-color: var(--color-foreground);
+    }
+  }
 }

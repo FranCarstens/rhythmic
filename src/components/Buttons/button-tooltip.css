@@ -113,7 +113,7 @@
       right: var(--offset);
 
       &::before {
-        left: 100%;
+        left: calc(100% - 2px);
         border-left-color: var(--color-base-shadow);
       }
     }
@@ -124,7 +124,7 @@
       left: var(--offset);
 
       &::before {
-        right: 100%;
+        right: calc(100% - 2px);
         border-top-color: var(--color-base-shadow);
       }
     }

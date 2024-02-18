@@ -1,0 +1,47 @@
+.App.light {
+  --color-foreground: hsl(var(--base), 13%);
+  --color-background: hsl(var(--base), 100%);
+
+  --color-primary: hsl(var(--primary), 49%);
+  --color-secondary: hsl(var(--secondary), 70%);
+
+  --color-base-low: hsl(var(--base), 18%);
+  --color-base-medium: hsl(var(--base), 56.5%);
+  --color-base-high: hsl(var(--base), 95%);
+  --color-base-shadow: hsl(var(--base), 98%);
+
+  --color-primary-hover: hsl(var(--primary), 59%);
+  --color-primary-inactive: hsl(var(--primary), 79%);
+  --color-primary-shadow: hsl(var(--primary), 94%);
+
+  --color-secondary-hover: hsl(var(--secondary), 78%);
+  --color-secondary-inactive: hsl(var(--secondary), 87%);
+  --color-secondary-shadow: hsl(var(--secondary), 96%);
+
+  --color-border: var(--color-base-high);
+}
+
+@media (prefers-color-scheme: light) {
+  .App {
+    --color-foreground: hsl(var(--base), 13%);
+    --color-background: hsl(var(--base), 100%);
+
+    --color-primary: hsl(var(--primary), 49%);
+    --color-secondary: hsl(var(--secondary), 70%);
+
+    --color-base-low: hsl(var(--base), 18%);
+    --color-base-medium: hsl(var(--base), 56.5%);
+    --color-base-high: hsl(var(--base), 95%);
+    --color-base-shadow: hsl(var(--base), 98%);
+
+    --color-primary-hover: hsl(var(--primary), 59%);
+    --color-primary-inactive: hsl(var(--primary), 79%);
+    --color-primary-shadow: hsl(var(--primary), 94%);
+
+    --color-secondary-hover: hsl(var(--secondary), 78%);
+    --color-secondary-inactive: hsl(var(--secondary), 87%);
+    --color-secondary-shadow: hsl(var(--secondary), 96%);
+
+    --color-border: var(--color-base-high);
+  }
+}

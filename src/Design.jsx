@@ -1,5 +1,6 @@
 import Button from "./components/Buttons"
 import ButtonHelp from "./components/Buttons/ButtonHelp"
+import { FormItem, Input, Range, Select } from './components/Form'
 
 import { Trash, Contrast } from "./components/Icons"
 
@@ -79,6 +80,19 @@ const Components = ({ theme, contrast }) => {
 
     <div>
       <ButtonHelp section="css" dispatch={() => null} />
+    </div>
+
+    <div>
+      <Range
+        id="range"
+        type="range"
+        min="0"
+        step="0.5"
+        max="4"
+        onChange={() => null}
+        value={0}
+        dataInfo={2}
+      />
     </div>
   </div >
 }

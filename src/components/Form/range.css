@@ -1,3 +1,9 @@
+/* Chromium */
+input[type=range] {
+  appearance: none;
+}
+
+/* layout */
 .Range {
   align-items: center;
   display: flex;
@@ -11,14 +17,7 @@
   width: 100px;
 }
 
-
-/* Chromium */
-input[type=range] {
-  appearance: none;
-}
-
 input[type=range]::-webkit-slider-runnable-track {
-  background: var(--color-base-high);
   border-radius: calc(var(--border-radius) * 0.5 + 1px);
   border: none;
   height: calc(var(--grid) + 2px);
@@ -29,63 +28,59 @@ input[type=range]:focus {
   outline: none;
 }
 
+input[type=range]::-webkit-slider-thumb {
+  display: block;
+  appearance: none;
+  background-clip: padding-box;
+  box-sizing: border-box;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: calc(var(--grid) * 1.25);
+  /* 2.5 */
+  cursor: pointer;
+  height: calc(var(--grid) * 3.5);
+  margin-top: calc(var(--grid) * -1.25 + 1px);
+  position: relative;
+  width: calc(var(--grid) * 3.5);
+}
+
+/* color */
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: var(--color-base-high);
+}
+
 input[type=range]:hover::-webkit-slider-runnable-track,
 input[type=range]:active::-webkit-slider-runnable-track,
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background: var(--color-base-high);
+  background-color: var(--color-base-high);
 }
 
 input[type=range]::-webkit-slider-thumb {
-  appearance: none;
-  background: hsl(var(--primary), 49%);
-  border-radius: 50%;
-  border: calc(var(--grid) * 1.5) solid var(--color-background);
-  box-sizing: content-box;
-  cursor: pointer;
-  height: var(--grid);
-  margin-top: calc(var(--grid) * -1.5 + 1px);
-  mix-blend-mode: darken;
-  position: relative;
-  width: var(--grid);
+  background-color: var(--color-primary);
+  border-color: transparent;
 
+  &:hover {
+    border-color: hsla(var(--base), 90%, 35%)
+  }
 
-}
-
-@media (prefers-color-scheme: dark) {
-  input[type=range]::-webkit-slider-thumb {
-    background: hsl(var(--primary), 49%);
-    border: calc(var(--grid) * 1.5) solid var(--color-black);
-    mix-blend-mode: color-dodge;
+  .dark &:hover {
+    border-color: hsla(var(--base), 90%, 10%)
   }
 }
 
-input[type=range]::-webkit-slider-thumb:hover {
-  background: hsl(var(--primary), 49%);
-  border: calc(var(--grid) * 1.5) solid var(--color-base-high);
-  mix-blend-mode: multiply;
+.contrast input[type=range]::-webkit-slider-thumb {
+  background-color: var(--color-background);
+
+  &:hover {
+    border-color: var(--color-foreground);
+  }
 }
 
 @media (prefers-color-scheme: dark) {
   input[type=range]::-webkit-slider-thumb:hover {
-    border: calc(var(--grid) * 1.5) solid var(--color-base-high);
-    mix-blend-mode: exclusion;
+    border-color: hsla(var(--base), 90%, 10%)
   }
 }
-
-.dark input[type=range]::-webkit-slider-thumb {
-  background: hsl(var(--primary), 49%);
-  border: calc(var(--grid) * 1.5) solid var(--color-black);
-  mix-blend-mode: color-dodge;
-}
-
-.dark input[type=range]::-webkit-slider-thumb:hover {
-  background: hsl(var(--primary), 49%);
-  border: calc(var(--grid) * 1.5) solid var(--color-base-high);
-  mix-blend-mode: exclusion;
-}
-
-
-
 
 /* Firefox */
 

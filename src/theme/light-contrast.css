@@ -1,0 +1,47 @@
+.App.light.contrast {
+  --color-foreground: hsl(var(--base), 0%);
+  --color-background: hsl(var(--base), 100%);
+
+  --color-primary: var(--color-foreground);
+  --color-secondary: var(--color-primary);
+
+  --color-primary-hover: hsl(var(--base), 50%);
+  --color-primary-inactive: hsl(var(--secondary), 70%);
+  --color-primary-shadow: var(--color-background);
+
+  --color-secondary-hover: var(--color-primary-hover);
+  --color-secondary-inactive: var(--color-primary-inactive);
+  --color-secondary-shadow: var(--color-primary-shadow);
+
+  --color-base-low: var(--color-background);
+  --color-base-medium: hsl(var(--base), 50%);
+  --color-base-high: var(--color-foreground);
+  --color-base-shadow: var(--color-foreground);
+
+  --color-border: var(--color-foreground);
+}
+
+@media (prefers-color-scheme: light) {
+  .App.contrast {
+    --color-foreground: hsl(var(--base), 0%);
+    --color-background: hsl(var(--base), 100%);
+
+    --color-primary: var(--color-foreground);
+    --color-secondary: var(--color-primary);
+
+    --color-primary-hover: hsl(var(--base), 50%);
+    --color-primary-inactive: hsl(var(--secondary), 70%);
+    --color-primary-shadow: var(--color-background);
+
+    --color-secondary-hover: var(--color-primary-hover);
+    --color-secondary-inactive: var(--color-primary-inactive);
+    --color-secondary-shadow: var(--color-primary-shadow);
+
+    --color-base-low: var(--color-background);
+    --color-base-medium: hsl(var(--base), 50%);
+    --color-base-high: var(--color-foreground);
+    --color-base-shadow: var(--color-foreground);
+
+    --color-border: var(--color-foreground);
+  }
+}
