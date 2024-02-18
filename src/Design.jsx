@@ -1,8 +1,8 @@
 import Button from "./components/Buttons"
 import ButtonHelp from "./components/Buttons/ButtonHelp"
-import { FormItem, Input, Range, Select } from './components/Form'
+import { FormItem, Input, Range, Select, Checkbox } from './components/Form'
 
-import { Trash, Contrast } from "./components/Icons"
+import { Trash, Contrast, Baseline } from "./components/Icons"
 
 const Design = () => {
   return (
@@ -93,6 +93,57 @@ const Components = ({ theme, contrast }) => {
         value={0}
         dataInfo={2}
       />
+    </div>
+
+    <div>
+      <div style={{ width: '2.5rem' }}>
+        <Checkbox
+          tooltip='Checkbox Tooltip'
+          className='Checkbox'
+          checked={false}
+          handleChange={() => null}
+          id='checkbox-checked'
+          label={<Baseline />}
+          name='checkbox-checked'
+          type="button"
+        />
+      </div>
+      <div style={{ width: '2.5rem' }}>
+        <Checkbox
+          tooltip='Checkbox Tooltip'
+          className='Checkbox'
+          checked={true}
+          handleChange={() => null}
+          id='checkbox-checked'
+          label={<Baseline />}
+          name='checkbox-checked'
+          type="button"
+        />
+      </div>
+      <div style={{ width: '2.5rem' }}>
+        <Checkbox
+          tooltip='Checkbox Tooltip'
+          className='Checkbox color'
+          checked={false}
+          handleChange={() => null}
+          id='checkbox-checked'
+          label={<Baseline />}
+          name='checkbox-checked'
+          type="button"
+        />
+      </div>
+      <div style={{ width: '2.5rem' }}>
+        <Checkbox
+          tooltip='Checkbox Tooltip'
+          className='Checkbox color'
+          checked={true}
+          handleChange={() => null}
+          id='checkbox-checked'
+          label={<Baseline />}
+          name='checkbox-checked'
+          type="button"
+        />
+      </div>
     </div>
   </div >
 }

@@ -1,7 +1,7 @@
 .ButtonHelp {
   height: calc(var(--grid) * 2);
   width: calc(var(--grid) * 2);
-  color: var(--color-base-medium);
+  color: var(--color-base-3);
   border-radius: 50%;
 
   &:hover {

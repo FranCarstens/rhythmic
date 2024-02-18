@@ -12,7 +12,7 @@ const CheckboxBase = ({
   type
 }) => {
   return (
-    <div className={`${identifier} ${identifier}--${type} ${className || ''}`} data-tooltip={tooltip}>
+    <div className={`${identifier} ${identifier}--${type} ${className || ''}`}>
       <input
         className={`${identifier}__Input`}
         type="checkbox"
@@ -22,7 +22,7 @@ const CheckboxBase = ({
         name={name}
       />
 
-      <label className={`${identifier}__Label`} htmlFor={id}>
+      <label className={`${identifier}__Label`} htmlFor={id} data-tooltip={tooltip}>
         {label}
       </label>
     </div >

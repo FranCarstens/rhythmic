@@ -17,6 +17,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    'react/no-unused-prop-types': [2],
     'no-multiple-empty-lines': ['error', { max: 1, maxEOF: 1 }],
   },
 }

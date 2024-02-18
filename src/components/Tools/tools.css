@@ -1,57 +1,40 @@
 .Tools {
+  display: flex;
+  flex-direction: column;
+  gap: var(--baseline);
+  align-items: flex-end;
   width: calc(var(--baseline) * 2.5);
   padding-top: calc(var(--baseline) * 4/3);
+
 }
 
-.Tools__Button {
-  position: relative;
+.Tools__Toggles,
+.Tools__Menu {
+  width: calc(var(--baseline) * 2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translate(var(--baseline), 0);
 }
 
-.Tools__Button.Tools__Toggle .Checkbox__Input+.Checkbox__Label {
-  color: var(--color-primary-inactive);
-  opacity: 1;
+.Tools__Toggles {
+  background-color: var(--color-base-shadow);
+  border-radius: var(--baseline);
+  gap: var(--grid);
+  padding: calc(var(--grid) * 1) 0;
 }
 
-.Tools__Button.Tools__Toggle:hover .Checkbox__Input+.Checkbox__Label,
-.Tools__Button.Tools__Toggle .Checkbox__Input:active+.Checkbox__Label {
-  color: var(--color-primary-hover);
+.Tools__Menu {
+  gap: 1px;
 }
 
-.Tools__Button.Tools__Toggle .Checkbox__Input:checked+.Checkbox__Label,
-.Tools__Button.Tools__Toggle:hover .Checkbox__Input:checked+.Checkbox__Label,
-.Tools__Button.Tools__Toggle .Checkbox__Input:checked:active+.Checkbox__Label {
-  color: var(--color-primary);
-}
+.App.contrast {
+  .Tools__Toggles {
+    box-shadow: inset 0 0 0 1px var(--color-foreground);
 
-.Tools__Button .Checkbox__Label {
-  width: calc(var(--baseline) * 2.5);
-  height: calc(var(--baseline) * 2);
-  padding: calc(var(--baseline) * 2/3) 0 calc(var(--baseline) * 2/3) calc(var(--baseline) * 1.75);
-}
-
-.Tools__Button::before {
-  /* background: var(--color-gray-light); */
-  background: var(--color-base-high);
-  border-radius: calc(var(--baseline) * .5);
-  content: attr(data-tooltip);
-  display: block;
-  font-size: 0.66rem;
-  height: var(--baseline);
-  left: calc(var(--baseline) * 3);
-  line-height: var(--baseline);
-  opacity: 0;
-  padding: 0 calc(var(--baseline) * .5);
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  transition: var(--transition-medium);
-  visibility: hidden;
-  white-space: nowrap;
-}
-
-.Tools__Button:hover::before,
-.Tools__Button:active::before {
-  left: calc(var(--baseline) * 2.75);
-  opacity: 1;
-  visibility: visible;
+    .Tools__Tool .Checkbox__Label {
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
 }

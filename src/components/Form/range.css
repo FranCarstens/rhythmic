@@ -46,13 +46,13 @@ input[type=range]::-webkit-slider-thumb {
 
 /* color */
 input[type=range]::-webkit-slider-runnable-track {
-  background-color: var(--color-base-high);
+  background-color: var(--color-base-5);
 }
 
 input[type=range]:hover::-webkit-slider-runnable-track,
 input[type=range]:active::-webkit-slider-runnable-track,
 input[type=range]:focus::-webkit-slider-runnable-track {
-  background-color: var(--color-base-high);
+  background-color: var(--color-base-5);
 }
 
 input[type=range]::-webkit-slider-thumb {

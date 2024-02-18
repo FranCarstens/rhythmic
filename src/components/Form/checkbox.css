@@ -4,27 +4,71 @@
   cursor: pointer
 }
 
-.Checkbox--button .Checkbox__Input {
+.Checkbox__Input {
   display: none;
 }
 
-.Checkbox--button .Checkbox__Label {
-  display: block;
-  color: var(--color-foreground);
-  opacity: 0.3;
-  padding: calc(var(--grid) * 1.5);
-  transition: var(--transition-fast);
-  height: calc(var(--baseline) * 1.5);
-  width: calc(var(--baseline) * 1.5);
+.Checkbox--button {
+  .Checkbox__Label {
+    display: block;
+
+    height: 100%;
+    width: 100%;
+    padding: calc(var(--grid) * 1.5);
+    transition: var(--transition-fast);
+
+    svg {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .Checkbox__Input+.Checkbox__Label {
+    color: var(--color-base-4);
+  }
+
+  .Checkbox__Input+.Checkbox__Label:hover,
+  .Checkbox__Input:focus+.Checkbox__Label,
+  .Checkbox__Input:active+.Checkbox__Label {
+    color: var(--color-base-3);
+  }
+
+  .Checkbox__Input:checked+.Checkbox__Label {
+    color: var(--color-base-1);
+  }
+
+  &.color {
+    .Checkbox__Input+.Checkbox__Label {
+      color: var(--color-primary-inactive);
+    }
+
+    .Checkbox__Input+.Checkbox__Label:hover,
+    .Checkbox__Input:focus+.Checkbox__Label,
+    .Checkbox__Input:active+.Checkbox__Label {
+      color: var(--color-primary-hover);
+    }
+
+    .Checkbox__Input:checked+.Checkbox__Label {
+      color: var(--color-primary);
+    }
+  }
 }
 
-.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label {
-  opacity: 1;
-}
+.App.contrast {
+  .Checkbox__Input+.Checkbox__Label {
+    color: var(--color-foreground);
+  }
 
-.Checkbox--button .Checkbox__Label:hover,
-.Checkbox--button .Checkbox__Label:focus,
-.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label:hover,
-.Checkbox--button .Checkbox__Input:checked+.Checkbox__Label:focus {
-  opacity: 0.6;
+  .Checkbox__Input+.Checkbox__Label:hover,
+  .Checkbox__Input:focus+.Checkbox__Label,
+  .Checkbox__Input:active+.Checkbox__Label {
+    color: var(--color-foreground);
+    box-shadow: inset 0 0 0 1px var(--color-foreground);
+  }
+
+  .Checkbox__Input:checked+.Checkbox__Label {
+    color: var(--color-background);
+    background-color: var(--color-foreground);
+  }
 }

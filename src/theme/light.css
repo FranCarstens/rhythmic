@@ -5,9 +5,11 @@
   --color-primary: hsl(var(--primary), 49%);
   --color-secondary: hsl(var(--secondary), 70%);
 
-  --color-base-low: hsl(var(--base), 18%);
-  --color-base-medium: hsl(var(--base), 56.5%);
-  --color-base-high: hsl(var(--base), 95%);
+  --color-base-1: hsl(var(--base), 19%);
+  --color-base-2: hsl(var(--base), 38%);
+  --color-base-3: hsl(var(--base), 57%);
+  --color-base-4: hsl(var(--base), 76%);
+  --color-base-5: hsl(var(--base), 95%);
   --color-base-shadow: hsl(var(--base), 98%);
 
   --color-primary-hover: hsl(var(--primary), 59%);
@@ -18,7 +20,7 @@
   --color-secondary-inactive: hsl(var(--secondary), 87%);
   --color-secondary-shadow: hsl(var(--secondary), 96%);
 
-  --color-border: var(--color-base-high);
+  --color-border: var(--color-base-5);
 }
 
 @media (prefers-color-scheme: light) {
@@ -29,9 +31,11 @@
     --color-primary: hsl(var(--primary), 49%);
     --color-secondary: hsl(var(--secondary), 70%);
 
-    --color-base-low: hsl(var(--base), 18%);
-    --color-base-medium: hsl(var(--base), 56.5%);
-    --color-base-high: hsl(var(--base), 95%);
+    --color-base-1: hsl(var(--base), 19%);
+    --color-base-2: hsl(var(--base), 38%);
+    --color-base-3: hsl(var(--base), 57%);
+    --color-base-4: hsl(var(--base), 76%);
+    --color-base-5: hsl(var(--base), 95%);
     --color-base-shadow: hsl(var(--base), 98%);
 
     --color-primary-hover: hsl(var(--primary), 59%);
@@ -42,6 +46,6 @@
     --color-secondary-inactive: hsl(var(--secondary), 87%);
     --color-secondary-shadow: hsl(var(--secondary), 96%);
 
-    --color-border: var(--color-base-high);
+    --color-border: var(--color-base-5);
   }
 }
