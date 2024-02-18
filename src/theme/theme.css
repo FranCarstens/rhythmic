@@ -18,9 +18,9 @@
   --border-radius: var(--grid);
 
   /* typography */
-  --font-brand: 'Bungee', sans-serif;
   --font-body: 'Manrope', sans-serif;
   --font-heading: var(--font-body);
+  --font-brand: var(--font-body), sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 
 
@@ -49,6 +49,25 @@ h4,
 h5,
 h6 {
   font-family: var(--font-heading);
+}
+
+a {
+  color: var(--color-foreground);
+  text-decoration-line: underline;
+  text-decoration-style: dotted;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  text-decoration-color: var(--color-primary-inactive);
+  transition: var(--transition-fast);
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: var(--color-primary);
+    text-decoration-style: solid;
+    text-underline-offset: 4px;
+    text-decoration-color: var(--color-primary);
+  }
 }
 
 legend {

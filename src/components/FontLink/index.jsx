@@ -67,7 +67,7 @@ const FontLink = ({ fonts, dispatch }) => {
           <Plus aria-hidden /><span className="sr-only">Add</span>
         </Button>
       </Wrapper>
-      <p>Selected Fonts</p>
+      <p><strong>Selected Fonts</strong></p>
       <ul>
         {fonts.map(font => (
           <li key={font.family}>

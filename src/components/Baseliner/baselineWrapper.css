@@ -2,19 +2,21 @@
   padding: calc(var(--workbox-baseline) - 1px) var(--workbox-baseline) var(--workbox-baseline);
   height: 100%;
   overflow-y: scroll;
+  background-attachment: local;
+}
 
+.BaselineWrapper {
   background-image: repeating-linear-gradient(transparent 0px,
       transparent calc(var(--workbox-baseline) - 1px),
-      hsl(var(--base), 90%) calc(var(--workbox-baseline) - 1px),
-      hsl(var(--base), 90%) var(--workbox-baseline));
-  background-attachment: local;
+      var(--color-base-5) calc(var(--workbox-baseline) - 1px),
+      var(--color-base-5) var(--workbox-baseline));
 }
 
 .BaselineWrapper.withSubgrid {
   background-image: repeating-linear-gradient(transparent 0px,
       transparent calc(var(--workbox-baseline) - 1px),
-      hsl(var(--base), 90%) calc(var(--workbox-baseline) - 1px),
-      hsl(var(--base), 90%) var(--workbox-baseline)),
+      var(--color-base-5) calc(var(--workbox-baseline) - 1px),
+      var(--color-base-5) var(--workbox-baseline)),
     repeating-linear-gradient(90deg,
       transparent 0px,
       transparent 1px,
@@ -22,8 +24,8 @@
       var(--color-background) 2px),
     repeating-linear-gradient(transparent 0px,
       transparent calc(var(--workbox-subgrid) - 1px),
-      hsl(var(--base), 90%) calc(var(--workbox-subgrid) - 1px),
-      hsl(var(--base), 90%) var(--workbox-subgrid))
+      var(--color-base-5) calc(var(--workbox-subgrid) - 1px),
+      var(--color-base-5) var(--workbox-subgrid))
 }
 
 .BaselineWrapper.hideGrid {

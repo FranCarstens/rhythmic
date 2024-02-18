@@ -60,7 +60,7 @@ export default Output
 
 Output.propTypes = {
   className: PropTypes.string,
-  styles: PropTypes.objectOf(PropTypes.string).isRequired
+  styles: PropTypes.object.isRequired
 }
 
 const formatCSS = (stylesString) => {

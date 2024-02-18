@@ -1,8 +1,6 @@
-import { useEffect, useReducer, useState } from 'react'
+import { useEffect, useReducer } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
-
-import Design from './Design'
 
 import AdjustFont from './components/AdjustFont'
 import Baseliner, { BaselineWrapper } from './components/Baseliner'
@@ -22,7 +20,6 @@ import { jsObjToCss } from './utils/convertJStoCSS'
 import './App.css'
 
 function App () {
-  const [design, setDesign] = useState(false)
   const [state, dispatch] = useReducer(appReducer, initialState)
 
   const {
@@ -60,8 +57,6 @@ function App () {
     }
   }, [styles])
 
-
-
   useEffect(() => {
     const setConfig = () => {
       import(`./store/help/${lang}.js`).then((module) => {
@@ -73,9 +68,8 @@ function App () {
     setConfig()
   }, [lang])
 
-  return (<>
-    <button onClick={() => setDesign(!design)}>Design</button>
-    {!design ? <div className={`App ${themeClass} ${contrastClass}`}>
+  return (
+    <div className={`App ${themeClass} ${contrastClass}`}>
       <Header contrast={contrast} dispatch={dispatch} theme={theme} />
       <Tools tools={tools} dispatch={dispatch} />
       <aside className="App__Control">
@@ -106,7 +100,7 @@ function App () {
             />
           )}
 
-          {tools.adjustFont && current && (
+          {tools.adjustFont && (
             <AdjustFont
               baseline={baseline}
               baseRem={baseRem}
@@ -144,9 +138,7 @@ function App () {
       </main>
 
       <Output className="App__Output" styles={styles} />
-    </div> :
-      <Design />}
-  </>
+    </div>
   )
 }
 

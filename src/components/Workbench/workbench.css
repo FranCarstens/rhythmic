@@ -8,14 +8,39 @@
 }
 
 .Workbench__Box {
-  background: hsla(var(--blue-gray), 0.3);
+  mix-blend-mode: darken;
+  background-color: var(--color-primary);
+  opacity: 0.3;
   height: 100%;
 }
 
 .Workbench__Box.margin {
-  background: hsla(var(--red-bright), 0.3);
+  background-color: var(--color-primary-inactive);
 }
 
 .Workbench__Box:nth-child(-n + 3) {
   height: 24px;
+}
+
+.App.dark {
+  .Workbench__Box {
+    mix-blend-mode: lighten;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .Workbench__Box {
+    mix-blend-mode: lighten;
+  }
+}
+
+.App.contrast {
+  .Workbench__Box {
+    background-color: hsla(9, 100%, 70%, 1);
+    opacity: 1;
+  }
+
+  .Workbench__Box.margin {
+    background-color: hsla(9, 100%, 85%);
+  }
 }

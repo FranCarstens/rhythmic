@@ -7,12 +7,12 @@
 
   --color-base-5: var(--color-foreground);
   --color-base-4: var(--color-foreground);
-  --color-base-3: hsl(var(--base), 50%);
+  --color-base-3: var(--color-base-3);
   --color-base-2: var(--color-background);
   --color-base-1: var(--color-background);
   --color-base-shadow: var(--color-background);
 
-  --color-primary-hover: hsl(var(--base), 50%);
+  --color-primary-hover: var(--color-base-3);
   --color-primary-inactive: hsl(var(--secondary), 70%);
   --color-primary-shadow: var(--color-background);
 
@@ -33,13 +33,13 @@
 
     --color-base-5: var(--color-foreground);
     --color-base-4: var(--color-foreground);
-    --color-base-3: hsl(var(--base), 50%);
+    --color-base-3: var(--color-base-3);
     --color-base-2: var(--color-background);
     --color-base-1: var(--color-background);
     --color-base-shadow: var(--color-background);
 
-    --color-primary-hover: hsl(var(--base), 50%);
-    --color-primary-inactive: hsl(var(--secondary), 70%);
+    --color-primary-hover: var(--color-foreground);
+    --color-primary-inactive: var(--color-foreground);
     --color-primary-shadow: var(--color-background);
 
     --color-secondary-hover: var(--color-primary-hover);

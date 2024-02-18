@@ -48,7 +48,7 @@ const Selectors = ({ current, dispatch, selectors, }) => {
 export default Selectors
 
 Selectors.propTypes = {
-  current: PropTypes.string.isRequired,
+  current: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
   selectors: PropTypes.array.isRequired
 }

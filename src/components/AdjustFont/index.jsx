@@ -15,16 +15,20 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style }) => {
   const fontOptions = fonts.map((font) => ({ value: font.family, label: font.family }))
 
   useEffect(() => {
+    if (!current) return
+
     if (!style?.top) {
       dispatch({
         type: 'UPDATE_STYLE', payload: { current, style: { ...style, position: 'static' } }
       })
     }
+
     if (style?.top && style?.position !== 'relative') {
       dispatch({
         type: 'UPDATE_STYLE', payload: { current, style: { ...style, position: 'relative' } }
       })
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [style?.top, style?.position])
 
   const handleChange = (e) => {
@@ -67,6 +71,19 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style }) => {
     const px = (value / remToPx).toFixed()
 
     return showRem ? `${rem}rem` : `${px}px`
+  }
+
+  if (!current) {
+    return (
+      <Fieldset>
+        <legend>
+          {current ? <>Adjusting <code>{current}</code></> : 'No selector selected'}{' '}
+          <ButtonHelp section="css" dispatch={dispatch} />
+        </legend>
+        <p>Please select or add a selector</p>
+      </Fieldset>
+    )
+
   }
 
   return (
@@ -187,8 +204,8 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style }) => {
 export default AdjustFont
 
 AdjustFont.propTypes = {
-  style: PropTypes.object.isRequired,
-  current: PropTypes.string.isRequired,
+  style: PropTypes.object,
+  current: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
   baseRem: PropTypes.number.isRequired,
   fonts: PropTypes.array.isRequired,
