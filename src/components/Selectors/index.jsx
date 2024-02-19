@@ -25,7 +25,7 @@ const Selectors = ({ current, dispatch, selectors }) => {
   return (
     <Fieldset className="Selectors">
       <legend>Manage Selectors <ButtonHelp section="selectors" dispatch={dispatch} /></legend>
-      <FormItem id="addSelector" className="Selectors__AddSelector" label="Add Selector" direction="column">
+      <FormItem itemId="addSelector" className="Selectors__AddSelector" label="Add Selector" direction="column">
         <Input
           id="addSelector"
           type="text"

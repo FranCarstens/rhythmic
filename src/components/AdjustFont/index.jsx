@@ -96,7 +96,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
 
       <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
 
-      <FormItem id="textSample" label="Sample text" direction="column">
+      <FormItem itemId="textSample" label="Sample text" direction="column">
         <Input
           id="textSample"
           type="text"
@@ -105,7 +105,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="fontFamily" label="Font Family" direction="column">
+      <FormItem itemId="fontFamily" label="Font Family" direction="column">
         <Select
           id="fontFamily"
           type="text"
@@ -116,7 +116,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="Unit" className="AdjustFont__Unit" label="Toggle px/rem" hideLabel direction="row">
+      <FormItem itemId="showRem" className="AdjustFont__Unit" label="Toggle px/rem" hideLabel direction="row">
         <CheckboxBase
           tooltip="Switch between rem and px"
           className="AdjustFont-Toggle__Toggle"
@@ -131,7 +131,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="fontSize" label="Font Size" direction="column">
+      <FormItem itemId="fontSize" label="Font Size" direction="column">
         <Range
           id="fontSize"
           type="range"
@@ -145,7 +145,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="lineHeight" label="Line-Height" direction="column">
+      <FormItem itemId="lineHeight" label="Line-Height" direction="column">
         <Range
           id="lineHeight"
           type="range"
@@ -159,7 +159,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="top" label="Top" direction="column">
+      <FormItem itemId="top" label="Top" direction="column">
         <Range
           id="top"
           type="range"
@@ -173,7 +173,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="paddingTop" label="Padding Top" direction="column">
+      <FormItem itemId="paddingTop" label="Padding Top" direction="column">
         <Range
           id="paddingTop"
           type="range"
@@ -187,7 +187,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
         />
       </FormItem>
 
-      <FormItem id="marginBottom" label="Margin Bottom" direction="column">
+      <FormItem itemId="marginBottom" label="Margin Bottom" direction="column">
         <Range
           id="marginBottom"
           type="range"

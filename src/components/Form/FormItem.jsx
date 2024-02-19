@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import clstr from '../../utils/clstr'
 import './formItem.css'
 
-const FormItem = ({ children, className, direction, hideLabel, id, label }) => {
+const FormItem = ({ children, className, direction, hideLabel, itemId, label }) => {
   const directionClass = direction ? `FormItem--${direction}` : ''
   const hiddenLabelClass = hideLabel ? 'sr-only' : ''
   const wrapperClasses = clstr(['FormItem', className, directionClass])
@@ -10,7 +10,7 @@ const FormItem = ({ children, className, direction, hideLabel, id, label }) => {
 
   return (
     <div className={wrapperClasses}>
-      <label htmlFor={id} className={labelClasses}>{label}</label>
+      <label htmlFor={itemId} className={labelClasses}>{label}</label>
       <div className="FormItem__Children">
         {children}
       </div>
@@ -25,6 +25,6 @@ FormItem.propTypes = {
   className: PropTypes.string,
   direction: PropTypes.string,
   hideLabel: PropTypes.bool,
-  id: PropTypes.string.isRequired,
+  itemId: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired
 }

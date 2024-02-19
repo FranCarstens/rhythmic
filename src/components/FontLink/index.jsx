@@ -45,16 +45,16 @@ const FontLink = ({ fonts, dispatch }) => {
     <Fieldset className="FontLink">
       <legend>Manage fonts <ButtonHelp section="fonts" dispatch={dispatch} /></legend>
       <Wrapper>
-        <FormItem id="fontFamily" label="Family" direction="column">
+        <FormItem itemId="fontName" label="Family" direction="column">
           <Input
-            id="fontFamily"
+            id="fontName"
             type="text"
             onChange={handleInputChange}
             value={family}
           />
         </FormItem>
         <form>
-          <FormItem id="fontLink" label="Link" direction="column">
+          <FormItem itemId="fontLink" label="Link" direction="column">
             <Input
               id="fontLink"
               type="url"

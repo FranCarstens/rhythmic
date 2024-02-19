@@ -56,7 +56,7 @@ const Typography = ({ children, dispatch, markdown }) => {
         >
           <button onClick={() => setEditing(false)}><span className="sr-only">Save</span></button>
           <label className="Typo__textarea-label" htmlFor="markdown">Markdown and HTML allowed. Click outside to save. Esc to cancel.</label>
-          <textarea name="markdown" ref={textareaRef} value={markdown} onChange={handleChange} onKeyDown={e => handleCancel(e)} />
+          <textarea id="markdown" name="markdown" ref={textareaRef} value={markdown} onChange={handleChange} onKeyDown={e => handleCancel(e)} />
         </div>
 
         <button

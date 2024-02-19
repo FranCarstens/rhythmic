@@ -69,7 +69,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         </Button>
       </Wrapper>
 
-      <FormItem id="customScale" label="Custom Scale" direction="column">
+      <FormItem itemId="customScale" label="Custom Scale" direction="column">
         <Input
           id="customScale"
           type="number"
@@ -78,7 +78,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         />
       </FormItem>
 
-      <FormItem id="heading" label="Heading at Base" direction="column">
+      <FormItem itemId="heading" label="Heading at Base" direction="column">
         <Input
           id="heading"
           type="number"
@@ -87,7 +87,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         />
       </FormItem>
 
-      <FormItem id="baseRem" label="Set REM px" direction="column">
+      <FormItem itemId="baseRem" label="Set REM px" direction="column">
         <Input
           id="baseRem"
           type="number"
@@ -104,7 +104,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         Generate
       </Button>
 
-      <FormItem id="baseline" label="Baseline" direction="column">
+      <FormItem itemId="baseline" label="Baseline" direction="column">
         <Range
           id="baseline"
           type="range"
@@ -116,7 +116,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           dataInfo={baseline + 'px'}
         />
       </FormItem>
-      <FormItem id="subgrid" label="Subgrid" direction="column">
+      <FormItem itemId="subgrid" label="Subgrid" direction="column">
         <Range
           id="subgrid"
           type="range"
