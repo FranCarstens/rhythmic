@@ -37,7 +37,6 @@ const Typography = ({ children, dispatch, markdown }) => {
   return (
     <div className="Typo">
       <div className="Typo__selectors">
-        <h2 className="Typo__heading">Selectors</h2>
         <div className="typography">
           <h1>Heading 1</h1>
           <h2>Heading 2</h2>

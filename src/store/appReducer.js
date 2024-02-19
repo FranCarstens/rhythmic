@@ -35,7 +35,9 @@ const appReducer = (state, action) => {
         }
       }
 
-    case 'TOGGLE_HELP':
+    case 'TOGGLE_HELP': {
+      console.log('TOGGLE_HELP', action.payload, state.help?.section);
+
       return {
         ...state,
         help: {
@@ -46,6 +48,7 @@ const appReducer = (state, action) => {
               : action.payload
         }
       }
+    }
 
     case 'UPDATE_STYLE':
       return {
@@ -155,7 +158,13 @@ const appReducer = (state, action) => {
     }
 
     case 'LOAD_SAMPLE':
-      return sampleState
+      return {
+        ...sampleState,
+        help: {
+          ...state.help,
+          section: ''
+        }
+      }
 
     case 'GENERATE':
       return {
