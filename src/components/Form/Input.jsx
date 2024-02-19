@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 
 import './input.css'
 
-const Input = ({ dataInfo, disabled, id, max, min, onChange, readonly, step, type, value }) => {
+const Input = ({ dataInfo, disabled, id, max, min, onChange, readonly, step, type, value, ...props }) => {
   return (
     <input
       className="Input"
@@ -16,6 +16,7 @@ const Input = ({ dataInfo, disabled, id, max, min, onChange, readonly, step, typ
       data-info={dataInfo}
       disabled={disabled}
       readOnly={readonly}
+      {...props}
     />
   )
 }

@@ -30,6 +30,7 @@ const Selectors = ({ current, dispatch, selectors }) => {
           id="addSelector"
           type="text"
           onChange={handleChange}
+          onKeyDown={(e) => e.key === 'Enter' && handleAdd()}
           value={value}
         />
         <Button id="add-selector" modifiers="round" handleClick={handleAdd}>

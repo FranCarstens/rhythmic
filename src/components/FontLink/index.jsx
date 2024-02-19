@@ -59,6 +59,7 @@ const FontLink = ({ fonts, dispatch }) => {
               id="fontLink"
               type="url"
               onChange={handleInputChange}
+              onKeyDown={(e) => e.key === 'Enter' && handleAddFont()}
               value={link}
             />
           </FormItem></form>

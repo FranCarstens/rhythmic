@@ -35,9 +35,7 @@ const appReducer = (state, action) => {
         }
       }
 
-    case 'TOGGLE_HELP': {
-      console.log('TOGGLE_HELP', action.payload, state.help?.section);
-
+    case 'TOGGLE_HELP':
       return {
         ...state,
         help: {
@@ -48,7 +46,6 @@ const appReducer = (state, action) => {
               : action.payload
         }
       }
-    }
 
     case 'UPDATE_STYLE':
       return {
@@ -125,7 +122,6 @@ const appReducer = (state, action) => {
 
     case 'SELECT_TOOL': {
       const updatedSelection = Object.fromEntries(Object.entries(state.tools).map(([key, value]) => {
-        console.log(state.tools);
         if (['preview', 'showGrid'].includes(key)) {
           return [key, value]
         }
@@ -136,8 +132,6 @@ const appReducer = (state, action) => {
 
         return [key, false]
       }))
-
-      console.log('SELECT_TOOL', updatedSelection, action.payload, state.tools);
 
       return {
         ...state,
