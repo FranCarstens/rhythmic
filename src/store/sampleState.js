@@ -4,7 +4,7 @@ const sampleState = {
   baseline: 24,
   baseRem: 16,
   contrast: false,
-  current: null,
+  current: 'h1',
   fonts: [
     {
       family: 'Abhaya Libre',
@@ -27,9 +27,8 @@ const sampleState = {
   tools: {
     'preview': true,
     'showGrid': true,
-    'baseline': false,
-    'samples': false,
-    'fontLink': true,
+    'baseline': true,
+    'fontLink': false,
     'adjustFont': false,
     'selectors': false
   },

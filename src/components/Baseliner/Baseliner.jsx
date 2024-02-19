@@ -8,6 +8,7 @@ import Wrapper from '../Wrapper'
 import './baseliner.css'
 
 import getSubgridSize from '../../utils/getSubgridSize'
+import { remove } from '../../utils/storage'
 
 const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => {
   const handleChange = (e) => {
@@ -25,7 +26,10 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="clear"
           className="Baseliner__button"
-          handleClick={() => dispatch({ type: 'CLEAR' })}
+          handleClick={() => {
+            dispatch({ type: 'CLEAR' })
+            remove('rhythmic')
+          }}
           modifiers="icon tooltip-top"
           data-tooltip="Start over"
         >
@@ -124,7 +128,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           dataInfo={Number(subgrid) + 1 + ' : ' + Math.round(subSize * 10) / 10 + 'px'}
         />
       </FormItem>
-    </Fieldset>
+    </Fieldset >
   )
 }
 

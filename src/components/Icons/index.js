@@ -12,8 +12,9 @@ import Hash from './Hash'
 import Help from './Help'
 import Moon from './Moon'
 import Plus from './Plus'
-import Preview from './Preview'
 import Sliders from './Sliders'
+import Preview from './Preview'
+import Save from './Save'
 import Sun from './Sun'
 import Trash from './Trash'
 
@@ -33,6 +34,7 @@ export {
   Moon,
   Plus,
   Preview,
+  Save,
   Sliders,
   Sun,
   Trash

@@ -5,11 +5,12 @@ import { FormItem, Input, Range, Select } from '../Form'
 import CheckboxBase from '../Form/CheckboxBase'
 import ButtonHelp from '../Buttons/ButtonHelp'
 import './adjustFont.css'
+import SelectorList from '../Selectors/SelectorList'
 
 // eslint-disable-next-line max-len
 const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ante sem, ut dapibus mi imperdiet tincidunt. Nulla mi justo, suscipit non tortor eu, rutrum tempor tortor.'
 
-const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style }) => {
+const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors }) => {
   const [showRem, setShowRem] = useState(true)
   const toggleLabel = showRem ? 'rem' : 'px'
   const fontOptions = fonts.map((font) => ({ value: font.family, label: font.family }))
@@ -92,6 +93,8 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style }) => {
         {current ? <>Adjusting <code>{current}</code></> : 'No selector selected'}{' '}
         <ButtonHelp section="css" dispatch={dispatch} />
       </legend>
+
+      <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
 
       <FormItem id="textSample" label="Sample text" direction="column">
         <Input
@@ -209,5 +212,6 @@ AdjustFont.propTypes = {
   dispatch: PropTypes.func.isRequired,
   baseRem: PropTypes.number.isRequired,
   fonts: PropTypes.array.isRequired,
-  sample: PropTypes.string.isRequired
+  sample: PropTypes.string.isRequired,
+  selectors: PropTypes.array.isRequired
 }

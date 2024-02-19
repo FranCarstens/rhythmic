@@ -19,9 +19,8 @@ const initialState = {
     'preview': false,
     'showGrid': true,
     'baseline': true,
-    'samples': true,
-    'fontLink': true,
-    'selectors': true,
+    'fontLink': false,
+    'selectors': false,
     'adjustFont': false
   },
   styles: {

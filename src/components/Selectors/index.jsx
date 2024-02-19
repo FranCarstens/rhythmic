@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
 import Fieldset from '../Fieldset'
-import Selector from './Selector'
+
 import { FormItem, Input } from '../Form'
 import { Plus } from '../Icons'
+import SelectorList from './SelectorList'
 import Button from '../Buttons'
 import ButtonHelp from '../Buttons/ButtonHelp'
 
 import './selectors.css'
 
-const Selectors = ({ current, dispatch, selectors, }) => {
+const Selectors = ({ current, dispatch, selectors }) => {
   const [value, setValue] = useState('')
 
   const handleChange = (e) => setValue(e.target.value)
@@ -35,12 +36,7 @@ const Selectors = ({ current, dispatch, selectors, }) => {
           <Plus aria-hidden /><span className="sr-only">Add</span>
         </Button>
       </FormItem>
-      <ul className="Selectors__List">
-        {selectors
-          .slice(2)
-          .map((el) => <Selector key={el} el={el} dispatch={dispatch} current={el === current} />)
-        }
-      </ul>
+      <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
     </Fieldset>
   )
 }

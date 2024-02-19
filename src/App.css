@@ -54,3 +54,9 @@
   height: calc(100vh - 75px);
   overflow-y: scroll;
 }
+
+.App__Saving {
+  position: absolute;
+  top: 0;
+  left: 0;
+}

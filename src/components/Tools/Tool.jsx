@@ -3,12 +3,16 @@ import { Checkbox } from '../Form'
 
 import './tool.css'
 
-const Tool = ({ color, dispatch, icon, id, label, tools }) => {
+const Tool = ({ color, dispatch, icon, id, label, tools, toggle }) => {
   const labelComponent = <IconLabel icon={icon} label={label} />
 
   const handleChange = e => {
     const { name } = e.target
-    dispatch({ type: 'TOGGLE_TOOL', payload: name })
+    if (toggle) {
+      return dispatch({ type: 'TOGGLE_TOOL', payload: name })
+    }
+
+    return dispatch({ type: 'SELECT_TOOL', payload: name })
   }
 
   return (
@@ -34,6 +38,7 @@ Tool.propTypes = {
   id: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   tools: PropTypes.object.isRequired,
+  toggle: PropTypes.bool
 }
 
 const IconLabel = ({ icon: Icon, label }) => (

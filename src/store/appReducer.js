@@ -4,14 +4,25 @@ import sampleState from './sampleState.js'
 
 const appReducer = (state, action) => {
   switch (action.type) {
-    case 'INIT':
+    case 'INIT': {
+      const newState = {
+        ...state,
+        ...action.data,
+        init: true
+      }
+      return newState
+    }
+
+    case 'LANG': {
       return {
         ...state,
         help: {
           ...state.help,
           content: action.help
-        }
+        },
+        init: true
       }
+    }
 
     // @TODO: Remove this
     case 'TOGGLE_PREVIEW':
@@ -108,6 +119,28 @@ const appReducer = (state, action) => {
         }
 
       }
+
+    case 'SELECT_TOOL': {
+      const updatedSelection = Object.fromEntries(Object.entries(state.tools).map(([key, value]) => {
+        console.log(state.tools);
+        if (['preview', 'showGrid'].includes(key)) {
+          return [key, value]
+        }
+
+        if (key === action.payload) {
+          return [key, true]
+        }
+
+        return [key, false]
+      }))
+
+      console.log('SELECT_TOOL', updatedSelection, action.payload, state.tools);
+
+      return {
+        ...state,
+        tools: updatedSelection
+      }
+    }
 
     case 'CLEAR': {
       const x = Object.values(state.styles)[0]

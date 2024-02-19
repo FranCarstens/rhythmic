@@ -21,7 +21,7 @@ const Tools = ({ tools, dispatch }) => {
   return (
     <div className="Tools" role="menu">
       <div className="Tools__Toggles" aria-label='Toggles' role="group">
-        {toggleSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} color />)}
+        {toggleSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} color toggle />)}
       </div>
       <nav className="Tools__Menu" aria-label='Menu' role="group">
         {menuSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} />)}
