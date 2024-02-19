@@ -19,5 +19,5 @@ export default SelectorList
 SelectorList.propTypes = {
   selectors: PropTypes.array.isRequired,
   dispatch: PropTypes.func.isRequired,
-  current: PropTypes.string.isRequired
+  current: PropTypes.string
 }

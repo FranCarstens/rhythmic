@@ -44,7 +44,7 @@ const FontLink = ({ fonts, dispatch }) => {
   return (
     <Fieldset className="FontLink">
       <legend>Manage fonts <ButtonHelp section="fonts" dispatch={dispatch} /></legend>
-      <Wrapper>
+      <Wrapper className="FontLink__Form">
         <FormItem itemId="fontName" label="Family" direction="column">
           <Input
             id="fontName"
@@ -53,16 +53,16 @@ const FontLink = ({ fonts, dispatch }) => {
             value={family}
           />
         </FormItem>
-        <form>
-          <FormItem itemId="fontLink" label="Link" direction="column">
-            <Input
-              id="fontLink"
-              type="url"
-              onChange={handleInputChange}
-              onKeyDown={(e) => e.key === 'Enter' && handleAddFont()}
-              value={link}
-            />
-          </FormItem></form>
+
+        <FormItem itemId="fontLink" label="Link" direction="column">
+          <Input
+            id="fontLink"
+            type="url"
+            onChange={handleInputChange}
+            onKeyDown={(e) => e.key === 'Enter' && handleAddFont()}
+            value={link}
+          />
+        </FormItem>
 
         <Button id="add-font" modifiers="round" handleClick={handleAddFont} >
           <Plus aria-hidden /><span className="sr-only">Add</span>

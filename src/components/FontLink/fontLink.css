@@ -1,5 +1,17 @@
-.FontLink .Wrapper {
-  display: flex;
-  gap: var(--grid);
-  align-items: flex-end;
+.FontLink {
+  .FontLink__Form {
+    display: flex;
+    gap: var(--grid);
+    align-items: flex-end;
+    flex-wrap: wrap;
+    margin-bottom: var(--baseline);
+
+    >*:first-child {
+      width: 100%;
+    }
+
+    >*:nth-child(2) {
+      width: calc(100% - calc(var(--baseline) * 1.5) - var(--grid));
+    }
+  }
 }

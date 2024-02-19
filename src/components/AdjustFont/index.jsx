@@ -74,132 +74,123 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
     return showRem ? `${rem}rem` : `${px}px`
   }
 
-  if (!current) {
-    return (
-      <Fieldset>
-        <legend>
-          {current ? <>Adjusting <code>{current}</code></> : 'No selector selected'}{' '}
-          <ButtonHelp section="css" dispatch={dispatch} />
-        </legend>
-        <p>Please select or add a selector</p>
-      </Fieldset>
-    )
-
-  }
-
   return (
     <Fieldset>
       <legend>
-        {current ? <>Adjusting <code>{current}</code></> : 'No selector selected'}{' '}
+        {!current ? 'No selector selected' : `Adjusting ${current}`}
         <ButtonHelp section="css" dispatch={dispatch} />
       </legend>
 
       <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
 
-      <FormItem itemId="textSample" label="Sample text" direction="column">
-        <Input
-          id="textSample"
-          type="text"
-          onChange={handleSampleChange}
-          value={sample || ''}
-        />
-      </FormItem>
+      {!current
+        ? <p>Please select or add a selector</p>
+        : <>
+          <FormItem itemId="textSample" label="Sample text" direction="column">
+            <Input
+              id="textSample"
+              type="text"
+              onChange={handleSampleChange}
+              value={sample || ''}
+            />
+          </FormItem>
 
-      <FormItem itemId="fontFamily" label="Font Family" direction="column">
-        <Select
-          id="fontFamily"
-          type="text"
-          onChange={handleChange}
-          value={style?.fontFamily || ''}
-          options={fontOptions}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="fontFamily" label="Font Family" direction="column">
+            <Select
+              id="fontFamily"
+              type="text"
+              onChange={handleChange}
+              value={style?.fontFamily || ''}
+              options={fontOptions}
+              disabled={!current}
+            />
+          </FormItem>
 
-      <FormItem itemId="showRem" className="AdjustFont__Unit" label="Toggle px/rem" hideLabel direction="row">
-        <CheckboxBase
-          tooltip="Switch between rem and px"
-          className="AdjustFont-Toggle__Toggle"
-          identifier="AdjustFont-Toggle"
-          checked={showRem}
-          handleChange={handleToggle}
-          id="showRem"
-          key="showRem"
-          label={toggleLabel}
-          name="showRem"
-          type="toggle"
-        />
-      </FormItem>
+          <FormItem itemId="showRem" className="AdjustFont__Unit" label="Toggle px/rem" hideLabel direction="row">
+            <CheckboxBase
+              tooltip="Switch between rem and px"
+              className="AdjustFont-Toggle__Toggle"
+              identifier="AdjustFont-Toggle"
+              checked={showRem}
+              handleChange={handleToggle}
+              id="showRem"
+              key="showRem"
+              label={toggleLabel}
+              name="showRem"
+              type="toggle"
+            />
+          </FormItem>
 
-      <FormItem itemId="fontSize" label="Font Size" direction="column">
-        <Range
-          id="fontSize"
-          type="range"
-          min="0"
-          step={remStep}
-          max="30"
-          onChange={handleChange}
-          value={getValue('fontSize')}
-          dataInfo={remPxString(style?.fontSize)}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="fontSize" label="Font Size" direction="column">
+            <Range
+              id="fontSize"
+              type="range"
+              min="0"
+              step={remStep}
+              max="30"
+              onChange={handleChange}
+              value={getValue('fontSize')}
+              dataInfo={remPxString(style?.fontSize)}
+              disabled={!current}
+            />
+          </FormItem>
 
-      <FormItem itemId="lineHeight" label="Line-Height" direction="column">
-        <Range
-          id="lineHeight"
-          type="range"
-          min="0"
-          step={remStep}
-          max="30"
-          onChange={handleChange}
-          value={getValue('lineHeight')}
-          dataInfo={remPxString(style?.lineHeight)}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="lineHeight" label="Line-Height" direction="column">
+            <Range
+              id="lineHeight"
+              type="range"
+              min="0"
+              step={remStep}
+              max="30"
+              onChange={handleChange}
+              value={getValue('lineHeight')}
+              dataInfo={remPxString(style?.lineHeight)}
+              disabled={!current}
+            />
+          </FormItem>
 
-      <FormItem itemId="top" label="Top" direction="column">
-        <Range
-          id="top"
-          type="range"
-          min="-4"
-          step={remStep}
-          max="4"
-          onChange={handleChange}
-          value={getValue('top')}
-          dataInfo={remPxString(style?.top)}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="top" label="Top" direction="column">
+            <Range
+              id="top"
+              type="range"
+              min="-4"
+              step={remStep}
+              max="4"
+              onChange={handleChange}
+              value={getValue('top')}
+              dataInfo={remPxString(style?.top)}
+              disabled={!current}
+            />
+          </FormItem>
 
-      <FormItem itemId="paddingTop" label="Padding Top" direction="column">
-        <Range
-          id="paddingTop"
-          type="range"
-          min="0"
-          step={remStep}
-          max="4"
-          onChange={handleChange}
-          value={getValue('paddingTop')}
-          dataInfo={remPxString(style?.paddingTop)}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="paddingTop" label="Padding Top" direction="column">
+            <Range
+              id="paddingTop"
+              type="range"
+              min="0"
+              step={remStep}
+              max="4"
+              onChange={handleChange}
+              value={getValue('paddingTop')}
+              dataInfo={remPxString(style?.paddingTop)}
+              disabled={!current}
+            />
+          </FormItem>
 
-      <FormItem itemId="marginBottom" label="Margin Bottom" direction="column">
-        <Range
-          id="marginBottom"
-          type="range"
-          min="-4"
-          step={remStep}
-          max="4"
-          onChange={handleChange}
-          value={getValue('marginBottom')}
-          dataInfo={remPxString(style?.marginBottom)}
-          disabled={!current}
-        />
-      </FormItem>
+          <FormItem itemId="marginBottom" label="Margin Bottom" direction="column">
+            <Range
+              id="marginBottom"
+              type="range"
+              min="-4"
+              step={remStep}
+              max="4"
+              onChange={handleChange}
+              value={getValue('marginBottom')}
+              dataInfo={remPxString(style?.marginBottom)}
+              disabled={!current}
+            />
+          </FormItem>
+        </>}
     </Fieldset>
   )
 }
