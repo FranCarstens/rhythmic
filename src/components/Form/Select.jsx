@@ -13,7 +13,7 @@ const Select = ({ disabled, id, onChange, options, readonly, value }) => {
       disabled={disabled}
       readOnly={readonly}
     >
-      <option value="" disabled>Select an option</option>
+      <option value="none" hidden>Select an option</option>
       {options.map((option) => (
         <option key={option.value} value={option.value}>{option.label}</option>
       ))}

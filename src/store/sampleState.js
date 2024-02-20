@@ -1,8 +1,8 @@
 import markdown from './markdown.js'
 
 const sampleState = {
-  baseline: 24,
-  baseRem: 16,
+  baseline: '24',
+  baseRem: '16',
   contrast: false,
   current: 'h1',
   fonts: [
@@ -15,14 +15,14 @@ const sampleState = {
       link: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap'
     }
   ],
-  heading: 4,
+  heading: '4',
   help: { content: '', section: '' },
   lang: 'en',
   markdown: markdown,
   sample: 'Sample',
-  scale: 1.2,
+  scale: '1.2',
   selectors: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'],
-  subgrid: 1,
+  subgrid: '1',
   theme: 'auto',
   tools: {
     'preview': true,

@@ -17,6 +17,12 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
     dispatch({ type: 'UPDATE_VALUE', payload: { id, value } })
   }
 
+  const handleClick = (callback) => {
+    if (confirm('Continuing will clear all your current work. Are you sure?')) {
+      callback()
+    }
+  }
+
   const subSize = getSubgridSize(baseline, subgrid)
 
   return (
@@ -26,10 +32,10 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="clear"
           className="Baseliner__button"
-          handleClick={() => {
+          handleClick={() => handleClick(() => {
             dispatch({ type: 'CLEAR' })
             remove('rhythmic')
-          }}
+          })}
           modifiers="icon tooltip-top"
           data-tooltip="Start over"
         >
@@ -40,7 +46,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="sample"
           className="Baseliner__button"
-          handleClick={() => dispatch({ type: 'LOAD_SAMPLE' })}
+          handleClick={() => handleClick(() => dispatch({ type: 'LOAD_SAMPLE' }))}
           modifiers="icon tooltip-top"
           data-tooltip="Load Sample Data"
         >
@@ -52,7 +58,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           id="golden"
           className="Baseliner__button"
           modifiers="button tooltip-top"
-          handleClick={() => handleChange({ id: 'scale', value: 1.618 })}
+          handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.618 }))}
           data-tooltip="Load Golden Ratio Preset"
         >
           Golden
@@ -62,7 +68,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           id="minor-third"
           className="Baseliner__button"
           modifiers="button tooltip-top"
-          handleClick={() => handleChange({ id: 'scale', value: 1.2 })}
+          handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.2 }))}
           data-tooltip="Load Minor Third Preset"
         >
           Minor Third
@@ -97,7 +103,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
       </FormItem>
       <Button
         className="Baseliner__button"
-        handleClick={() => dispatch({ type: 'GENERATE', payload: { scale, baseRem, heading } })}
+        handleClick={() => handleClick(() => dispatch({ type: 'GENERATE', payload: { scale, baseRem, heading } }))}
         id="generate"
         modifiers="highlight button"
       >
@@ -135,11 +141,11 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
 export default Baseliner
 
 Baseliner.propTypes = {
-  baseline: PropTypes.number.isRequired,
-  subgrid: PropTypes.number.isRequired,
+  baseline: PropTypes.string.isRequired,
+  subgrid: PropTypes.string.isRequired,
   dispatch: PropTypes.func.isRequired,
-  scale: PropTypes.number.isRequired,
-  baseRem: PropTypes.number.isRequired,
-  heading: PropTypes.number.isRequired
+  scale: PropTypes.string.isRequired,
+  baseRem: PropTypes.string.isRequired,
+  heading: PropTypes.string.isRequired
 }
 

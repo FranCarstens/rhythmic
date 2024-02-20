@@ -25,8 +25,8 @@ const BaselineWrapper = ({ baseline, showGrid, subgrid, children }) => {
 export default BaselineWrapper
 
 BaselineWrapper.propTypes = {
-  baseline: PropTypes.number.isRequired,
+  baseline: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
   showGrid: PropTypes.bool.isRequired,
-  subgrid: PropTypes.number.isRequired,
+  subgrid: PropTypes.string.isRequired,
 }

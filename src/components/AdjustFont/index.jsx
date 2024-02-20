@@ -201,7 +201,7 @@ AdjustFont.propTypes = {
   style: PropTypes.object,
   current: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
-  baseRem: PropTypes.number.isRequired,
+  baseRem: PropTypes.string.isRequired,
   fonts: PropTypes.array.isRequired,
   sample: PropTypes.string.isRequired,
   selectors: PropTypes.array.isRequired

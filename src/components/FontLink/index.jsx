@@ -27,7 +27,7 @@ const FontLink = ({ fonts, dispatch }) => {
   }
 
   const handleInputChange = (e) => {
-    e.target.id === 'fontLink' ? setLink(e.target.value) : setFamily(e.target.value)
+    e.target.id === 'fontURL' ? setLink(e.target.value) : setFamily(e.target.value)
   }
 
   const handleAddFont = () => {
@@ -54,9 +54,9 @@ const FontLink = ({ fonts, dispatch }) => {
           />
         </FormItem>
 
-        <FormItem itemId="fontLink" label="Link" direction="column">
+        <FormItem itemId="fontURL" label="Link" direction="column">
           <Input
-            id="fontLink"
+            id="fontURL"
             type="url"
             onChange={handleInputChange}
             onKeyDown={(e) => e.key === 'Enter' && handleAddFont()}

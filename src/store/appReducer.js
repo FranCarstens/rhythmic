@@ -141,12 +141,14 @@ const appReducer = (state, action) => {
 
     case 'CLEAR': {
       const x = Object.values(state.styles)[0]
+      const y = Object.values(state.styles)[1]
 
       return {
         ...state,
         ...initialState,
         styles: {
-          '*': x
+          '*': x,
+          '> * + *': y
         },
       }
     }
