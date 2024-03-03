@@ -89,7 +89,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
           <FormItem itemId="textSample" label="Sample text" direction="column">
             <Input
               id="textSample"
-              type="text"
+              type="textarea"
               onChange={handleSampleChange}
               value={sample || ''}
             />

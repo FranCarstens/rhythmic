@@ -52,11 +52,11 @@ const css = `
 ## Adjust Selector
 
 This is where the magic happens. We're adjust our sample text so:
+
 - The line height is visually pleasing.
 - All the lines lie on our baseline or subgrid.
 - The top margin is minimized.
 - And the next element's top margin butts up nicely to the bottom of our block.
-
 - **Text Sample**: A sample of the text you are styling. Adjusting multiline text will generate more usable results. Type "Lorem" to automatically generate some sample text.
 - **Font Family**: Select the font family you want to use for this selector, matching one of your preloaded fonts
 - **Font Size**: Set the font size in rem

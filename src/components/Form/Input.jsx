@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import './input.css'
 
 const Input = ({ dataInfo, disabled, id, max, min, onChange, readonly, step, type, value, ...props }) => {
+  const InputEl = type === 'textarea' ? 'textarea' : 'input'
+
   return (
-    <input
+    <InputEl
       className="Input"
       id={id}
       type={type}

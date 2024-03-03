@@ -17,8 +17,14 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
     dispatch({ type: 'UPDATE_VALUE', payload: { id, value } })
   }
 
-  const handleClick = (callback) => {
-    if (confirm('Continuing will clear all your current work. Are you sure?')) {
+  const handleClick = (callback, clearAll) => {
+    const clearMessage = {
+      'reset': 'Do you want to reset the app to its default state? You will lose all your work.',
+      'sample': 'Do you want to replace all your current data with sample data? You will lose all your styles',
+      'default': 'Do you want to replace your current styles with new, generated styles?'
+    }[clearAll || 'default']
+
+    if (confirm(clearMessage)) {
       callback()
     }
   }
@@ -35,7 +41,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           handleClick={() => handleClick(() => {
             dispatch({ type: 'CLEAR' })
             remove('rhythmic')
-          })}
+          }, 'reset')}
           modifiers="icon tooltip-top"
           data-tooltip="Start over"
         >
@@ -46,7 +52,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         <Button
           id="sample"
           className="Baseliner__button"
-          handleClick={() => handleClick(() => dispatch({ type: 'LOAD_SAMPLE' }))}
+          handleClick={() => handleClick(() => dispatch({ type: 'LOAD_SAMPLE' }), 'sample')}
           modifiers="icon tooltip-top"
           data-tooltip="Load Sample Data"
         >

@@ -140,7 +140,7 @@ function App () {
             )}
 
             {help?.section && (
-              <ReactMarkdown rehypePlugins={[rehypeRaw]} >{help.content[help?.section]}</ReactMarkdown>
+              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} >{help.content[help?.section]}</ReactMarkdown>
             )}
           </BaselineWrapper>
         </main>

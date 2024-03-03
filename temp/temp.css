@@ -1,0 +1,133 @@
+h1 {
+  font-family: Manrope;
+  font-size: 1.9375rem;
+  line-height: 3rem;
+  top: 0.0625rem;
+  padding-top: 0px;
+  margin-bottom: -0.75rem;
+  position: relative;
+}
+
+h2 {
+  font-size: 1.563rem;
+  line-height: 2.25rem;
+  position: relative;
+  font-family: Manrope;
+  top: -0.1875rem;
+  margin-bottom: -0.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  line-height: 2.25rem;
+  position: relative;
+  font-family: Manrope;
+  top: -0.0625rem;
+  margin-bottom: -0.75rem;
+}
+
+h4 {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-family: Manrope;
+  top: 0.4375rem;
+  margin-bottom: 0rem;
+}
+
+h5 {
+  font-size: 0.8rem;
+  line-height: 1.5rem;
+  position: relative;
+  font-family: Manrope;
+  top: -0.25rem;
+  margin-bottom: -0.75rem;
+}
+
+h6 {
+  font-size: 0.64rem;
+  line-height: 1.5rem;
+  position: relative;
+  top: -0.1875rem;
+  margin-bottom: -0.75rem;
+  font-family: Manrope;
+}
+
+p {
+  font-size: 1rem;
+  line-height: 1.5rem;
+  position: relative;
+  top: 0.4375rem;
+  margin-bottom: 0rem;
+  font-family: Manrope;
+}
+
+small {
+  font-family: Manrope;
+  font-size: 0.8125rem;
+  line-height: 16px;
+  top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+strong {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+em {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 1.4375rem;
+  top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+li {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+ul {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 16px;
+  top: 0rem;
+  padding-top: 0rem;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+a {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  top: 0px;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+ol {
+  font-family: Manrope;
+  font-size: 1rem;
+  line-height: 16px;
+  top: 0.4375rem;
+  padding-top: 0px;
+  margin-bottom: 0px;
+  position: relative;
+}

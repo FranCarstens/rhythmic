@@ -1,5 +1,6 @@
 .Typo {
   display: flex;
+  align-items: flex-start;
   height: 100%;
   font-size: 16px;
 }
