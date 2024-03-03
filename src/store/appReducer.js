@@ -52,7 +52,10 @@ const appReducer = (state, action) => {
         ...state,
         styles: {
           ...state.styles,
-          [action.payload.current]: action.payload.style
+          [action.payload.current]: {
+            ...state.styles[action.payload.current],
+            ...action.payload.style
+          }
         }
       }
 
@@ -84,7 +87,6 @@ const appReducer = (state, action) => {
         styles: {
           ...state.styles,
           [action.payload]: {
-            fontFamily: 'Arial',
             fontSize: '1rem',
             lineHeight: '16px',
             top: '0px',

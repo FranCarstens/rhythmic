@@ -93,6 +93,16 @@ legend {
     margin-top: 1.5rem;
   }
 
+  h1 {
+    font-family: Manrope;
+    font-size: 1.9375rem;
+    line-height: 2.25rem;
+    top: -0.3125rem;
+    padding-top: 0px;
+    margin-bottom: -0.75rem;
+    position: relative;
+  }
+
   h2 {
     font-size: 1.563rem;
     line-height: 2.25rem;
@@ -149,18 +159,8 @@ legend {
     font-family: Manrope;
   }
 
-  h1 {
-    font-family: Manrope;
-    font-size: 1.9375rem;
-    line-height: 3rem;
-    top: 0.0625rem;
-    padding-top: 0px;
-    margin-bottom: -0.75rem;
-    position: relative;
-  }
-
   small {
-    font-family: Arial;
+    font-family: Manrope;
     font-size: 0.8125rem;
     line-height: 16px;
     top: 0px;
@@ -180,7 +180,7 @@ legend {
   }
 
   em {
-    font-family: Arial;
+    font-family: Manrope;
     font-size: 1rem;
     line-height: 1.4375rem;
     top: 0px;
@@ -194,17 +194,7 @@ legend {
     font-size: 1rem;
     line-height: 1.5rem;
     top: 0.4375rem;
-    padding-top: 0px;
-    margin-bottom: 0px;
-    position: relative;
-  }
-
-  code {
-    font-family: JetBrains Mono;
-    font-size: 1rem;
-    line-height: 16px;
-    top: 0px;
-    padding-top: 0px;
+    padding-top: 0.375rem;
     margin-bottom: 0px;
     position: relative;
   }
@@ -223,9 +213,9 @@ legend {
     font-family: Manrope;
     font-size: 1rem;
     line-height: 1rem;
-    top: 0rem;
+    top: -0.375rem;
     padding-top: 0rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: -0.375rem;
     position: relative;
   }
 
@@ -233,9 +223,19 @@ legend {
     font-family: Manrope;
     font-size: 1rem;
     line-height: 16px;
-    top: 0rem;
+    top: -0.375rem;
     padding-top: 0px;
-    margin-bottom: 1.5rem;
+    margin-bottom: -0.375rem;
+    position: relative;
+  }
+
+  code {
+    font-family: JetBrains Mono;
+    font-size: 1rem;
+    line-height: 16px;
+    top: 0px;
+    padding-top: 0px;
+    margin-bottom: 0px;
     position: relative;
   }
 

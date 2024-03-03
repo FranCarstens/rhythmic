@@ -20,6 +20,7 @@
 
 .Typo>*:last-of-type {
   width: calc(100% - 250px);
+  height: 100%;
 }
 
 .Typo__edit {

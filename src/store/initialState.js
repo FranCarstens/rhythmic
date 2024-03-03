@@ -26,8 +26,6 @@ const initialState = {
   styles: {
     '*': {
       lineHeight: '1.5rem',
-      marginTop: '1.5rem',
-      fontFamily: 'serif',
     },
     '> * + *': {
       marginTop: '1.5rem',

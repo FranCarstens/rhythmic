@@ -1,0 +1,5 @@
+.btn.inline {
+  padding: 0 var(--grid);
+  font-size: 0.75rem;
+  white-space: nowrap;
+}

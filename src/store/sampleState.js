@@ -7,12 +7,12 @@ const sampleState = {
   current: 'h1',
   fonts: [
     {
-      family: 'Abhaya Libre',
-      link: 'https://fonts.googleapis.com/css2?family=Abhaya+Libre:wght@400;700&display=swap'
+      family: 'Cormorant Garamond',
+      link: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700'
     },
     {
-      family: 'Lato',
-      link: 'https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400;1,700&display=swap'
+      family: 'Proza Libre',
+      link: 'https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;700'
     }
   ],
   heading: '4',
@@ -35,7 +35,6 @@ const sampleState = {
   styles: {
     '*': {
       lineHeight: '1.5rem',
-      fontFamily: 'Lato',
     },
 
     '> * + *': {

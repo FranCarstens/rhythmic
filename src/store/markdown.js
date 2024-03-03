@@ -1,46 +1,44 @@
 /* eslint-disable max-len */
-export default `# Cry from a Far Planet
+export default `# 1000 Things Worth Knowing
 
-## by Tom Godwin
+Excerpts from ["1000 Things Worth Knowing"](https://www.gutenberg.org/cache/epub/56796/pg56796-images.html) by Nathaniel C Fowler Jr. Published 1913. Published on [Project Gutenberg](https://www.gutenberg.org/) under the Public Domain.
 
-> The problem of separating the friends from the enemies was a major one in the conquest of space as many a dead spacer could have testified. A tough job when you could see an alien and judge appearances; far tougher when they were only whispers on the wind.
+## Preface
 
-HE LISTENED in the silence of the Exploration ship's control room. He heard nothing but that was what bothered him; an ominous quiet when there should have been a multitude of sounds from the nearby village for the viewscreen's audio-pickups to transmit. And it was more than six hours past the time when the native, Throon, should have come to sit with him outside the ship as they resumed the laborious attempt to learn each other's language.
+This book contains more than one thousand facts, many of which are not generally known to the average person; but all of them are of interest to humankind, and a knowledge of many of them is essential.
 
-- The viewscreen was black in the light of the control room,
-- even though it was high noon outside.
-- The dull red sun was always invisible through the world's thick atmosphere
-- and to human eyes full day was no more than a red-tinged darkness.
+### Artificial Ice
 
-## He switched on the ship's outside floodlights
+The artificial manufacture of ice is of somewhat recent origin, and there are over **2,000 ice-making plants** in the United States, exclusive of those used by breweries, packers, and others for the making of their own ice. Artificial ice-making showed an increase of 81 per cent. during the last few years.
 
-He switched on the ship's outside floodlights and the viewscreen came to bright white life, showing the empty glades reaching away between groves of purple alien trees. He noticed, absently, that the trees seemed to have changed a little in color since his arrival.
+### Earth Facts
 
+- The circumference at the equator measures 24,902 statute miles.
+- The total area of the earth is 196,940,400 statute square miles, and its volume is 259,880 million cubic miles.
+- The land area of the earth covers 54,807,420 square miles.
+- The ocean, including the inland seas, covers 142,132,980 square miles, or about 72 per cent. of the total surface of the earth.
 
-### The village was hidden from view
+### Great American Inventions
 
-1. The village was hidden from view by the outer trees but there should have been some activity in the broad area visible to him.
-2. There was none, not even along the distant segment of what should have been a busy road.
-3. The natives were up to something and he knew, from hard experience on other alien worlds, that it would be nothing good.
-4. It would be another misunderstanding of some kind and he didn't know enough of their incomprehensible language to ask them what it was—
+The following list of fifteen [abridged] great American  inventions is taken from Killikelly's *"Curious Questions"*:
 
-#### Suddenly, as it always came
+1.  The Cotton Gin.
+2.  The Planting Machine.
+3.  The Grass Mower and Reaper.
+4.  The Rotary Printing-Press.
+5.  Steam Navigation.
 
-Suddenly, as it always came, he felt someone or something standing close behind him and peering over his shoulder. He dropped his hand to the blaster he had taken to wearing at all times and whirled.
+### Sporting, Speed, and Other Records
 
-Nothing was behind him. There never was. The control room was empty, with no hiding place for anything, and the door was closed, locked by the remote-control button beside him. There was nothing.
+#### Airship Records
 
-##### The sensation of being watched faded
+Highest altitude reached, 17,881 feet; longest non-stop flight, 635-5/8 miles in 13 hours, 22 minutes; longest time in the air, 16-1/2 hours.
 
-> The sensation of being watched faded, as though the watcher had withdrawn to a greater distance. It was perhaps the hundredth time within six days that he had felt the sensation. And when he slept at night something came to nuzzle at his mind; faceless, formless, utterly alien. For the past three nights he had not let the blaster get beyond quick reach of his hand, even when in bed.
+#### Automobile Records
 
-###### It could not be on the ship
+##### Short Distance
+1 mile, 25.40 s.; 2 miles, 51.28 s.; 5 miles, 2 m., 34 s.
 
-But whatever it was, it could not be on the ship. He had searched the ship twice, a methodical compartment-by-compartment search that had found nothing. It had to be the work of the natives from outside the ship. Except….
-
-Why, if the natives were telepathic, did the one called Throon go through the weary pretense of trying to learn a mutually understandable form of communication?
-
-Read more at [Project Gutenberg](http://www.gutenberg.org/ebooks/23799)
-
-<small>All use of the web site and content at [www.gutenberg.org](https://www.gutenberg.org/) is subject to its Terms of Use. Find them on the main page of [www.gutenberg.org](https://www.gutenberg.org/).</small>
+##### Long Distance
+50 miles, 35m., 52-1/2 s.; 100 miles, 1h., 12 m., 41 1-5 s.;  300 miles, 3 h., 53 m., 33-1/2 s.; 500 miles, 6 h., 21 m., 6 3-10 s.
 `

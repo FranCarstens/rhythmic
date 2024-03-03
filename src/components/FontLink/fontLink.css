@@ -14,4 +14,13 @@
       width: calc(100% - calc(var(--baseline) * 1.5) - var(--grid));
     }
   }
+
+  .FontLink__ListItem {
+    display: flex;
+    /* gap: var(--grid); */
+
+    &>*:first-child {
+      width: 100%;
+    }
+  }
 }
