@@ -1,6 +1,7 @@
 import { useEffect, useReducer } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
+import remarkGfm from 'remark-gfm'
 
 import AdjustFont from './components/AdjustFont'
 import Baseliner, { BaselineWrapper } from './components/Baseliner'
@@ -37,15 +38,18 @@ function App () {
     markdown,
     sample,
     scale,
+    selectors,
     styles,
     subgrid,
     theme,
-    tools
+    tools,
+    unit
   } = state
 
   const themeClass = theme
   const contrastClass = contrast ? 'contrast' : ''
-  const selectors = Object.keys(styles)
+  const styledSelectors = Object.keys(styles)
+  const availableSelectors = styledSelectors.length > 2 ? styledSelectors.slice(2) : selectors
 
   useEffect(() => {
     if (!init) {
@@ -104,7 +108,7 @@ function App () {
               <Selectors
                 current={current}
                 dispatch={dispatch}
-                selectors={selectors}
+                selectors={availableSelectors}
               />
             </Visible>
 
@@ -116,8 +120,9 @@ function App () {
                 dispatch={dispatch}
                 fonts={fonts}
                 sample={sample}
-                selectors={selectors}
+                selectors={availableSelectors}
                 style={styles?.[current]}
+                unit={unit}
               />
             </Visible>
           </Wrapper>
@@ -135,12 +140,12 @@ function App () {
 
             {tools.preview && !help?.section && (
               <Typo markdown={markdown} dispatch={dispatch}>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]} >{markdown}</ReactMarkdown>
+                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
               </Typo>
             )}
 
             {help?.section && (
-              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} >{help.content[help?.section]}</ReactMarkdown>
+              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>{help.content[help?.section]}</ReactMarkdown>
             )}
           </BaselineWrapper>
         </main>

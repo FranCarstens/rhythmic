@@ -63,7 +63,7 @@ const Typography = ({ children, dispatch, markdown }) => {
           className="Typo__markdown Typo__open  typography"
           ref={buttonRef}
           onClick={handleEdit}
-          style={{ display: editing ? 'none' : 'block' }}
+          style={{ display: editing ? 'none' : 'flex' }}
           aria-label="Click or Enter to Open Markdown Editor"
         >
           {children}

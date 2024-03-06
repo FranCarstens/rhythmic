@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import PropTypes from 'prop-types'
 import Fieldset from '../Fieldset'
 import { FormItem, Input, Range, Select } from '../Form'
@@ -10,9 +10,7 @@ import SelectorList from '../Selectors/SelectorList'
 // eslint-disable-next-line max-len
 const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ante sem, ut dapibus mi imperdiet tincidunt. Nulla mi justo, suscipit non tortor eu, rutrum tempor tortor.'
 
-const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors }) => {
-  const [showRem, setShowRem] = useState(true)
-  const toggleLabel = showRem ? 'rem' : 'px'
+const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors, unit }) => {
   const fontOptions = fonts.map((font) => ({ value: font.family, label: font.family }))
 
   useEffect(() => {
@@ -51,7 +49,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
   }
 
   const handleToggle = () => {
-    setShowRem(!showRem)
+    dispatch({ type: 'TOGGLE_UNIT' })
   }
 
   const getValue = (id) => {
@@ -71,7 +69,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
     const rem = remDisplayVal(value)
     const px = (value / remToPx).toFixed()
 
-    return showRem ? `${rem}rem` : `${px}px`
+    return unit === 'rem' ? `${rem}rem` : `${px}px`
   }
 
   return (
@@ -111,11 +109,11 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
               tooltip="Switch between rem and px"
               className="AdjustFont-Toggle__Toggle"
               identifier="AdjustFont-Toggle"
-              checked={showRem}
+              checked={unit === 'rem'}
               handleChange={handleToggle}
               id="showRem"
               key="showRem"
-              label={toggleLabel}
+              label={unit}
               name="showRem"
               type="toggle"
             />
@@ -204,5 +202,6 @@ AdjustFont.propTypes = {
   baseRem: PropTypes.string.isRequired,
   fonts: PropTypes.array.isRequired,
   sample: PropTypes.string.isRequired,
-  selectors: PropTypes.array.isRequired
+  selectors: PropTypes.array.isRequired,
+  unit: PropTypes.string.isRequired,
 }

@@ -4,10 +4,10 @@ import Selector from './Selector'
 import './selectorList.css'
 
 const SelectorList = ({ current, dispatch, selectors }) => {
+
   return (
     <ul className="SelectorList">
       {selectors
-        .slice(2)
         .map((el) => <Selector key={el} el={el} dispatch={dispatch} current={el === current} />)
       }
     </ul>

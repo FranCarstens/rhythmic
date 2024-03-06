@@ -90,15 +90,6 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         />
       </FormItem>
 
-      <FormItem itemId="heading" label="Heading at Base" direction="column">
-        <Input
-          id="heading"
-          type="number"
-          onChange={handleChange}
-          value={heading}
-        />
-      </FormItem>
-
       <FormItem itemId="baseRem" label="Set REM px" direction="column">
         <Input
           id="baseRem"
@@ -107,6 +98,16 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           value={baseRem}
         />
       </FormItem>
+
+      <FormItem itemId="heading" label="Heading at Root" direction="column">
+        <Input
+          id="heading"
+          type="number"
+          onChange={handleChange}
+          value={heading}
+        />
+      </FormItem>
+
       <Button
         className="Baseliner__button"
         handleClick={() => handleClick(() => dispatch({ type: 'GENERATE', payload: { scale, baseRem, heading } }))}

@@ -7,12 +7,12 @@ const sampleState = {
   current: 'h1',
   fonts: [
     {
-      family: 'Cormorant Garamond',
-      link: 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700'
+      family: 'Playfair Display',
+      link: 'https://fonts.googleapis.com/css2?family=Playfair+Display'
     },
     {
-      family: 'Proza Libre',
-      link: 'https://fonts.googleapis.com/css2?family=Proza+Libre:wght@400;700'
+      family: 'Alice',
+      link: 'https://fonts.googleapis.com/css2?family=Alice'
     }
   ],
   heading: '4',
@@ -32,89 +32,98 @@ const sampleState = {
     'adjustFont': false,
     'selectors': false
   },
+  unit: 'px',
   styles: {
-    '*': {
-      lineHeight: '1.5rem',
+    "*": {
+      lineHeight: "1.5rem",
+      fontFamily: "Alice"
     },
-
-    '> * + *': {
-      marginTop: '1.5rem',
-    },
-
+    "> * + *": { marginTop: "1.5rem" },
     h1: {
-      fontSize: '2.074rem',
-      lineHeight: '48px',
-      position: 'relative',
-      fontFamily: 'Abhaya Libre',
-      paddingTop: '10px',
-      top: '-24px',
-      marginBottom: '-34px',
+      fontSize: "2.744rem",
+      lineHeight: "3rem",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "0.4375rem",
+      marginBottom: "0rem"
     },
-
     h2: {
-      fontSize: '1.728rem',
-      lineHeight: '2.25rem',
-      position: 'relative',
-      fontFamily: 'Abhaya Libre',
-      paddingTop: '6px',
-      marginBottom: '-18px',
-      top: '-12px',
+      fontSize: "1.96rem",
+      lineHeight: "2.25rem",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "-0.375rem",
+      marginBottom: "-0.75rem"
     },
-
     h3: {
-      fontSize: '1.44rem',
-      lineHeight: '36px',
-      position: 'relative',
-      paddingTop: '8px',
-      marginBottom: '-20px',
-      fontFamily: 'Abhaya Libre',
-      top: '-12px',
+      fontSize: "1.4rem",
+      lineHeight: "24px",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "0.25rem",
+      marginBottom: "0rem"
     },
-
     h4: {
-      fontSize: '1.2rem',
-      lineHeight: '24px',
-      position: 'static',
-      paddingTop: '4px',
-      marginBottom: '-4px',
-      fontFamily: 'Abhaya Libre',
+      fontSize: "1rem",
+      lineHeight: "1.5rem",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "0.375rem"
     },
-
     h5: {
-      fontSize: '1rem',
-      lineHeight: '24px',
-      position: 'static',
-      paddingTop: '7px',
-      marginBottom: '-7px',
-      fontFamily: 'Lato',
+      fontSize: "0.714rem",
+      lineHeight: "1.5rem",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "0.5rem"
     },
-
     h6: {
-      fontSize: '0.833rem',
-      lineHeight: '1.5rem',
-      position: 'static',
-      paddingTop: '8px',
-      marginBottom: '-8px',
+      fontSize: "0.51rem",
+      lineHeight: "0.75rem",
+      position: "relative",
+      fontFamily: "Playfair Display",
+      top: "0.1875rem"
     },
-
     p: {
-      fontSize: '1rem',
-      lineHeight: '1.5rem',
-      position: 'static',
-      fontFamily: 'Lato',
-      paddingTop: '7px',
-      marginBottom: '-7px',
+      fontSize: "1rem",
+      lineHeight: "24px",
+      position: "relative",
+      fontFamily: "Alice",
+      top: "0.4375rem"
     },
-
     small: {
-      fontSize: '0.833rem',
-      lineHeight: '1.5rem',
-      position: 'relative',
-      fontFamily: 'Lato',
-      paddingTop: '0px',
-      top: '7px',
+      fontSize: "0.714rem",
+      lineHeight: "24px",
+      position: "relative",
+      fontFamily: "Alice",
+      top: "0.5625rem",
+      marginBottom: "-1.9375rem"
+    },
+    ul: {
+      fontSize: "1rem",
+      lineHeight: "16px",
+      top: "0rem",
+      paddingTop: "0px",
+      marginBottom: "0rem",
+      position: "relative"
+    },
+    ol: {
+      fontSize: "1rem",
+      lineHeight: "16px",
+      top: "0rem",
+      paddingTop: "0px",
+      marginBottom: "0px",
+      position: "relative"
+    },
+    li: {
+      fontSize: "1rem",
+      lineHeight: "1.5rem",
+      top: "0.4375rem",
+      paddingTop: "0px",
+      marginBottom: "0px",
+      position: "relative",
+      fontFamily: "Alice"
     }
-
   }
 }
 

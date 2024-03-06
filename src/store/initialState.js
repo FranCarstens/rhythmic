@@ -7,7 +7,7 @@ const initialState = {
   heading: '4',
   help: { content: '', section: '' },
   lang: 'en',
-  markdown: '',
+  markdown: 'Click or Enter to Open Markdown Editor',
   sample: 'Sample',
   scale: '1',
   selectors: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'],
@@ -30,7 +30,8 @@ const initialState = {
     '> * + *': {
       marginTop: '1.5rem',
     },
-  }
+  },
+  unit: 'rem'
 }
 
 export default initialState

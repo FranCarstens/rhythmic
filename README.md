@@ -1,5 +1,7 @@
-/* eslint-disable max-len */
-const grid = `
+# Rhythmic
+
+Satisfying type made easy
+
 ## Grid
 
 ### Adjust Grid
@@ -8,37 +10,35 @@ Adjust your baseline grid and font scaling to suit your design. For a more pleas
 
 In short, your typographic scale determines by which percentage each heading will increase in size.
 
-E.g. if \`h4\` = \`1rem\`, \`h3\` = \`1.5rem\`, \`h2\` = \`2.25rem\`, \`h1\` = \`3.375rem\`
+E.g. if `h4` = `1rem`, `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
 
 A great resource for exploring more complex typographic scales is [Modular Scale](https://www.modularscale.com/).
 
 | Tool                | Description                                              |
-| :------------------ | :------------------------------------------------------- |
-| **Trash**           | Reset to default                                         |
-| **Load**            | Load sample                                              |
+| ------------------- | -------------------------------------------------------- |
+| **Trash**           | Reset app to defaults                                    |
+| **Droplet**         | Load sample configuration                                |
 | **Golden**          | Convenient golden ratio typographic scale preset         |
 | **Minor Third**     | Convenient minor third ratio typographic scale preset    |
-| **Custom Scale**    | Experiment with your own scale                           |
-| **Heading at Base** | Set which heading will share a font size with your p tag |
-| **Set REM px**      | Set your base font size in pixels                        |
+| **Custom Scale**    | Adjust the scale to match your design                    |
+| **Set REM px**      | Set your root font size in pixels                        |
+| **Heading at Root** | Set which heading will share a font size with your p tag |
+| **Generate**        | Generate a typographic scale based on your settings      |
 | **Baseline**        | Set the pixel value of your baseline                     |
-| **Subgrid**         | Set the number of subgrid lines                          |
-`
+| **Subgrid**         | Set the number of subgrid rows                           |
 
-const fonts = `
 ## Fonts
 
 ### Manage fonts
 
 Load your front fonts from a hosted service like Google Fonts or CDN Fonts, or use your own hosted link.
 
-| Tool       | Description                                                                                                                    |
-| :--------- | :----------------------------------------------------------------------------------------------------------------------------- |
-| **Family** | Set the font family, e.g. \`Open Sans\` or \`Bachelor\`                                                                        |
-| **Link**   | Set the font link, e.g. \`https://fonts.googleapis.com/css?family=Open+Sans\` or \`https://fonts.cdnfonts.com/css/bachelor-2\` |
-`
+| Tool               | Description                                                                                                                |
+| :----------------- | :------------------------------------------------------------------------------------------------------------------------- |
+| **Family**         | Set the font family, e.g. `Open Sans` or `Bachelor`                                                                        |
+| **Link**           | Set the font link, e.g. `https://fonts.googleapis.com/css?family=Open+Sans` or `https://fonts.cdnfonts.com/css/bachelor-2` |
+| **Selected Fonts** | A list of selected fonts with actions<br /> - set default font family, indicated by ✢<br /> - remove font family           |
 
-const selectors = `
 ## Selectors
 
 ### Manage selectors
@@ -49,9 +49,7 @@ Add and update CSS Selectors for your project. It's a good idea to start with yo
 | :------------------ | :---------------------------------------- |
 | **Add Selector**    | Add a new CSS selector                    |
 | **Select Selector** | Select the CSS Selector you want to style |
-`
 
-const css = `
 ## CSS
 
 ### Adjust Selector
@@ -61,16 +59,17 @@ This is where the magic happens. We're adjust our sample text so:
 - The line height is visually pleasing.
 - All the lines lie on our baseline or subgrid.
 - The top margin is minimized.
-- And the next element's top margin butts up nicely to the bottom of our block.
+- And the next element's top margin butts up nicely to the baseline of our last text line.
 
 | Tool              | Description                                                                                                                                                |
 | :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | **Text Sample**   | A sample of the text you are styling. Adjusting multiline text will generate more usable results. Type "Lorem" to automatically generate some sample text. |
 | **Font Family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts                                                             |
 | **Font Size**     | Set the font size in rem                                                                                                                                   |
+| **Unit**          | Switch between rem and px, output is in rem                                                                                                                |
 | **Magic**         |                                                                                                                                                            |
-| **Line Height**   |                                                                                                                                                            |
-| **Top**           |                                                                                                                                                            |
+| **Line Height**   | Adjust the line height                                                                                                                                     |
+| **Top**           | Adjust the relative top of the selector                                                                                                                    |
 | **Padding Top**   |                                                                                                                                                            |
 | **Margin Bottom** |                                                                                                                                                            |
 
@@ -79,13 +78,13 @@ This is where the magic happens. We're adjust our sample text so:
   - **Adjust until**
   - Your sample baseline is parallel to the baseline grid
   - Each line of text is equidistant from the baseline or subgrid, whichever matches your intent
+    - For comfortable reading consider somewhere between 120-180% of the font-size
   - At this stage your sample baseline does not have to be on the baseline grid, but it should be parallel
 
 #### Top 
 
-  - Set the top offset in pixels
   - Adjust the top offset (not margin) until the sample baseline is on the baseline grid
-  - This will most likely be a negative value
+  - This will more often than not be a negative value
 
 #### Padding Top
 
@@ -96,8 +95,3 @@ This is where the magic happens. We're adjust our sample text so:
 
   - Set the bottom margin in pixels
   - Adjust the bottom margin until the sample baseline is on the red box
-  `
-
-export default {
-  grid, fonts, selectors, css
-}
