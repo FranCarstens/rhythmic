@@ -15,7 +15,7 @@ E.g. if `h4` = `1rem`, `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
 A great resource for exploring more complex typographic scales is [Modular Scale](https://www.modularscale.com/).
 
 | Tool                | Description                                              |
-| ------------------- | -------------------------------------------------------- |
+| :------------------ | :------------------------------------------------------- |
 | **Trash**           | Reset app to defaults                                    |
 | **Droplet**         | Load sample configuration                                |
 | **Golden**          | Convenient golden ratio typographic scale preset         |
@@ -61,24 +61,30 @@ This is where the magic happens. We're adjust our sample text so:
 - The top margin is minimized.
 - And the next element's top margin butts up nicely to the baseline of our last text line.
 
-| Tool              | Description                                                                                                                                                |
-| :---------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| **Text Sample**   | A sample of the text you are styling. Adjusting multiline text will generate more usable results. Type "Lorem" to automatically generate some sample text. |
-| **Font Family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts                                                             |
-| **Font Size**     | Set the font size in rem                                                                                                                                   |
-| **Unit**          | Switch between rem and px, output is in rem                                                                                                                |
-| **Magic**         |                                                                                                                                                            |
-| **Line Height**   | Adjust the line height                                                                                                                                     |
-| **Top**           | Adjust the relative top of the selector                                                                                                                    |
-| **Padding Top**   |                                                                                                                                                            |
-| **Margin Bottom** |                                                                                                                                                            |
+| Tool              | Description                                                                                    |
+| :---------------- | :--------------------------------------------------------------------------------------------- |
+| **Text Sample**   | A sample of the text you are styling.                                                          |
+| **Font Family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts |
+| **Font Size**     | Set the font size in rem                                                                       |
+| **Unit**          | Switch between rem and px, output is in rem                                                    |
+| **Magic**         |                                                                                                |
+| **Line Height**   | Adjust the line height                                                                         |
+| **Top**           | Adjust the relative top of the selector                                                        |
+| **Padding Top**   |                                                                                                |
+| **Margin Bottom** |                                                                                                |
+
+### Text Sample
+
+- Adjusting multiline text will generate more usable results.
+- Type "Lorem" to automatically generate some sample text.
+- Supports html tags, so you can e.g. provide `li`s for your `ol` or `ul` selectors.
 
 #### Line Height
 
   - **Adjust until**
   - Your sample baseline is parallel to the baseline grid
   - Each line of text is equidistant from the baseline or subgrid, whichever matches your intent
-    - For comfortable reading consider somewhere between 120-180% of the font-size
+    - For comfortable reading consider somewhere between 120%-180% of the font-size
   - At this stage your sample baseline does not have to be on the baseline grid, but it should be parallel
 
 #### Top 
