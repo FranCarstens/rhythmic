@@ -23,12 +23,13 @@ export default {
     adjustFont: 'Adjust CSS'
   },
   baseliner: {
+    adjustGrid: 'Adjust Grid',
     clearMessage: {
       reset: 'Do you want to reset the app to its default state? You will lose all your work.',
       sample: 'Do you want to replace all your current data with sample data? You will lose all your styles',
       default: 'Do you want to replace your current styles with new, generated styles?'
     },
-    startOver: 'Start over',
+    startOver: 'Start Over',
     loadSample: 'Load Sample Data',
     goldenTip: 'Load Golden Ratio Preset',
     golden: 'Golden',
@@ -64,10 +65,10 @@ export default {
     fontFamily: 'Font Family',
     toggleUnit: 'Toggle px/rem',
     fontSize: 'Font Size',
-    lineHeight: 'Line-Height',
-    top: 'Top',
-    paddingTop: 'Padding Top',
-    marginBottom: 'Margin Bottom',
+    lineHeight: 'line-height',
+    top: 'top',
+    paddingTop: 'padding-top',
+    marginBottom: 'margin-bottom',
   },
   typography: {
     heading: 'Heading',

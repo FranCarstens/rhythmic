@@ -13,6 +13,13 @@ const appReducer = (state, action) => {
       return newState
     }
 
+    case 'SET_LANG': {
+      return {
+        ...state,
+        lang: action.payload
+      }
+    }
+
     case 'LANG': {
       return {
         ...state,

@@ -33,7 +33,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
 
   return (
     <Fieldset className="Baseliner">
-      <legend>Adjust grid <ButtonHelp section="grid" dispatch={dispatch} /></legend>
+      <legend>{i18?.baseliner?.adjustGrid}<ButtonHelp section="grid" dispatch={dispatch} /></legend>
       <Wrapper className="Baseliner__Actions">
         <Button
           id="clear"

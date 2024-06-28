@@ -19,6 +19,7 @@ import Visible from './components/Visible'
 import appReducer from './store/appReducer'
 import initialState from './store/initialState'
 import { jsObjToCss } from './utils/convertJStoCSS'
+import { setLanguage } from './utils/setLanguage'
 
 import './App.css'
 
@@ -54,16 +55,7 @@ function App () {
 
   useEffect(() => {
     if (!init) {
-      const setConfig = () => {
-        import(`./store/help/${lang}.md`).then((module) => {
-          dispatch({ type: 'LANG', help: module.default })
-        })
-        import(`./store/i18/${lang}.js`).then((module) => {
-          dispatch({ type: 'I18', i18: module.default })
-        })
-      }
-
-      setConfig()
+      setLanguage(dispatch, lang)
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [lang])
