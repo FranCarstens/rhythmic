@@ -10,7 +10,7 @@ import './baseliner.css'
 import getSubgridSize from '../../utils/getSubgridSize'
 import { remove } from '../../utils/storage'
 
-const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => {
+const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }) => {
   const handleChange = (e) => {
     const { id, value } = e?.target || e || {}
 
@@ -19,9 +19,9 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
 
   const handleClick = (callback, clearAll) => {
     const clearMessage = {
-      'reset': 'Do you want to reset the app to its default state? You will lose all your work.',
-      'sample': 'Do you want to replace all your current data with sample data? You will lose all your styles',
-      'default': 'Do you want to replace your current styles with new, generated styles?'
+      'reset': i18?.baseliner?.clearMessage?.reset,
+      'sample': i18?.baseliner?.clearMessage?.sample,
+      'default': i18?.baseliner?.clearMessage?.default
     }[clearAll || 'default']
 
     if (confirm(clearMessage)) {
@@ -43,10 +43,10 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
             remove('rhythmic')
           }, 'reset')}
           modifiers="icon tooltip-top"
-          data-tooltip="Start over"
+          data-tooltip={i18?.baseliner?.startOver}
         >
           <Trash aria-hidden />
-          <span className="sr-only">Start over</span>
+          <span className="sr-only">{i18?.baseliner?.startOver}</span>
         </Button>
 
         <Button
@@ -54,10 +54,10 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           className="Baseliner__button"
           handleClick={() => handleClick(() => dispatch({ type: 'LOAD_SAMPLE' }), 'sample')}
           modifiers="icon tooltip-top"
-          data-tooltip="Load Sample Data"
+          data-tooltip={i18?.baseliner?.loadSample}
         >
           <Droplet aria-hidden />
-          <span className="sr-only">Load Sample Data</span>
+          <span className="sr-only">{i18?.baseliner?.loadSample}</span>
         </Button>
 
         <Button
@@ -65,9 +65,9 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           className="Baseliner__button"
           modifiers="button tooltip-top"
           handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.618 }))}
-          data-tooltip="Load Golden Ratio Preset"
+          data-tooltip={i18?.baseliner?.goldenTip}
         >
-          Golden
+          {i18?.baseliner?.golden}
         </Button>
 
         <Button
@@ -75,13 +75,13 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           className="Baseliner__button"
           modifiers="button tooltip-top"
           handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.2 }))}
-          data-tooltip="Load Minor Third Preset"
+          data-tooltip={i18?.baseliner?.minorTip}
         >
-          Minor Third
+          {i18?.baseliner?.minor}
         </Button>
       </Wrapper>
 
-      <FormItem itemId="customScale" label="Custom Scale" direction="column">
+      <FormItem itemId="customScale" label={i18?.baseliner?.customScale} direction="column">
         <Input
           id="customScale"
           type="number"
@@ -90,7 +90,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         />
       </FormItem>
 
-      <FormItem itemId="baseRem" label="Set REM px" direction="column">
+      <FormItem itemId="baseRem" label={i18?.baseliner?.baseRem} direction="column">
         <Input
           id="baseRem"
           type="number"
@@ -99,7 +99,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         />
       </FormItem>
 
-      <FormItem itemId="heading" label="Heading at Root" direction="column">
+      <FormItem itemId="heading" label={i18?.baseliner?.heading} direction="column">
         <Input
           id="heading"
           type="number"
@@ -114,10 +114,10 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
         id="generate"
         modifiers="highlight button"
       >
-        Generate
+        {i18?.baseliner?.generate}
       </Button>
 
-      <FormItem itemId="baseline" label="Baseline" direction="column">
+      <FormItem itemId="baseline" label={i18?.baseliner?.baseline} direction="column">
         <Range
           id="baseline"
           type="range"
@@ -129,7 +129,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch }) => 
           dataInfo={baseline + 'px'}
         />
       </FormItem>
-      <FormItem itemId="subgrid" label="Subgrid" direction="column">
+      <FormItem itemId="subgrid" label={i18?.baseliner?.subgrid} direction="column">
         <Range
           id="subgrid"
           type="range"
@@ -153,6 +153,7 @@ Baseliner.propTypes = {
   dispatch: PropTypes.func.isRequired,
   scale: PropTypes.string.isRequired,
   baseRem: PropTypes.string.isRequired,
-  heading: PropTypes.string.isRequired
+  heading: PropTypes.string.isRequired,
+  i18: PropTypes.object.isRequired
 }
 

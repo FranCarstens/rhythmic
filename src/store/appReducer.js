@@ -24,6 +24,14 @@ const appReducer = (state, action) => {
       }
     }
 
+    case 'I18': {
+      return {
+        ...state,
+        i18: action.i18,
+        init: true
+      }
+    }
+
     // @TODO: Remove this
     case 'TOGGLE_PREVIEW':
       return {
@@ -68,11 +76,11 @@ const appReducer = (state, action) => {
     case 'TOGGLE_THEME':
       return {
         ...state,
-        theme: state.theme === 'auto'
+        theme: state.theme === 'system'
           ? 'dark'
           : state.theme === 'dark'
             ? 'light'
-            : 'auto'
+            : 'system'
       }
 
     case 'TOGGLE_CONTRAST':

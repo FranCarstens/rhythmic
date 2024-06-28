@@ -10,7 +10,7 @@ import ButtonHelp from '../Buttons/ButtonHelp'
 
 import './selectors.css'
 
-const Selectors = ({ current, dispatch, selectors }) => {
+const Selectors = ({ current, dispatch, selectors, i18 }) => {
   const [value, setValue] = useState('')
 
   const handleChange = (e) => setValue(e.target.value)
@@ -24,8 +24,8 @@ const Selectors = ({ current, dispatch, selectors }) => {
 
   return (
     <Fieldset className="Selectors">
-      <legend>Manage Selectors <ButtonHelp section="selectors" dispatch={dispatch} /></legend>
-      <FormItem itemId="addSelector" className="Selectors__AddSelector" label="Add Selector" direction="column">
+      <legend>{i18?.selectors?.manage}<ButtonHelp section="selectors" dispatch={dispatch} /></legend>
+      <FormItem itemId="addSelector" className="Selectors__AddSelector" label={i18?.selectors?.addSelector} direction="column">
         <Input
           id="addSelector"
           type="text"
@@ -34,10 +34,10 @@ const Selectors = ({ current, dispatch, selectors }) => {
           value={value}
         />
         <Button id="add-selector" modifiers="round" handleClick={handleAdd}>
-          <Plus aria-hidden /><span className="sr-only">Add</span>
+          <Plus aria-hidden /><span className="sr-only">{i18?.selectors?.addLabel}</span>
         </Button>
       </FormItem>
-      <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
+      <SelectorList current={current} dispatch={dispatch} selectors={selectors} i18={i18} />
     </Fieldset>
   )
 }
@@ -47,6 +47,7 @@ export default Selectors
 Selectors.propTypes = {
   current: PropTypes.string,
   dispatch: PropTypes.func.isRequired,
-  selectors: PropTypes.array.isRequired
+  selectors: PropTypes.array.isRequired,
+  i18: PropTypes.object.isRequired,
 }
 

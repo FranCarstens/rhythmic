@@ -9,7 +9,7 @@ import Selectors from './components/Selectors'
 import FontLink from './components/FontLink'
 import Header from './components/Header'
 import Output from './components/Output'
-import Persistent from './components/Persistant'
+import Persistent from './components/Persistent'
 import Tools from './components/Tools'
 import Typo from './components/Typo'
 import Workbench from './components/Workbench'
@@ -34,6 +34,7 @@ function App () {
     heading,
     help,
     init,
+    i18,
     lang,
     markdown,
     sample,
@@ -54,8 +55,11 @@ function App () {
   useEffect(() => {
     if (!init) {
       const setConfig = () => {
-        import(`./store/help/${lang}.js`).then((module) => {
+        import(`./store/help/${lang}.md`).then((module) => {
           dispatch({ type: 'LANG', help: module.default })
+        })
+        import(`./store/i18/${lang}.js`).then((module) => {
+          dispatch({ type: 'I18', i18: module.default })
         })
       }
 
@@ -80,9 +84,9 @@ function App () {
   return (
 
     <div className={`App ${themeClass} ${contrastClass}`}>
-      <Persistent state={state} dispatch={dispatch}>
-        <Header contrast={contrast} dispatch={dispatch} theme={theme} />
-        <Tools tools={tools} dispatch={dispatch} />
+      <Persistent state={state} dispatch={dispatch} i18={i18}>
+        <Header contrast={contrast} dispatch={dispatch} theme={theme} i18={i18} />
+        <Tools tools={tools} dispatch={dispatch} i18={i18} />
         <aside className="App__Control">
           <Wrapper>
 
@@ -94,6 +98,7 @@ function App () {
                 heading={heading}
                 scale={scale}
                 subgrid={subgrid}
+                i18={i18}
               />
             </Visible>
 
@@ -101,6 +106,7 @@ function App () {
               <FontLink
                 dispatch={dispatch}
                 fonts={fonts}
+                i18={i18}
               />
             </Visible>
 
@@ -109,6 +115,7 @@ function App () {
                 current={current}
                 dispatch={dispatch}
                 selectors={availableSelectors}
+                i18={i18}
               />
             </Visible>
 
@@ -123,6 +130,7 @@ function App () {
                 selectors={availableSelectors}
                 style={styles?.[current]}
                 unit={unit}
+                i18={i18}
               />
             </Visible>
           </Wrapper>
@@ -139,7 +147,7 @@ function App () {
             )}
 
             {tools.preview && !help?.section && (
-              <Typo markdown={markdown} dispatch={dispatch}>
+              <Typo markdown={markdown} dispatch={dispatch} i18={i18}>
                 <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
               </Typo>
             )}
@@ -150,7 +158,7 @@ function App () {
           </BaselineWrapper>
         </main>
 
-        <Output className="App__Output" styles={styles} />
+        <Output className="App__Output" styles={styles} i18={i18} />
       </Persistent>
     </div>
   )

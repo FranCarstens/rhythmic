@@ -11,7 +11,7 @@ import Wrapper from '../Wrapper'
 
 import './fontLink.css'
 
-const FontLink = ({ fonts, dispatch }) => {
+const FontLink = ({ fonts, dispatch, i18 }) => {
   const [link, setLink] = useState('')
   const [family, setFamily] = useState('')
   const [defaultFont, setDefaultFont] = useState('')
@@ -53,9 +53,9 @@ const FontLink = ({ fonts, dispatch }) => {
 
   return (
     <Fieldset className="FontLink">
-      <legend>Manage fonts <ButtonHelp section="fonts" dispatch={dispatch} /></legend>
+      <legend>{i18?.fontLink?.manageFonts} <ButtonHelp section="fonts" dispatch={dispatch} /></legend>
       <Wrapper className="FontLink__Form">
-        <FormItem itemId="fontName" label="Family" direction="column">
+        <FormItem itemId="fontName" label={i18?.fontLink?.family} direction="column">
           <Input
             id="fontName"
             type="text"
@@ -64,7 +64,7 @@ const FontLink = ({ fonts, dispatch }) => {
           />
         </FormItem>
 
-        <FormItem itemId="fontURL" label="Link" direction="column">
+        <FormItem itemId="fontURL" label={i18?.fontLink?.link} direction="column">
           <Input
             id="fontURL"
             type="url"
@@ -75,10 +75,10 @@ const FontLink = ({ fonts, dispatch }) => {
         </FormItem>
 
         <Button id="add-font" modifiers="round" handleClick={handleAddFont} >
-          <Plus aria-hidden /><span className="sr-only">Add</span>
+          <Plus aria-hidden /><span className="sr-only">{i18?.fontLink?.Add}</span>
         </Button>
       </Wrapper>
-      <p><strong>Selected Fonts</strong></p>
+      <p><strong>{i18?.fontLink?.selected}</strong></p>
       <ul className="FontLink__List">
         {fonts.map((font, i) => {
           const isDefault = defaultFont === font.family
@@ -98,7 +98,7 @@ const FontLink = ({ fonts, dispatch }) => {
                 modifiers="inline"
                 handleClick={() => handleDefaultFont(font)}
               >
-                set default
+                {i18?.fontLink?.setDefault}
               </Button>
             )}
 
@@ -107,7 +107,7 @@ const FontLink = ({ fonts, dispatch }) => {
               modifiers="inline"
               handleClick={() => handleRemoveFont(font)}
             >
-              <span className="sr-only">Remove </span>&#10005;
+              <span className="sr-only">{i18?.fontLink?.remove}</span>&#10005;
             </Button>
           </li>)
         })}
@@ -120,5 +120,6 @@ export default FontLink
 
 FontLink.propTypes = {
   fonts: PropTypes.array.isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  i18: PropTypes.object.isRequired
 }

@@ -4,27 +4,27 @@ import Tool from './Tool'
 
 import './tools.css'
 
-const Tools = ({ tools, dispatch }) => {
-
+const Tools = ({ tools, dispatch, i18 }) => {
   const toggleSet = [
-    { id: 'preview', label: 'Toggle Preview', icon: Preview },
-    { id: 'showGrid', label: 'Toggle Grid', icon: Hash }
+    { id: 'preview', label: i18?.toggles?.preview, icon: Preview },
+    { id: 'showGrid', label: i18?.toggles?.showGrid, icon: Hash }
   ]
 
   const menuSet = [
-    { id: 'baseline', label: 'Adjust Grid', icon: Baseline },
-    { id: 'fontLink', label: 'Manage Fonts', icon: Font },
-    { id: 'selectors', label: 'Manage Selectors', icon: Code },
-    { id: 'adjustFont', label: 'Adjust CSS', icon: Sliders }
+    { id: 'baseline', label: i18?.menu?.baseline, icon: Baseline },
+    { id: 'fontLink', label: i18?.menu?.fontLink, icon: Font },
+    { id: 'selectors', label: i18?.menu?.selectors, icon: Code },
+    { id: 'adjustFont', label: i18?.menu?.adjustFont, icon: Sliders }
   ]
 
   return (
     <div className="Tools" role="menu">
-      <div className="Tools__Toggles" aria-label='Toggles' role="group">
-        {toggleSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} color toggle />)}
+      <div className="Tools__Toggles" aria-label={i18?.toggles?.title} role="group">
+        {toggleSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} color toggle i18={i18} />)}
       </div>
-      <nav className="Tools__Menu" aria-label='Menu' role="group">
-        {menuSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} />)}
+
+      <nav className="Tools__Menu" aria-label={i18?.toggles?.menu} role="group">
+        {menuSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} i18={i18} />)}
       </nav>
     </div>
   )
@@ -34,6 +34,6 @@ export default Tools
 
 Tools.propTypes = {
   dispatch: PropTypes.func.isRequired,
-  tools: PropTypes.object.isRequired
+  tools: PropTypes.object.isRequired,
+  i18: PropTypes.object.isRequired
 }
-

@@ -5,7 +5,7 @@ import { save, load } from '../../utils/storage'
 
 import './persistent.css'
 
-const Persistent = ({ state, children, dispatch }) => {
+const Persistent = ({ state, children, dispatch, i18 }) => {
   const [init, setInit] = useState(false)
   const [saving, setSaving] = useState(false)
   const hasSavedState = !!localStorage.getItem('rhythmic')
@@ -35,7 +35,7 @@ const Persistent = ({ state, children, dispatch }) => {
     {saving && (
       <div className="persistent">
         <Save className="persistent__icon" />
-        <span className="sr-only">Saving state...</span>
+        <span className="sr-only">{i18?.persistent?.saving}</span>
       </div>
     )}
     {!init && (
@@ -49,5 +49,6 @@ export default Persistent
 Persistent.propTypes = {
   state: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
-  dispatch: PropTypes.func.isRequired
+  dispatch: PropTypes.func.isRequired,
+  i18: PropTypes.object.isRequired
 }

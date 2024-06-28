@@ -5,14 +5,14 @@ import { Clipboard, Check } from '../Icons'
 import { jsObjToCss } from '../../utils/convertJStoCSS'
 import './output.css'
 
-const Output = ({ className, styles }) => {
+const Output = ({ className, styles, i18 }) => {
   const [copied, setCopied] = useState(0)
   const style = formatCSS(jsObjToCss(styles))
 
   const copyText = {
-    0: 'Copy to clipboard',
-    1: 'Copied!',
-    2: 'Something went wrong 😕.'
+    0: i18?.output?.copy,
+    1: i18?.output?.copied,
+    2: i18?.output?.error
   }[copied]
 
   const handleClick = () => {
@@ -60,7 +60,8 @@ export default Output
 
 Output.propTypes = {
   className: PropTypes.string,
-  styles: PropTypes.object.isRequired
+  styles: PropTypes.object.isRequired,
+  i18: PropTypes.object.isRequired
 }
 
 const formatCSS = (stylesString) => {

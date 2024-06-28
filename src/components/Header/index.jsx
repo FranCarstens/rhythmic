@@ -4,20 +4,15 @@ import Button from '../Buttons'
 import { Sun, Moon, Contrast, Auto } from '../Icons'
 import './header.css'
 
-const Header = ({ dispatch, theme, contrast }) => {
+const Header = ({ dispatch, theme, contrast, i18 }) => {
   const ThemeIcon = {
-    auto: Auto,
+    system: Auto,
     dark: Moon,
     light: Sun
   }[theme]
 
-  const NextThemeLabel = {
-    auto: 'Toggle dark theme',
-    dark: 'Toggle light theme',
-    light: 'Toggle system theme'
-  }[theme]
-
-  const contrastLabel = contrast ? 'Standard Contrast' : 'High Contrast'
+  const themeLabel = i18?.theme?.[theme]
+  const contrastLabel = i18?.contrast?.[contrast]
 
   return (
     <header className="Header">
@@ -32,28 +27,28 @@ const Header = ({ dispatch, theme, contrast }) => {
           <span style={{ fontWeight: '290' }}>i</span>
           <span style={{ fontWeight: '200' }}>c</span>
         </h1>
-        <p className="Header__Tagline">Satisfying type made easy</p>
+        <p className="Header__Tagline">{i18?.tagline}</p>
       </hgroup>
 
       <div className="Header__Icons">
         <Button
           id="theme"
           modifiers="round tooltip-persist tooltip-bottom"
-          data-tooltip={`${theme === 'auto' ? 'system' : theme} theme`}
+          data-tooltip={themeLabel}
           handleClick={() => dispatch({ type: 'TOGGLE_THEME' })}
         >
-          <ThemeIcon aria-hidden /><span className="sr-only">{NextThemeLabel}</span>
+          <ThemeIcon aria-hidden /><span className="sr-only">{themeLabel}</span>
         </Button>
 
         <Button
           id="preview"
           modifiers="round tooltip-persist tooltip-bottom"
-          data-tooltip={contrast ? 'Contrast Mode' : 'Contrast Off'}
+          data-tooltip={contrastLabel}
           handleClick={() => dispatch({ type: 'TOGGLE_CONTRAST' })}
           active={contrast}
         >
           <Contrast aria-hidden />
-          <span className="sr-only">Toggle {contrastLabel}</span>
+          <span className="sr-only">{contrastLabel}</span>
         </Button>
       </div>
     </header>
@@ -65,5 +60,6 @@ export default Header
 Header.propTypes = {
   contrast: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired
+  theme: PropTypes.string.isRequired,
+  i18: PropTypes.object.isRequired
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 
 import './typo.css'
 
-const Typography = ({ children, dispatch, markdown }) => {
+const Typography = ({ children, dispatch, markdown, i18 }) => {
   const [editing, setEditing] = useState(false)
   const [backup, setBackup] = useState(markdown)
   const textareaRef = useRef(null)
@@ -38,14 +38,14 @@ const Typography = ({ children, dispatch, markdown }) => {
     <div className="Typo">
       <div className="Typo__selectors">
         <div className="typography">
-          <h1>Heading 1</h1>
-          <h2>Heading 2</h2>
-          <h3>Heading 3</h3>
-          <h4>Heading 4</h4>
-          <h5>Heading 5</h5>
-          <h6>Heading 6</h6>
-          <p>Paragraph</p>
-          <small>Small</small>
+          <h1>{i18?.typography?.heading} 1</h1>
+          <h2>{i18?.typography?.heading} 2</h2>
+          <h3>{i18?.typography?.heading} 3</h3>
+          <h4>{i18?.typography?.heading} 4</h4>
+          <h5>{i18?.typography?.heading} 5</h5>
+          <h6>{i18?.typography?.heading} 6</h6>
+          <p>{i18?.typography?.paragraph}</p>
+          <small>{i18?.typography?.small}</small>
         </div>
       </div>
 
@@ -55,7 +55,7 @@ const Typography = ({ children, dispatch, markdown }) => {
           style={{ display: editing ? 'block' : 'none' }}
         >
           <button onClick={() => setEditing(false)}><span className="sr-only">Save</span></button>
-          <label className="Typo__textarea-label" htmlFor="markdown">Markdown and HTML allowed. Click outside to save. Esc to cancel.</label>
+          <label className="Typo__textarea-label" htmlFor="markdown">{i18?.typography?.textareaLabel}</label>
           <textarea id="markdown" name="markdown" ref={textareaRef} value={markdown} onChange={handleChange} onKeyDown={e => handleCancel(e)} />
         </div>
 
@@ -64,7 +64,7 @@ const Typography = ({ children, dispatch, markdown }) => {
           ref={buttonRef}
           onClick={handleEdit}
           style={{ display: editing ? 'none' : 'flex' }}
-          aria-label="Click or Enter to Open Markdown Editor"
+          aria-label={i18?.typography?.buttonAriaLabel}
         >
           {children}
         </button>
@@ -78,5 +78,6 @@ export default Typography
 Typography.propTypes = {
   dispatch: PropTypes.func.isRequired,
   markdown: PropTypes.string.isRequired,
+  i18: PropTypes.object.isRequired,
   children: PropTypes.node.isRequired,
 }

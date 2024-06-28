@@ -3,7 +3,7 @@ import { Close } from '../Icons'
 
 import './selector.css'
 
-const Selector = ({ current, dispatch, el }) => {
+const Selector = ({ current, dispatch, el, i18 }) => {
   const currentClass = current ? 'Selector--current' : ''
 
   const updateCurrent = (e) => {
@@ -18,7 +18,7 @@ const Selector = ({ current, dispatch, el }) => {
     <span className={`Selector ${currentClass}`}>
       <button className="Selector__Select" onClick={updateCurrent} value={el}>{el}</button>
       <button className="Selector__Remove" onClick={removeSelector} value={el}>
-        <Close aria-hidden /><span className="sr-only">Remove Selector</span>
+        <Close aria-hidden /><span className="sr-only">{i18?.selectors?.removeSelector}</span>
       </button>
     </span>
   )
@@ -29,5 +29,6 @@ export default Selector
 Selector.propTypes = {
   current: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
-  el: PropTypes.string.isRequired
+  el: PropTypes.string.isRequired,
+  i18: PropTypes.object.isRequired,
 }

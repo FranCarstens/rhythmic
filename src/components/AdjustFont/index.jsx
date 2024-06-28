@@ -10,7 +10,7 @@ import SelectorList from '../Selectors/SelectorList'
 // eslint-disable-next-line max-len
 const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ante sem, ut dapibus mi imperdiet tincidunt. Nulla mi justo, suscipit non tortor eu, rutrum tempor tortor.'
 
-const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors, unit }) => {
+const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors, unit, i18 }) => {
   const fontOptions = fonts.map((font) => ({ value: font.family, label: font.family }))
 
   useEffect(() => {
@@ -75,16 +75,16 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
   return (
     <Fieldset>
       <legend>
-        {!current ? 'No selector selected' : `Adjusting ${current}`}
+        {!current ? i18?.adjustFont?.noSelector : `${i18?.adjustFont?.adjusting} ${current}`}
         <ButtonHelp section="css" dispatch={dispatch} />
       </legend>
 
-      <SelectorList current={current} dispatch={dispatch} selectors={selectors} />
+      <SelectorList current={current} dispatch={dispatch} selectors={selectors} i18={i18} />
 
       {!current
-        ? <p>Please select or add a selector</p>
+        ? <p>{i18?.adjustFont?.pleaseAdd}</p>
         : <>
-          <FormItem itemId="textSample" label="Sample text" direction="column">
+          <FormItem itemId="textSample" label={i18?.adjustFont?.sampleText} direction="column">
             <Input
               id="textSample"
               type="textarea"
@@ -93,7 +93,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="fontFamily" label="Font Family" direction="column">
+          <FormItem itemId="fontFamily" label={i18?.adjustFont?.fontFamily} direction="column">
             <Select
               id="fontFamily"
               type="text"
@@ -104,7 +104,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="showRem" className="AdjustFont__Unit" label="Toggle px/rem" hideLabel direction="row">
+          <FormItem itemId="showRem" className="AdjustFont__Unit" label={i18?.adjustFont?.toggleUnit} hideLabel direction="row">
             <CheckboxBase
               tooltip="Switch between rem and px"
               className="AdjustFont-Toggle__Toggle"
@@ -119,7 +119,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="fontSize" label="Font Size" direction="column">
+          <FormItem itemId="fontSize" label={i18?.adjustFont?.fontSize} direction="column">
             <Range
               id="fontSize"
               type="range"
@@ -133,7 +133,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="lineHeight" label="Line-Height" direction="column">
+          <FormItem itemId="lineHeight" label={i18?.adjustFont?.lineHeight} direction="column">
             <Range
               id="lineHeight"
               type="range"
@@ -147,7 +147,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="top" label="Top" direction="column">
+          <FormItem itemId="top" label={i18?.adjustFont?.top} direction="column">
             <Range
               id="top"
               type="range"
@@ -161,7 +161,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="paddingTop" label="Padding Top" direction="column">
+          <FormItem itemId="paddingTop" label={i18?.adjustFont?.paddingTop} direction="column">
             <Range
               id="paddingTop"
               type="range"
@@ -175,7 +175,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
             />
           </FormItem>
 
-          <FormItem itemId="marginBottom" label="Margin Bottom" direction="column">
+          <FormItem itemId="marginBottom" label={i18?.adjustFont?.marginBottom} direction="column">
             <Range
               id="marginBottom"
               type="range"
@@ -204,4 +204,5 @@ AdjustFont.propTypes = {
   sample: PropTypes.string.isRequired,
   selectors: PropTypes.array.isRequired,
   unit: PropTypes.string.isRequired,
+  i18: PropTypes.object.isRequired
 }

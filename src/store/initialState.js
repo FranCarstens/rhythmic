@@ -7,12 +7,13 @@ const initialState = {
   heading: '4',
   help: { content: '', section: '' },
   lang: 'en',
+  i18: {},
   markdown: 'Click or Enter to Open Markdown Editor',
   sample: 'Sample',
   scale: '1',
   selectors: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'],
   subgrid: '0',
-  theme: 'auto',
+  theme: 'system',
   tools: {
     // not alphabetized
     // follows order in the UI
