@@ -55,10 +55,8 @@ const appReducer = (state, action) => {
         ...state,
         help: {
           ...state.help,
-          section:
-            state.help?.section === action.payload
-              ? ''
-              : action.payload
+          show:
+            !state.help.show
         }
       }
 
@@ -158,7 +156,17 @@ const appReducer = (state, action) => {
 
     case 'CLEAR': {
 
-      return initialState
+      return {
+        ...initialState,
+        contrast: state.contrast,
+        lang: state.lang,
+        theme: state.theme,
+        i18: state.i18,
+        help: {
+          ...state.help,
+          section: ''
+        }
+      }
 
       // const x = Object.values(state.styles)[0]
       // const y = Object.values(state.styles)[1]
@@ -185,6 +193,7 @@ const appReducer = (state, action) => {
 
     case 'LOAD_SAMPLE':
       return {
+        ...state,
         ...sampleState,
         help: {
           ...state.help,

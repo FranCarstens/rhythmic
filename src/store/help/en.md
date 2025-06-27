@@ -2,7 +2,12 @@
 
 Satisfying type made easy
 
-## Grid
+1. [Grid](#grid)
+2. [Fonts](#fonts)
+3. [Selectors](#selectors)
+4. [CSS](#css)
+
+## Grid {#grid}
 
 ### Adjust Grid
 
@@ -10,7 +15,7 @@ Adjust your baseline grid and font scaling to suit your design. For a more pleas
 
 In short, your typographic scale determines by which percentage each heading will increase in size.
 
-E.g. if `h4` = `1rem`, `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
+E.g. if `h4` = `1rem` then `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
 
 A great resource for exploring more complex typographic scales is [Modular Scale](https://www.modularscale.com/).
 
@@ -27,7 +32,7 @@ A great resource for exploring more complex typographic scales is [Modular Scale
 | **Baseline**        | Set the pixel value of your baseline                     |
 | **Subgrid**         | Set the number of subgrid rows                           |
 
-## Fonts
+## Fonts {#fonts}
 
 ### Manage fonts
 
@@ -39,7 +44,7 @@ Load your front fonts from a hosted service like Google Fonts or CDN Fonts, or u
 | **Link**           | Set the font link, e.g. `https://fonts.googleapis.com/css?family=Open+Sans` or `https://fonts.cdnfonts.com/css/bachelor-2` |
 | **Selected Fonts** | A list of selected fonts with actions<br /> - set default font family, indicated by ✢<br /> - remove font family           |
 
-## Selectors
+## Selectors {#selectors}
 
 ### Manage selectors
 
@@ -50,11 +55,11 @@ Add and update CSS Selectors for your project. It's a good idea to start with yo
 | **Add Selector**    | Add a new CSS selector                    |
 | **Select Selector** | Select the CSS Selector you want to style |
 
-## CSS
+## CSS {#css}
 
 ### Adjust Selector
 
-This is where the magic happens. We're adjust our sample text so:
+This is where the magic happens. We're adjusting our sample text as follows:
 
 - The line height is visually pleasing.
 - All the lines lie on our baseline or subgrid.
@@ -64,14 +69,14 @@ This is where the magic happens. We're adjust our sample text so:
 | Tool              | Description                                                                                    |
 | :---------------- | :--------------------------------------------------------------------------------------------- |
 | **Text Sample**   | A sample of the text you are styling.                                                          |
-| **Font Family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts |
-| **Font Size**     | Set the font size in rem                                                                       |
+| **font-family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts |
+| **font-size**     | Set the font size in rem                                                                       |
 | **Unit**          | Switch between rem and px, output is in rem                                                    |
 | **Magic**         |                                                                                                |
-| **Line Height**   | Adjust the line height                                                                         |
-| **Top**           | Adjust the relative top of the selector                                                        |
-| **Padding Top**   |                                                                                                |
-| **Margin Bottom** |                                                                                                |
+| **line-height**   | Adjust the element's line height                                                               |
+| **top**           | Adjust the relative top of the element                                                         |
+| **padding-top**   | Adjust the element's top padding                                                               |
+| **margin-bottom** | Adjust the element's bottom margin                                                             |
 
 ### Text Sample
 

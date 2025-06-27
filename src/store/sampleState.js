@@ -3,7 +3,6 @@ import markdown from './markdown.js'
 const sampleState = {
   baseline: '24',
   baseRem: '16',
-  contrast: false,
   current: 'h1',
   fonts: [
     {
@@ -17,13 +16,11 @@ const sampleState = {
   ],
   heading: '4',
   help: { content: '', section: '' },
-  lang: 'en',
   markdown: markdown,
   sample: 'Sample',
   scale: '1.2',
   selectors: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'],
   subgrid: '1',
-  theme: 'auto',
   tools: {
     'preview': true,
     'showGrid': true,

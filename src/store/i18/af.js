@@ -10,6 +10,7 @@ export default {
     false: 'Standaard Kontras',
     true: 'Hoë Kontras'
   },
+  help: 'Help',
   toggles: {
     title: 'Wissel',
     preview: 'Wissel Voorskou',
@@ -62,13 +63,13 @@ export default {
     adjusting: 'Aanpassing',
     pleaseAdd: "Kies of voeg asseblief 'n keurder by",
     sampleText: 'Voorbeeldteks',
-    fontFamily: 'Lettertipe',
+    fontFamily: 'Lettertipefamilie',
     toggleUnit: 'Wissel px/rem',
     fontSize: 'Lettergrootte',
-    lineHeight: 'line-height',
+    lineHeight: 'Lynhoogte',
     top: 'top',
-    paddingTop: 'padding-top',
-    marginBottom: 'margin-bottom',
+    paddingTop: 'Boonste Vulling',
+    marginBottom: 'Onderste Marge',
   },
   typography: {
     heading: 'Opskrif',

@@ -2,6 +2,7 @@ import { useEffect, useReducer } from 'react'
 import ReactMarkdown from 'react-markdown'
 import rehypeRaw from 'rehype-raw'
 import remarkGfm from 'remark-gfm'
+import remarkHeadingId from 'remark-heading-id'
 
 import AdjustFont from './components/AdjustFont'
 import Baseliner, { BaselineWrapper } from './components/Baseliner'
@@ -73,8 +74,11 @@ function App () {
     }
   }, [styles])
 
-  return (
+  const showHelp = help?.show
+  const showWorkbench = !tools.preview && !showHelp
+  const showPreview = tools.preview && !showHelp
 
+  return (
     <div className={`App ${themeClass} ${contrastClass}`}>
       <Persistent state={state} dispatch={dispatch} i18={i18}>
         <Header contrast={contrast} dispatch={dispatch} theme={theme} i18={i18} />
@@ -130,7 +134,7 @@ function App () {
 
         <main className="App__View">
           <BaselineWrapper baseline={baseline} showGrid={tools.showGrid} subgrid={subgrid}>
-            {!tools.preview && !help?.section && (
+            {showWorkbench && (
               <Workbench
                 current={current}
                 sample={sample}
@@ -138,14 +142,14 @@ function App () {
               />
             )}
 
-            {tools.preview && !help?.section && (
+            {showPreview && (
               <Typo markdown={markdown} dispatch={dispatch} i18={i18}>
                 <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
               </Typo>
             )}
 
-            {help?.section && (
-              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm]}>{help.content[help?.section]}</ReactMarkdown>
+            {showHelp && (
+              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm, remarkHeadingId]}>{help.content}</ReactMarkdown>
             )}
           </BaselineWrapper>
         </main>

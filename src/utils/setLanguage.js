@@ -15,7 +15,7 @@ export const setLanguage = (dispatch, lang) => {
 }
 
 export const setConfig = (dispatch, lang) => {
-  const help = `../store/help/${lang}.md`
+  const help = `../store/help/${lang}.md?raw`
   const i18 = `../store/i18/${lang}.js`
 
   import(help).then((module) => {
@@ -23,7 +23,6 @@ export const setConfig = (dispatch, lang) => {
   })
 
   import(i18).then((module) => {
-    console.log('MODULE', module.default);
     dispatch({ type: 'I18', i18: module.default })
   })
 }

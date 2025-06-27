@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 
 import Button from '../Buttons'
-import { Sun, Moon, Contrast, Auto } from '../Icons'
+import { Auto, Contrast, Help, Moon, Sun } from '../Icons'
 import './header.css'
 
 const Header = ({ dispatch, theme, contrast, i18 }) => {
@@ -13,6 +13,7 @@ const Header = ({ dispatch, theme, contrast, i18 }) => {
 
   const themeLabel = i18?.theme?.[theme]
   const contrastLabel = i18?.contrast?.[contrast]
+  const helpLabel = i18?.help
 
   return (
     <header className="Header">
@@ -49,6 +50,16 @@ const Header = ({ dispatch, theme, contrast, i18 }) => {
         >
           <Contrast aria-hidden />
           <span className="sr-only">{contrastLabel}</span>
+        </Button>
+
+        <Button
+          id="help"
+          modifiers="round tooltip-persist tooltip-bottom"
+          data-tooltip={helpLabel}
+          handleClick={() => dispatch({ type: 'TOGGLE_HELP' })}
+        >
+          <Help aria-hidden />
+          <span className="sr-only">{helpLabel}</span>
         </Button>
       </div>
     </header>

@@ -5,7 +5,8 @@ import './button-help.css'
 // eslint-disable-next-line no-unused-vars
 const ButtonHelp = ({ section, dispatch }) => {
   const handleClick = () => {
-    dispatch({ type: 'TOGGLE_HELP', payload: section })
+    // dispatch({ type: 'TOGGLE_HELP', payload: section })
+    dispatch({ type: 'TOGGLE_HELP' })
   }
 
   return (

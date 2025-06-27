@@ -15,6 +15,7 @@ export default {
     preview: 'Toggle Preview',
     showGrid: 'Toggle Grid'
   },
+  help: 'Help',
   menu: {
     title: 'Menu',
     baseline: 'Adjust Grid',
@@ -65,10 +66,10 @@ export default {
     fontFamily: 'Font Family',
     toggleUnit: 'Toggle px/rem',
     fontSize: 'Font Size',
-    lineHeight: 'line-height',
-    top: 'top',
-    paddingTop: 'padding-top',
-    marginBottom: 'margin-bottom',
+    lineHeight: 'Line Height',
+    top: 'Top',
+    paddingTop: 'Padding Top',
+    marginBottom: 'Margin Bottom',
   },
   typography: {
     heading: 'Heading',

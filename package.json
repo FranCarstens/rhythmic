@@ -12,7 +12,8 @@
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "remark-gfm": "^3.0.0"
+    "remark-gfm": "^3.0.0",
+    "remark-heading-id": "^1.0.1"
   },
   "devDependencies": {
     "@types/react": "^18.2.55",

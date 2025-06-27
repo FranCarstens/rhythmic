@@ -23,7 +23,6 @@
   --font-brand: var(--font-body), sans-serif;
   --font-code: 'JetBrains Mono', monospace;
 
-
   /* animation */
   --transition-slow: all 0.5s ease-in-out;
   --transition-medium: all 0.3s ease-in-out;
@@ -89,7 +88,7 @@ legend {
     font-family: Manrope;
   }
 
-  >*+* {
+  > * + * {
     margin-top: 1.5rem;
   }
 
@@ -154,8 +153,8 @@ legend {
     font-size: 1rem;
     line-height: 1.5rem;
     position: relative;
-    top: 0.4375rem;
-    margin-bottom: 0rem;
+    top: 0.375rem;
+    margin-bottom: 0.0625rem;
     font-family: Manrope;
   }
 
@@ -268,12 +267,11 @@ legend {
   th,
   td {
     padding: 5px 1rem 6px 0;
-    border-bottom: 1px solid var(--color-border)
+    border-bottom: 1px solid var(--color-border);
   }
 }
 
 /* typography */
-
 
 /* .first-color {
   background: hsl(153, 47%, 49%);
