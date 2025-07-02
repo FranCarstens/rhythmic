@@ -1,11 +1,15 @@
 .btn.tooltip {
   position: relative;
 
-  &:not(.tooltip-persist):hover .btn__tooltip {
+  &:not(.tooltip-persist):hover .btn__tooltip,
+  &:not(.tooltip-persist):focus .btn__tooltip,
+  &:not(.tooltip-persist):active .btn__tooltip {
     animation: fadeInOut 2500s ease-in-out forwards;
   }
 
-  &.tooltip-persist:hover .btn__tooltip {
+  &.tooltip-persist:hover .btn__tooltip,
+  &.tooltip-persist:focus .btn__tooltip,
+  &.tooltip-persist:active .btn__tooltip {
     opacity: 1;
     visibility: visible;
   }

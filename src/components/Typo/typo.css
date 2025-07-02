@@ -110,7 +110,9 @@
   opacity: 0;
 }
 
-.Typo__markdown:hover::after {
+.Typo__markdown:hover::after,
+.Typo__markdown:focus::after,
+.Typo__markdown:active::after {
   opacity: 1;
 }
 

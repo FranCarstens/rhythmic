@@ -25,6 +25,7 @@
   }
 
   .Checkbox__Label:hover::before,
+  .Checkbox__Input:focus + .Checkbox__Label::before,
   .Checkbox__Label:active::before {
     left: calc(var(--baseline) * 2);
     opacity: 1;

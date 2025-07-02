@@ -3,9 +3,8 @@
   border-color: var(--color-border);
   color: var(--color-foreground);
 
-  &:active,
-  &:focus,
   &:hover,
+  &:focus,
   &.active {
     background-color: var(--color-base-shadow);
     border-color: var(--color-border);
@@ -13,10 +12,8 @@
   }
 
   .contrast & {
-
-    &:active,
-    &:focus,
     &:hover,
+    &:focus,
     &.active {
       background-color: var(--color-foreground);
       color: var(--color-background);

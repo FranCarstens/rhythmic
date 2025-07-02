@@ -1,17 +1,21 @@
 .ButtonHelp {
   height: calc(var(--grid) * 2);
   width: calc(var(--grid) * 2);
-  color: var(--color-base-3);
+  color: var(--color-base-4);
   border-radius: 50%;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:active {
     color: var(--color-primary);
   }
 
   .contrast & {
     color: var(--color-primary);
 
-    &:hover {
+    &:hover,
+    &:focus,
+    &:active {
       color: var(--color-background);
       background-color: var(--color-foreground);
     }

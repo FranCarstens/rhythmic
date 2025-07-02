@@ -3,19 +3,16 @@
   border-color: var(--color-secondary);
   color: var(--color-background);
 
-  &:active,
-  &:focus,
   &:hover,
+  &:focus,
   &.active {
     background-color: var(--color-secondary-hover);
     border-color: var(--color-secondary-hover);
   }
 
   .contrast & {
-
-    &:active,
-    &:focus,
     &:hover,
+    &:focus,
     &.active {
       background-color: var(--color-background);
       color: var(--color-foreground);

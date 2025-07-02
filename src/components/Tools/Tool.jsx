@@ -25,6 +25,7 @@ const Tool = ({ color, dispatch, icon, id, label, tools, toggle }) => {
       label={labelComponent}
       name={id}
       type="button"
+      hide
     />
   )
 }

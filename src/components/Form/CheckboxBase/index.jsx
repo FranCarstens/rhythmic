@@ -9,12 +9,13 @@ const CheckboxBase = ({
   label,
   name,
   tooltip,
-  type
+  type,
+  hide
 }) => {
   return (
     <div className={`${identifier} ${identifier}--${type} ${className || ''}`}>
       <input
-        className={`${identifier}__Input`}
+        className={`${identifier}__Input ${hide ? 'sr-only' : ''}`}
         type="checkbox"
         checked={checked}
         onChange={handleChange}
@@ -43,5 +44,6 @@ CheckboxBase.propTypes = {
   ]).isRequired,
   name: PropTypes.string.isRequired,
   tooltip: PropTypes.string,
-  type: PropTypes.string.isRequired
+  type: PropTypes.string.isRequired,
+  hide: PropTypes.bool
 }

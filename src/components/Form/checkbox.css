@@ -1,11 +1,5 @@
-.Checkbox {}
-
 .Checkbox__Label {
   cursor: pointer
-}
-
-.Checkbox__Input {
-  display: none;
 }
 
 .Checkbox--button {

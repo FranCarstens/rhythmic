@@ -1,6 +1,8 @@
 import PropTypes from 'prop-types'
 
 import Button from '../Buttons'
+import { FormItem } from '../Form'
+import Select from '../Form/Select'
 import { Auto, Contrast, Help, Moon, Sun } from '../Icons'
 import './header.css'
 
@@ -42,7 +44,7 @@ const Header = ({ dispatch, theme, contrast, i18 }) => {
         </Button>
 
         <Button
-          id="preview"
+          id="contrast"
           modifiers="round tooltip-persist tooltip-bottom"
           data-tooltip={contrastLabel}
           handleClick={() => dispatch({ type: 'TOGGLE_CONTRAST' })}
