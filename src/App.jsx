@@ -81,7 +81,7 @@ function App () {
   return (
     <div className={`App ${themeClass} ${contrastClass}`}>
       <Persistent state={state} dispatch={dispatch} i18={i18}>
-        <Header contrast={contrast} dispatch={dispatch} theme={theme} i18={i18} />
+        <Header contrast={contrast} dispatch={dispatch} help={help} theme={theme} i18={i18} />
         <Tools tools={tools} dispatch={dispatch} i18={i18} />
         <aside className="App__Control">
           <Wrapper>

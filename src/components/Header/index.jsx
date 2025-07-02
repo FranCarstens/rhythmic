@@ -1,12 +1,10 @@
 import PropTypes from 'prop-types'
 
 import Button from '../Buttons'
-import { FormItem } from '../Form'
-import Select from '../Form/Select'
 import { Auto, Contrast, Help, Moon, Sun } from '../Icons'
 import './header.css'
 
-const Header = ({ dispatch, theme, contrast, i18 }) => {
+const Header = ({ contrast, dispatch, help, i18, theme }) => {
   const ThemeIcon = {
     system: Auto,
     dark: Moon,
@@ -59,6 +57,7 @@ const Header = ({ dispatch, theme, contrast, i18 }) => {
           modifiers="round tooltip-persist tooltip-bottom"
           data-tooltip={helpLabel}
           handleClick={() => dispatch({ type: 'TOGGLE_HELP' })}
+          active={help.show}
         >
           <Help aria-hidden />
           <span className="sr-only">{helpLabel}</span>
@@ -73,6 +72,7 @@ export default Header
 Header.propTypes = {
   contrast: PropTypes.bool.isRequired,
   dispatch: PropTypes.func.isRequired,
-  theme: PropTypes.string.isRequired,
-  i18: PropTypes.object.isRequired
+  help: PropTypes.object.isRequired,
+  i18: PropTypes.object.isRequired,
+  theme: PropTypes.string.isRequired
 }
