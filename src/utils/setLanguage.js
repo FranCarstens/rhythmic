@@ -1,6 +1,14 @@
 import supportedLanguages from "../store/i18/supportedLanguages"
+import setConfig from "./setConfig"
 
-export const setLanguage = (dispatch, lang) => {
+/**
+ * Sets the language based on the selected language
+ * Falls back to the browser language, if supported, or English if not
+ * 
+ * @param {function} dispatch 
+ * @param {string} lang 
+ */
+const setLanguage = (dispatch, lang) => {
   if (lang) {
     setConfig(dispatch, lang)
     dispatch({ type: 'SET_LANG', payload: lang })
@@ -9,20 +17,10 @@ export const setLanguage = (dispatch, lang) => {
   if (!lang) {
     const browserLang = navigator.language
     const lang = supportedLanguages.includes(browserLang) ? browserLang : 'en'
+
     setConfig(dispatch, lang)
     dispatch({ type: 'SET_LANG', payload: lang })
   }
 }
 
-export const setConfig = (dispatch, lang) => {
-  const help = `../store/help/${lang}.md?raw`
-  const i18 = `../store/i18/${lang}.js`
-
-  import(help).then((module) => {
-    dispatch({ type: 'LANG', help: module.default })
-  })
-
-  import(i18).then((module) => {
-    dispatch({ type: 'I18', i18: module.default })
-  })
-}
+export default setLanguage

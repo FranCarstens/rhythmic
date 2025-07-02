@@ -1,4 +1,14 @@
+/**
+ * Converts a parameter to a string of space-separated classes
+ * 
+ * @param {*} param - The parameter to convert
+ * @returns {string} The string of space-separated classes
+ */
 export default (param) => {
+  if (!param) {
+    return ''
+  }
+
   if (Array.isArray(param)) {
     return param.filter(Boolean).join(' ')
   }

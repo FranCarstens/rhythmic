@@ -20,7 +20,7 @@ import Visible from './components/Visible'
 import appReducer from './store/appReducer'
 import initialState from './store/initialState'
 import { jsObjToCss } from './utils/convertJStoCSS'
-import { setLanguage } from './utils/setLanguage'
+import setLanguage from './utils/setLanguage'
 
 import './App.css'
 

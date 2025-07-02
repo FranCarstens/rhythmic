@@ -13,7 +13,15 @@ import './button-highlight.css'
 import './button-alternative.css'
 import './button-subtle.css'
 
-const Button = ({ id, handleClick, className, modifiers, active, 'data-tooltip': tooltip, children }) => {
+const Button = ({
+  id,
+  handleClick,
+  className = '',
+  modifiers = '',
+  active = false,
+  'data-tooltip': tooltip = '',
+  children
+}) => {
   const isDefault = ['highlight', 'alternative', 'subtle'].every(modifier => !modifiers.includes(modifier))
   const modifierClasses = `${modifiers} ${isDefault ? 'default' : ''}`?.split(' ').filter(Boolean).join(' ') || ''
   const activeClass = active ? 'active' : ''
@@ -42,12 +50,4 @@ Button.propTypes = {
   handleClick: PropTypes.func.isRequired,
   id: PropTypes.string.isRequired,
   modifiers: PropTypes.string,
-}
-
-Button.defaultProps = {
-  active: false,
-  className: '',
-  'data-tooltip': '',
-  modifiers: '',
-  type: ''
 }
