@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import { Checkbox } from '../Form'
 
 import './tool.css'

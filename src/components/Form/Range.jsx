@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import './range.css'
 
 const Range = ({ id, type, min, step, max, onChange, value, dataInfo, disabled, readonly }) => {

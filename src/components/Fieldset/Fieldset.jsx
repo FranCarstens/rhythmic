@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import Wrapper from '../Wrapper'
 
 const Fieldset = ({ className, children }) => {

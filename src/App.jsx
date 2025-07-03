@@ -79,6 +79,8 @@ function App () {
   const showWorkbench = !tools.preview && !showHelp
   const showPreview = tools.preview && !showHelp
 
+  console.log(state)
+
   return (
     <div className={clstr('App', themeClass, contrastClass)}>
       <Persistent state={state} dispatch={dispatch} i18={i18}>
@@ -111,7 +113,7 @@ function App () {
               <Selectors
                 current={current}
                 dispatch={dispatch}
-                selectors={availableSelectors}
+                selectors={selectors}
                 i18={i18}
               />
             </Visible>

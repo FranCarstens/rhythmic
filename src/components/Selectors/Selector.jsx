@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import { Close } from '../Icons'
 
 import './selector.css'

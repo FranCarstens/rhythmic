@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types'
+
 import clstr from '@/utils/clstr'
+
 import './formItem.css'
 
 const FormItem = ({ children, className, direction, hideLabel, itemId, label }) => {

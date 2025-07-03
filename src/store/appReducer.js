@@ -175,22 +175,6 @@ const appReducer = (state, action) => {
           section: ''
         }
       }
-
-      // const x = Object.values(state.styles)[0]
-      // const y = Object.values(state.styles)[1]
-
-      // return {
-      //   ...state,
-      //   ...initialState,
-      //   styles: {
-      //     '*': {
-      //       lineHeight: x.lineHeight
-      //     },
-      //     '> * + *': {
-      //       marginTop: y.marginTop
-      //     }
-      //   },
-      // }
     }
 
     case 'TOGGLE_UNIT':

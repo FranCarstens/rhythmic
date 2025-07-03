@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+
 import { Baseline, Code, Hash, Preview, Sliders, Font } from '../Icons'
 import Tool from './Tool'
 

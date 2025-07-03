@@ -2,6 +2,7 @@ import PropTypes from 'prop-types'
 
 import Button from '../Buttons'
 import { Auto, Contrast, Help, Moon, Sun } from '../Icons'
+
 import './header.css'
 
 const Header = ({ contrast, dispatch, help, i18, theme }) => {

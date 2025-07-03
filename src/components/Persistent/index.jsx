@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
+
 import { Save } from '../Icons';
 import { save, load } from '@/utils/storage'
 
@@ -30,6 +31,10 @@ const Persistent = ({ state, children, dispatch, i18 }) => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [JSON.stringify(state)])
 
+  if (!init) {
+    return <div className="persistent__loader"><div></div></div>
+  }
+
   return <>
     {children}
     {saving && (
@@ -37,9 +42,6 @@ const Persistent = ({ state, children, dispatch, i18 }) => {
         <Save className="persistent__icon" />
         <span className="sr-only">{i18?.persistent?.saving}</span>
       </div>
-    )}
-    {!init && (
-      <div className="persistent__loader"><div></div></div>
     )}
   </>
 }

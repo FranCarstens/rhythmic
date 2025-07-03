@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import PropTypes from 'prop-types'
+
 import getSubgridSize from '@/utils/getSubgridSize'
 import clstr from '@/utils/clstr'
 

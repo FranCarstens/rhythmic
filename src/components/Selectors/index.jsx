@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
-import Fieldset from '../Fieldset'
 
+import Fieldset from '../Fieldset'
 import { FormItem, Input } from '../Form'
 import { Plus } from '../Icons'
 import SelectorList from './SelectorList'
@@ -21,7 +21,7 @@ const Selectors = ({ current, dispatch, selectors, i18 }) => {
       setValue('')
     }
   }
-
+  console.log(selectors)
   return (
     <Fieldset className="Selectors">
       <legend>{i18?.selectors?.manage}<ButtonHelp section="selectors" dispatch={dispatch} /></legend>

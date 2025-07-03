@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+
 import Selector from './Selector'
 
 import './selectorList.css'

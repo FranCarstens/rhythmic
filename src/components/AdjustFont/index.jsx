@@ -1,13 +1,14 @@
 import { useEffect } from 'react'
 import PropTypes from 'prop-types'
+
 import Fieldset from '../Fieldset'
 import { FormItem, Input, Range, Select } from '../Form'
 import CheckboxBase from '../Form/CheckboxBase'
 import ButtonHelp from '../Buttons/ButtonHelp'
-import './adjustFont.css'
 import SelectorList from '../Selectors/SelectorList'
 
-// eslint-disable-next-line max-len
+import './adjustFont.css'
+
 const LOREM = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur aliquet ante sem, ut dapibus mi imperdiet tincidunt. Nulla mi justo, suscipit non tortor eu, rutrum tempor tortor.'
 
 const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selectors, unit, i18 }) => {
@@ -138,7 +139,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
               id="fontWeight"
               type="range"
               min="100"
-              step={1}
+              step="1"
               max="900"
               onChange={handleChange}
               value={getValue('fontWeight')}

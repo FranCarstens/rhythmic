@@ -1,4 +1,3 @@
-/* eslint-disable max-len */
 export default `# 1000 Things Worth Knowing
 
 Excerpts from [“1000 Things Worth Knowing”](https://www.gutenberg.org/cache/epub/56796/pg56796-images.html) by Nathaniel C Fowler Jr. Published 1913. Published on [Project Gutenberg](https://www.gutenberg.org/) under the Public Domain.

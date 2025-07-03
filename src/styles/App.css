@@ -30,7 +30,7 @@
   }
 
   fieldset>.Wrapper {
-    padding: calc(var(--baseline) * 1) calc(var(--baseline) * 1.5);
+    padding: calc(var(--baseline) * 1) calc(var(--baseline) * 3);
   }
 
 
@@ -52,7 +52,7 @@
 /* CSS Preview */
 .App__Output {
   position: relative;
-  padding: calc(var(--baseline) * 1) calc(var(--baseline) * 1.5);
+  padding: calc(var(--baseline) * 1) calc(var(--baseline) * 3);
   font-family: monospace;
   text-align: left;
   width: calc(var(--baseline) * 17);
@@ -65,4 +65,22 @@
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.debug {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .App {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    max-height: 100vh;
+    width: 25vw;
+    min-width: 25vw;
+    flex-wrap: wrap;
+  }
 }

@@ -1,4 +1,5 @@
-import CheckboxBase from './CheckboxBase/index.jsx'
+import CheckboxBase from './CheckboxBase'
+
 import './checkbox.css'
 
 export default function Checkbox (props) {

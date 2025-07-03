@@ -1,14 +1,16 @@
 import PropTypes from 'prop-types'
+
 import Fieldset from '../Fieldset'
 import { Droplet, Trash } from '../Icons'
 import { FormItem, Range, Input } from '../Form'
 import Button from '../Buttons'
 import ButtonHelp from '../Buttons/ButtonHelp'
 import Wrapper from '../Wrapper'
-import './baseliner.css'
 
 import getSubgridSize from '@/utils/getSubgridSize'
 import { remove } from '@/utils/storage'
+
+import './baseliner.css'
 
 const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }) => {
   const handleChange = (e) => {

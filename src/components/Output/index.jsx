@@ -1,14 +1,18 @@
 import { useState } from 'react'
 import PropTypes from 'prop-types'
+
 import Button from '../Buttons'
 import { Clipboard, Check } from '../Icons'
+
 import { jsObjToCss } from '@/utils/convertJStoCSS'
-import './output.css'
+import { removeDeepProperties } from '@/utils/removeProperties'
 import clstr from '@/utils/clstr'
+
+import './output.css'
 
 const Output = ({ className, styles, i18 }) => {
   const [copied, setCopied] = useState(0)
-  const style = formatCSS(jsObjToCss(styles))
+  const style = formatCSS(jsObjToCss(removeDeepProperties(styles, ['position'])))
 
   const copyText = {
     0: i18?.output?.copy,
