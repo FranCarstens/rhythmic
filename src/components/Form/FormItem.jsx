@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
-import clstr from '../../utils/clstr'
+import clstr from '@/utils/clstr'
 import './formItem.css'
 
 const FormItem = ({ children, className, direction, hideLabel, itemId, label }) => {
   const directionClass = direction ? `FormItem--${direction}` : ''
-  const hiddenLabelClass = hideLabel ? 'sr-only' : ''
-  const wrapperClasses = clstr(['FormItem', className, directionClass])
-  const labelClasses = clstr(['FormItem__Label', hiddenLabelClass])
+  const wrapperClasses = clstr('FormItem', className, directionClass)
+  const labelClasses = clstr('FormItem__Label', { 'sr-only': hideLabel })
 
   return (
     <div className={wrapperClasses}>

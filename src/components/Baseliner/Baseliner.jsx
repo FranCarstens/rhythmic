@@ -7,8 +7,8 @@ import ButtonHelp from '../Buttons/ButtonHelp'
 import Wrapper from '../Wrapper'
 import './baseliner.css'
 
-import getSubgridSize from '../../utils/getSubgridSize'
-import { remove } from '../../utils/storage'
+import getSubgridSize from '@/utils/getSubgridSize'
+import { remove } from '@/utils/storage'
 
 const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }) => {
   const handleChange = (e) => {

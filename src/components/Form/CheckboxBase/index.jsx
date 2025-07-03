@@ -1,3 +1,4 @@
+import clstr from '@/utils/clstr'
 import PropTypes from 'prop-types'
 
 const CheckboxBase = ({
@@ -13,9 +14,9 @@ const CheckboxBase = ({
   hide
 }) => {
   return (
-    <div className={`${identifier} ${identifier}--${type} ${className || ''}`}>
+    <div className={clstr(identifier, `${identifier}--${type}`, { [className]: className })}>
       <input
-        className={`${identifier}__Input ${hide ? 'sr-only' : ''}`}
+        className={clstr(`${identifier}__Input`, { 'sr-only': hide })}
         type="checkbox"
         checked={checked}
         onChange={handleChange}

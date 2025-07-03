@@ -2,8 +2,9 @@ import { useState } from 'react'
 import PropTypes from 'prop-types'
 import Button from '../Buttons'
 import { Clipboard, Check } from '../Icons'
-import { jsObjToCss } from '../../utils/convertJStoCSS'
+import { jsObjToCss } from '@/utils/convertJStoCSS'
 import './output.css'
+import clstr from '@/utils/clstr'
 
 const Output = ({ className, styles, i18 }) => {
   const [copied, setCopied] = useState(0)
@@ -32,7 +33,7 @@ const Output = ({ className, styles, i18 }) => {
   }
 
   return (
-    <aside className={`Output ${className}`}>
+    <aside className={clstr('Output', className)}>
       <span className="Output__Clipboard">
         <Button
           id="clipboard"

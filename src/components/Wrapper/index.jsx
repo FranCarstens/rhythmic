@@ -1,7 +1,8 @@
+import clstr from '@/utils/clstr'
 import PropTypes from 'prop-types'
 
 const Wrapper = ({ className = '', children }) => (
-  <div className={`Wrapper ${className}`.trim()}>
+  <div className={clstr('Wrapper', className)}>
     {children}
   </div>
 )

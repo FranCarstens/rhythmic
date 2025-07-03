@@ -4,22 +4,30 @@
  * @param {*} param - The parameter to convert
  * @returns {string} The string of space-separated classes
  */
-export default (param) => {
-  if (!param) {
+export default (...args) => {
+  if (!args.length) {
     return ''
   }
 
-  if (Array.isArray(param)) {
-    return param.filter(Boolean).join(' ')
-  }
+  const allClassNames = args.map(arg => {
+    if (!arg) {
+      return ''
+    }
 
-  if (typeof param === 'string') {
-    return param.split(' ').filter(Boolean).join(' ')
-  }
+    if (Array.isArray(arg)) {
+      return arg.filter(Boolean).join(' ')
+    }
 
-  if (typeof param === 'object' && Object.keys(param).length > 0) {
-    return Object.keys(param).filter(key => param[key]).join(' ')
-  }
+    if (typeof arg === 'string') {
+      return arg.split(' ').filter(Boolean).join(' ')
+    }
 
-  return ''
+    if (typeof arg === 'object' && Object.keys(arg).length > 0) {
+      return Object.keys(arg).filter(key => arg[key]).join(' ')
+    }
+
+    return ''
+  })
+
+  return allClassNames.join(' ')
 }

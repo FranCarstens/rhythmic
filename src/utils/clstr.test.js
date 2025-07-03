@@ -28,4 +28,12 @@ describe("clstr", () => {
   it("should return a string of classes from an array with falsy values", () => {
     expect(clstr(["class1", "", "class3", null])).toBe("class1 class3")
   })
+
+  it("should return a combination of strings, arrays, and objects as a class", () => {
+    const stringClasses = 'class1 class2'
+    const arrayClasses = ['class3', 'class4', null]
+    const objectClasses = { class5: true, class6: false, class7: undefined }
+
+    expect(clstr(stringClasses, arrayClasses, objectClasses)).toBe("class1 class2 class3 class4 class5")
+  })
 })

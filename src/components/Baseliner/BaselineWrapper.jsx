@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import PropTypes from 'prop-types'
-import getSubgridSize from '../../utils/getSubgridSize'
+import getSubgridSize from '@/utils/getSubgridSize'
+import clstr from '@/utils/clstr'
 
 import './baselineWrapper.css'
 
@@ -15,7 +16,7 @@ const BaselineWrapper = ({ baseline, showGrid, subgrid, children }) => {
 
   return (
     <div
-      className={`BaselineWrapper ${Number(subgrid) ? 'withSubgrid' : ''} ${showGrid ? '' : 'hideGrid'}`}
+      className={clstr({ BaselineWrapper: true, withSubgrid: Number(subgrid), hideGrid: !showGrid })}
     >
       {children}
     </div>

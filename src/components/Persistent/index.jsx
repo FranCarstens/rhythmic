@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Save } from '../Icons';
-import { save, load } from '../../utils/storage'
+import { save, load } from '@/utils/storage'
 
 import './persistent.css'
 

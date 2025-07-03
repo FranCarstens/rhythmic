@@ -1,4 +1,4 @@
-import generateRatios from '../utils/generateRatios'
+import generateRatios from '@/utils/generateRatios'
 import initialState from './initialState'
 import sampleState from './sampleState.js'
 

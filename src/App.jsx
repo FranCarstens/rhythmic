@@ -23,6 +23,7 @@ import { jsObjToCss } from './utils/convertJStoCSS'
 import setLanguage from './utils/setLanguage'
 
 import './App.css'
+import clstr from './utils/clstr'
 
 function App () {
   const [state, dispatch] = useReducer(appReducer, initialState)
@@ -79,7 +80,7 @@ function App () {
   const showPreview = tools.preview && !showHelp
 
   return (
-    <div className={`App ${themeClass} ${contrastClass}`}>
+    <div className={clstr('App', themeClass, contrastClass)}>
       <Persistent state={state} dispatch={dispatch} i18={i18}>
         <Header contrast={contrast} dispatch={dispatch} help={help} theme={theme} i18={i18} />
         <Tools tools={tools} dispatch={dispatch} i18={i18} />

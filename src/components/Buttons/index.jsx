@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import clstr from '../../utils/clstr'
+import clstr from '@/utils/clstr'
 
 // layout
 import './button.css'
