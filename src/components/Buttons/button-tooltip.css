@@ -4,7 +4,7 @@
   &:not(.tooltip-persist):hover .btn__tooltip,
   &:not(.tooltip-persist):focus .btn__tooltip,
   &:not(.tooltip-persist):active .btn__tooltip {
-    animation: fadeInOut 2500s ease-in-out forwards;
+    animation: fadeInOut 2500ms ease-in-out forwards;
   }
 
   &.tooltip-persist:hover .btn__tooltip,
@@ -132,28 +132,5 @@
         border-top-color: var(--color-base-shadow);
       }
     }
-  }
-}
-
-
-@keyframes fadeInOut {
-  0% {
-    opacity: 0;
-    visibility: hidden;
-  }
-
-  0% {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  99% {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  100% {
-    opacity: 0;
-    visibility: hidden;
   }
 }

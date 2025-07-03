@@ -1,8 +1,9 @@
-@import './reset.css';
-@import './a11y.css';
+@import './styles/reset.css';
+@import './styles/a11y.css';
+@import './styles/typography.css';
+@import './styles/animations.css';
 @import './theme/theme.css';
 @import './theme/dark.css';
 @import './theme/light.css';
 @import './theme/light-contrast.css';
 @import './theme/dark-contrast.css';
-@import './typography.css';

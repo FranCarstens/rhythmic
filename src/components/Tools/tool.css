@@ -17,19 +17,20 @@
 
     border-radius: calc(var(--baseline) * .5);
     font-size: 0.66rem;
-    visibility: hidden;
     white-space: nowrap;
 
+    visibility: hidden;
     opacity: 0;
     transition: var(--transition-medium);
+
+
   }
 
   .Checkbox__Label:hover::before,
-  .Checkbox__Input:focus + .Checkbox__Label::before,
+  .Checkbox__Input:focus+.Checkbox__Label::before,
   .Checkbox__Label:active::before {
     left: calc(var(--baseline) * 2);
-    opacity: 1;
-    visibility: visible;
+    animation: showHide 2.5s ease-in-out forwards;
   }
 
   .Checkbox__Label::before {
