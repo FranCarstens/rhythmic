@@ -55,7 +55,7 @@ export default {
   selectors: {
     addLabel: 'Voeg By',
     manage: 'Bestuur Keurders',
-    addSelector: 'Voeg Keurder By',
+    addSelector: 'Voeg Keurder(s) By',
     removeSelector: 'Verwyder Keurder',
   },
   adjustFont: {

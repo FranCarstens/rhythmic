@@ -94,20 +94,28 @@ const appReducer = (state, action) => {
         contrast: !state.contrast
       }
 
-    case 'ADD_SELECTOR':
-      return {
-        ...state,
-        styles: {
-          ...state.styles,
-          [action.payload]: {
+    case 'ADD_SELECTOR': {
+      const selectors = action.payload
+        .split(/,|\s+/)
+        .reduce((a, c) => ({
+          ...a,
+          [c]: {
             fontSize: '1rem',
             lineHeight: '16px',
             top: '0px',
             paddingTop: '0px',
             marginBottom: '0px'
           }
+        }), {})
+
+      return {
+        ...state,
+        styles: {
+          ...state.styles,
+          ...selectors
         }
       }
+    }
 
     case 'REMOVE_SELECTOR': {
       // eslint-disable-next-line no-unused-vars

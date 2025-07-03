@@ -55,7 +55,7 @@ export default {
   selectors: {
     addLabel: 'Add',
     manage: 'Manage Selectors',
-    addSelector: 'Add Selector',
+    addSelector: 'Add Selector(s)',
     removeSelector: 'Remove Selector',
   },
   adjustFont: {
