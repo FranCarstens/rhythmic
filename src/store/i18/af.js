@@ -66,6 +66,7 @@ export default {
     fontFamily: 'Lettertipefamilie',
     toggleUnit: 'Wissel px/rem',
     fontSize: 'Lettergrootte',
+    fontWeight: 'Lettergewig',
     lineHeight: 'Lynhoogte',
     top: 'top',
     paddingTop: 'Boonste Vulling',

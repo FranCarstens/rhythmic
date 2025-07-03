@@ -22,7 +22,6 @@
 
 .AdjustFont-Toggle--toggle {
   position: relative;
-  border-radius: calc(var(--baseline) * 1);
   height: var(--toggle-slider-height);
   width: var(--toggle-slider-width);
   border-radius: calc(var(--baseline) * .375);

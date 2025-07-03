@@ -34,10 +34,11 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
   return (
     <Fieldset className="Baseliner">
       <legend>{i18?.baseliner?.adjustGrid}<ButtonHelp section="grid" dispatch={dispatch} /></legend>
+
       <Wrapper className="Baseliner__Actions">
         <Button
           id="clear"
-          className="Baseliner__button"
+          className="Baseliner__Button"
           handleClick={() => handleClick(() => {
             dispatch({ type: 'CLEAR' })
             remove('rhythmic')
@@ -51,7 +52,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
 
         <Button
           id="sample"
-          className="Baseliner__button"
+          className="Baseliner__Button"
           handleClick={() => handleClick(() => dispatch({ type: 'LOAD_SAMPLE' }), 'sample')}
           modifiers="icon tooltip-top"
           data-tooltip={i18?.baseliner?.loadSample}
@@ -62,7 +63,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
 
         <Button
           id="golden"
-          className="Baseliner__button"
+          className="Baseliner__Button"
           modifiers="button tooltip-top"
           handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.618 }))}
           data-tooltip={i18?.baseliner?.goldenTip}
@@ -72,7 +73,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
 
         <Button
           id="minor-third"
-          className="Baseliner__button"
+          className="Baseliner__Button"
           modifiers="button tooltip-top"
           handleClick={() => handleClick(() => handleChange({ id: 'scale', value: 1.2 }))}
           data-tooltip={i18?.baseliner?.minorTip}
@@ -109,7 +110,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
       </FormItem>
 
       <Button
-        className="Baseliner__button"
+        className="Baseliner__Button"
         handleClick={() => handleClick(() => dispatch({ type: 'GENERATE', payload: { scale, baseRem, heading } }))}
         id="generate"
         modifiers="highlight button"
@@ -129,6 +130,7 @@ const Baseliner = ({ baseline, subgrid, scale, baseRem, heading, dispatch, i18 }
           dataInfo={baseline + 'px'}
         />
       </FormItem>
+
       <FormItem itemId="subgrid" label={i18?.baseliner?.subgrid} direction="column">
         <Range
           id="subgrid"

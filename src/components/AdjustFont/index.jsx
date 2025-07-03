@@ -32,7 +32,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
 
   const handleChange = (e) => {
     const { id, value } = e.target
-    const suffix = id !== 'fontFamily' ? 'rem' : ''
+    const suffix = ['fontFamily', 'fontWeight'].includes(id) ? '' : 'rem'
 
     dispatch({
       type: 'UPDATE_STYLE', payload: { current, style: { ...style, [id]: value + suffix } }
@@ -55,7 +55,7 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
   const getValue = (id) => {
     if (!style?.[id]) return '0'
 
-    return style[id].slice(0, -3)
+    return id === 'fontWeight' ? style[id] : style[id].slice(0, -3)
   }
 
   const remToPx = (1 / baseRem)
@@ -129,6 +129,20 @@ const AdjustFont = ({ baseRem, current, dispatch, fonts, sample, style, selector
               onChange={handleChange}
               value={getValue('fontSize')}
               dataInfo={remPxString(style?.fontSize)}
+              disabled={!current}
+            />
+          </FormItem>
+
+          <FormItem itemId="fontWeight" label={i18?.adjustFont?.fontWeight} direction="column">
+            <Range
+              id="fontWeight"
+              type="range"
+              min="100"
+              step={1}
+              max="900"
+              onChange={handleChange}
+              value={getValue('fontWeight')}
+              dataInfo={style?.fontWeight || '400'}
               disabled={!current}
             />
           </FormItem>

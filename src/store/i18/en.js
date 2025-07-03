@@ -66,6 +66,7 @@ export default {
     fontFamily: 'Font Family',
     toggleUnit: 'Toggle px/rem',
     fontSize: 'Font Size',
+    fontWeight: 'Font Weight',
     lineHeight: 'Line Height',
     top: 'Top',
     paddingTop: 'Padding Top',
