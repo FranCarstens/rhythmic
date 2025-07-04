@@ -1,4 +1,4 @@
-import supportedLanguages from "../store/i18/supportedLanguages"
+import supportedLanguages from "@/language/supportedLanguages"
 import setConfig from "./setConfig"
 
 /**

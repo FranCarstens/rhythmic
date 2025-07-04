@@ -1,11 +1,14 @@
-import React, { lazy } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
+
 import App from './App'
+
+import lazyWithSuspense from './utils/lazyWithSuspense'
 
 import './index.css'
 
 // eslint-disable-next-line react-refresh/only-export-components
-const Design = lazy(() => import('./Design'))
+const Design = lazyWithSuspense(() => import('./Design'))
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 

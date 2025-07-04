@@ -1,8 +1,8 @@
 /**
- * Converts a parameter to a string of space-separated classes
+ * Converts an array of arguments to a string of space-separated classes
  * 
- * @param {*} param - The parameter to convert
- * @returns {string} The string of space-separated classes
+ * @param {string | object | array} args - The parameter to convert
+ * @returns {string} A string of space-separated classNames
  */
 export default (...args) => {
   if (!args.length) {

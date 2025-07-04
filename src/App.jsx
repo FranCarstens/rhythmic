@@ -1,8 +1,4 @@
 import { useEffect, useReducer } from 'react'
-import ReactMarkdown from 'react-markdown'
-import rehypeRaw from 'rehype-raw'
-import remarkGfm from 'remark-gfm'
-import remarkHeadingId from 'remark-heading-id'
 
 import AdjustFont from '@/components/AdjustFont'
 import Baseliner, { BaselineWrapper } from '@/components/Baseliner'
@@ -12,7 +8,6 @@ import Header from '@/components/Header'
 import Output from '@/components/Output'
 import Persistent from '@/components/Persistent'
 import Tools from '@/components/Tools'
-import Typo from '@/components/Typo'
 import Workbench from '@/components/Workbench'
 import Wrapper from '@/components/Wrapper'
 import Visible from '@/components/Visible'
@@ -22,8 +17,12 @@ import initialState from '@/store/initialState'
 import { jsObjToCss } from '@/utils/convertJStoCSS'
 import setLanguage from '@/utils/setLanguage'
 import clstr from '@/utils/clstr'
+import lazyWithSuspense from '@/utils/lazyWithSuspense'
 
 import '@/styles/App.css'
+
+const Markdown = lazyWithSuspense(() => import('@/components/Markdown'))
+const Typo = lazyWithSuspense(() => import('@/components/Typo'))
 
 function App () {
   const [state, dispatch] = useReducer(appReducer, initialState)
@@ -78,8 +77,6 @@ function App () {
   const showHelp = help?.show
   const showWorkbench = !tools.preview && !showHelp
   const showPreview = tools.preview && !showHelp
-
-  console.log(state)
 
   return (
     <div className={clstr('App', themeClass, contrastClass)}>
@@ -147,12 +144,22 @@ function App () {
 
             {showPreview && (
               <Typo markdown={markdown} dispatch={dispatch} i18={i18}>
-                <ReactMarkdown rehypePlugins={[rehypeRaw]}>{markdown}</ReactMarkdown>
+                <Markdown
+                  rehypePlugins={['rehypeRaw']}
+                >
+                  {markdown}
+                </Markdown>
               </Typo>
             )}
 
             {showHelp && (
-              <ReactMarkdown className="help__typography" rehypePlugins={[rehypeRaw]} remarkPlugins={[remarkGfm, remarkHeadingId]}>{help.content}</ReactMarkdown>
+              <Markdown
+                className="help__typography"
+                rehypePlugins={['rehypeRaw']}
+                remarkPlugins={['remarkGfm', 'remarkHeadingId']}
+              >
+                {help.content}
+              </Markdown>
             )}
           </BaselineWrapper>
         </main>
@@ -164,4 +171,3 @@ function App () {
 }
 
 export default App
-

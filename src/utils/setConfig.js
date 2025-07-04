@@ -5,15 +5,11 @@
  * @param {string} lang 
  */
 const setConfig = (dispatch, lang) => {
-  const help = `../store/help/${lang}.md?raw`
-  const i18 = `../store/i18/${lang}.js`
+  import(`../language/${lang}/getLang.js`).then((getLang) => {
+    const languageFiles = getLang.default()
 
-  import(help).then((module) => {
-    dispatch({ type: 'LANG', help: module.default })
-  })
-
-  import(i18).then((module) => {
-    dispatch({ type: 'I18', i18: module.default })
+    dispatch({ type: 'LANG', help: languageFiles.help })
+    dispatch({ type: 'I18', i18: JSON.parse(languageFiles.i18) })
   })
 }
 

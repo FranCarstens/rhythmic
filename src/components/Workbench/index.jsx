@@ -1,9 +1,10 @@
-import { Fragment } from 'react'
-import rehypeRaw from 'rehype-raw'
 import PropTypes from 'prop-types'
-import ReactMarkdown from 'react-markdown'
+
+import lazyWithSuspense from '@/utils/lazyWithSuspense'
 
 import './workbench.css'
+
+const Markdown = lazyWithSuspense(() => import('../Markdown'))
 
 const Workbench = ({ current, sample }) => {
   const El = current || 'span'
@@ -11,11 +12,13 @@ const Workbench = ({ current, sample }) => {
   return (
     <div className="Workbench typography">
       <div className="Workbench__Box"></div>
-      {sample && <El className="Workbench__Sample">
-        <ReactMarkdown components={{ p: Fragment, }} rehypePlugins={[rehypeRaw]}>
-          {sample}
-        </ReactMarkdown>
-      </El>}
+      {sample && (
+        <El className="Workbench__Sample">
+          <Markdown components={{ p: 'fragment', }} rehypePlugins={['rehypeRaw']}>
+            {sample}
+          </Markdown>
+        </El>
+      )}
       <div className="Workbench__Box margin"></div>
       <div className="Workbench__Box"></div>
     </div>
