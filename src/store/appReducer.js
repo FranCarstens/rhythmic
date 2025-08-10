@@ -96,7 +96,9 @@ const appReducer = (state, action) => {
 
     case 'ADD_SELECTOR': {
       const selectors = action.payload
-        .split(/,|\s+/)
+        .split(/,\s*/)
+
+      const selectorDefaultStyles = selectors
         .reduce((a, c) => ({
           ...a,
           [c]: {
@@ -112,19 +114,22 @@ const appReducer = (state, action) => {
         ...state,
         styles: {
           ...state.styles,
-          ...selectors
-        }
+          ...selectorDefaultStyles
+        },
+        selectors: [...state.selectors, ...selectors]
       }
     }
 
     case 'REMOVE_SELECTOR': {
       // eslint-disable-next-line no-unused-vars
       const { [action.payload]: el, ...rest } = state.styles
+      const selectors = state.selectors.filter((s) => s !== action.payload)
 
       return {
         ...state,
         styles: rest,
-        current: null
+        current: null,
+        selectors
       }
     }
 

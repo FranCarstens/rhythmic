@@ -21,7 +21,7 @@ const Selectors = ({ current, dispatch, selectors, i18 }) => {
       setValue('')
     }
   }
-  console.log(selectors)
+
   return (
     <Fieldset className="Selectors">
       <legend>{i18?.selectors?.manage}<ButtonHelp section="selectors" dispatch={dispatch} /></legend>

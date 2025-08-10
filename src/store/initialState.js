@@ -11,7 +11,7 @@ const initialState = {
   markdown: 'Click or Enter to Open Markdown Editor',
   sample: 'Lorem Ipsum',
   scale: '1',
-  selectors: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'p', 'small'],
+  selectors: [],
   subgrid: '0',
   theme: 'system',
   tools: {
