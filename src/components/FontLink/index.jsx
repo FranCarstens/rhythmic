@@ -64,7 +64,7 @@ const FontLink = ({ fonts, dispatch, i18 }) => {
           />
         </FormItem>
 
-        <FormItem itemId="fontURL" label={i18?.fontLink?.link} direction="column">
+        <FormItem itemId="fontURL" label={i18?.fontLink?.url} direction="column">
           <Input
             id="fontURL"
             type="url"

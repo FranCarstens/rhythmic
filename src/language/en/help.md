@@ -2,20 +2,38 @@
 
 Satisfying type made easy
 
-1. [Grid](#grid)
-2. [Fonts](#fonts)
-3. [Selectors](#selectors)
-4. [CSS](#css)
+Creating print-like vertical rhythm for the web has always been an absolute pain, requiring tedious adjustments. Rhythmic tries to solve that problem, speeding up the process of lining up type, and other elements, to your baseline grid.
 
-## Grid {#grid}
+## Table of Contents
+1. [Terminology](#terminology)
+2. [Tools](#tools) > [Adjust Grid](#adjust-grid)
+3. [Tools](#tools) > [Manage Fonts](#manage-fonts)
+4. [Tools](#tools) > [Manage Selectors](#manage-selectors)
+5. [Tools](#tools) > [Adjust CSS](#adjust-css)
 
-### Adjust Grid
+## Terminology {#terminology}
+
+### Baseline Grid
+The primary horizontal grid, divided into equal segments based on a user-defined value. All elements ideally align to this grid for consistent vertical rhythm.
+
+### Subgrid
+A finer horizontal grid that divides each baseline segment into smaller units, allowing for more precise alignment when the baseline grid spacing is too coarse.
+
+### Sample Baseline
+The invisible line your sample text "sits" on in the preview area. Use this as a reference point when aligning type to the baseline or subgrid.
+
+## Tools {#tools}
+
+### Adjust Grid {#adjust-grid}
 
 Adjust your baseline grid and font scaling to suit your design. For a more pleasing vertical rhythm consider using a typographic scale. You can read more about typographic scales at [More Meaningful Typography](https://alistapart.com/article/more-meaningful-typography/).
 
-In short, your typographic scale determines by which percentage each heading will increase in size.
+In short, your typographic scale defines the percentage increase in font size between heading levels.
 
-E.g. if `h4` = `1rem` then `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
+E.g. if `h4` = `1rem`:
+- `h3` = `1.5rem`
+- `h2` = `2.25rem`
+- `h1` = `3.375rem`
 
 A great resource for exploring more complex typographic scales is [Modular Scale](https://www.modularscale.com/).
 
@@ -32,39 +50,33 @@ A great resource for exploring more complex typographic scales is [Modular Scale
 | **Baseline**        | Set the pixel value of your baseline                     |
 | **Subgrid**         | Set the number of subgrid rows                           |
 
-## Fonts {#fonts}
+### Manage Fonts {#manage-fonts}
 
-### Manage fonts
-
-Load your front fonts from a hosted service like Google Fonts or CDN Fonts, or use your own hosted link.
+Load your fonts from a hosted service like Google Fonts or CDN Fonts, or use your own hosted URL.
 
 | Tool               | Description                                                                                                                |
 | :----------------- | :------------------------------------------------------------------------------------------------------------------------- |
 | **Family**         | Set the font family, e.g. `Open Sans` or `Bachelor`                                                                        |
-| **Link**           | Set the font link, e.g. `https://fonts.googleapis.com/css?family=Open+Sans` or `https://fonts.cdnfonts.com/css/bachelor-2` |
+| **URL**            | Set the font URL, e.g. `https://fonts.googleapis.com/css?family=Open+Sans` or `https://fonts.cdnfonts.com/css/bachelor-2` |
 | **Selected Fonts** | A list of selected fonts with actions<br /> - set default font family, indicated by ✢<br /> - remove font family           |
 
-## Selectors {#selectors}
+### Manage Selectors {#manage-selectors}
 
-### Manage selectors
-
-Add and update CSS Selectors for your project. It's a good idea to start with your basic typographic elements, but you can add any CSS selector you need to style.
+Add and update CSS Selectors for your project. Start with your core typographic elements (like h1, p, ul, etc.), but you can add any CSS selector you need.
 
 | Tool                | Description                               |
 | :------------------ | :---------------------------------------- |
 | **Add Selector**    | Add a new CSS selector                    |
 | **Select Selector** | Select the CSS Selector you want to style |
 
-## CSS {#css}
-
-### Adjust Selector
+### Adjust CSS {#adjust-css}
 
 This is where the magic happens. We're adjusting our sample text as follows:
 
 - The line height is visually pleasing.
 - All the lines lie on our baseline or subgrid.
 - The top margin is minimized.
-- And the next element's top margin butts up nicely to the baseline of our last text line.
+- And the next element's top margin aligns cleanly with the baseline of the last line of text.
 
 | Tool              | Description                                                                                    |
 | :---------------- | :--------------------------------------------------------------------------------------------- |
@@ -80,29 +92,29 @@ This is where the magic happens. We're adjusting our sample text as follows:
 
 ### Text Sample
 
-- Adjusting multiline text will generate more usable results.
+- Adjusting multiline text will generate more accurate results.
 - Type "Lorem" to automatically generate some sample text.
 - Supports html tags, so you can e.g. provide `li`s for your `ol` or `ul` selectors.
 
 #### Line Height
 
   - **Adjust until**
-  - Your sample baseline is parallel to the baseline grid
+  - The sample text’s baseline runs parallel to the baseline grid
   - Each line of text is equidistant from the baseline or subgrid, whichever matches your intent
     - For comfortable reading consider somewhere between 120%-180% of the font-size
-  - At this stage your sample baseline does not have to be on the baseline grid, but it should be parallel
+  - After this adjustment, your sample text's baseline spacing should match the grid — even if it's not aligned to it yet.
 
 #### Top 
 
-  - Adjust the top offset (not margin) until the sample baseline is on the baseline grid
+  - Adjust the top offset (not margin) until the sample text's baseline is on the baseline grid
   - This will more often than not be a negative value
 
 #### Padding Top
 
   - Set the top padding in pixels
-  - Adjust the top padding to so the sample baseline is on the closest subgrid line to the top, without leaving the white space
+  - Adjust the top padding so the sample text's baseline is on the closest subgrid line to the top, without leaving the white space
 
 #### Margin Bottom
 
   - Set the bottom margin in pixels
-  - Adjust the bottom margin until the sample baseline is on the red box
+  - Adjust the bottom margin until the sample text's baseline is on the red box

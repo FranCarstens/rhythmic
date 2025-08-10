@@ -1,103 +1,98 @@
 # Rhythmic
 
-Satisfying type made easy
+Satisfying type made easy. 
 
-## Grid
+Creating print-like vertical rhythm for the web has always been an absolute pain, requiring tedious adjustments. Rhythmic tries to solve that problem, speeding up the process of lining up type, and other elements, to your baseline grid.
 
-### Adjust Grid
+## Documentation
 
-Adjust your baseline grid and font scaling to suit your design. For a more pleasing vertical rhythm consider using a typographic scale. You can read more about typographic scales at [More Meaningful Typography](https://alistapart.com/article/more-meaningful-typography/).
+Documentation for supported languages can be found at `/src/language/[lang]/help.md`.
 
-In short, your typographic scale determines by which percentage each heading will increase in size.
+## Contributions Welcome!
 
-E.g. if `h4` = `1rem`, `h3` = `1.5rem`, `h2` = `2.25rem`, `h1` = `3.375rem`
+We appreciate all contributions to this project! Before you get started, please take a moment to review our **[contribution guidelines](CONTRIBUTING.md)**.
 
-A great resource for exploring more complex typographic scales is [Modular Scale](https://www.modularscale.com/).
+---
 
-| Tool                | Description                                              |
-| :------------------ | :------------------------------------------------------- |
-| **Trash**           | Reset app to defaults                                    |
-| **Droplet**         | Load sample configuration                                |
-| **Golden**          | Convenient golden ratio typographic scale preset         |
-| **Minor Third**     | Convenient minor third ratio typographic scale preset    |
-| **Custom Scale**    | Adjust the scale to match your design                    |
-| **Set REM px**      | Set your root font size in pixels                        |
-| **Heading at Root** | Set which heading will share a font size with your p tag |
-| **Generate**        | Generate a typographic scale based on your settings      |
-| **Baseline**        | Set the pixel value of your baseline                     |
-| **Subgrid**         | Set the number of subgrid rows                           |
+### General Contributions
 
-## Fonts
+For general contributions, please follow these steps:
 
-### Manage fonts
+1.  **Open an issue:** Create a new issue and apply the "feature" label.
+2.  **Describe your idea:** Explain the new feature or update you're considering.
+3.  **Let's discuss:** We'll talk it through to find a good path forward.
+4.  **Create a PR:** Once we're on the same page, submit a pull request.
 
-Load your front fonts from a hosted service like Google Fonts or CDN Fonts, or use your own hosted link.
+---
 
-| Tool               | Description                                                                                                                |
-| :----------------- | :------------------------------------------------------------------------------------------------------------------------- |
-| **Family**         | Set the font family, e.g. `Open Sans` or `Bachelor`                                                                        |
-| **Link**           | Set the font link, e.g. `https://fonts.googleapis.com/css?family=Open+Sans` or `https://fonts.cdnfonts.com/css/bachelor-2` |
-| **Selected Fonts** | A list of selected fonts with actions<br /> - set default font family, indicated by ✢<br /> - remove font family           |
+### Translations 🌍
 
-## Selectors
+Translations are especially helpful in making this project accessible to a wider audience. If you'd like to contribute a translation:
 
-### Manage selectors
+1.  **Create translation files:** Add your translated content to `i18n.md` and `help.md`.
+2.  **Update `supportedLanguages.js`:** Include your language code in this file.
+3.  **Submit a Pull Request:** Create a pull request with your changes for review.
 
-Add and update CSS Selectors for your project. It's a good idea to start with your basic typographic elements, but you can add any CSS selector you need to style.
+---
 
-| Tool                | Description                               |
-| :------------------ | :---------------------------------------- |
-| **Add Selector**    | Add a new CSS selector                    |
-| **Select Selector** | Select the CSS Selector you want to style |
+## Installation & Development
 
-## CSS
+### Prerequisites
+- [Node.js](https://nodejs.org/) (version 18 or later recommended)
+- [npm](https://www.npmjs.com/) (comes with Node.js)
 
-### Adjust Selector
+### Install Dependencies
 
-This is where the magic happens. We're adjust our sample text so:
+```bash
+npm install
+```
 
-- The line height is visually pleasing.
-- All the lines lie on our baseline or subgrid.
-- The top margin is minimized.
-- And the next element's top margin butts up nicely to the baseline of our last text line.
+### Start Development Server
 
-| Tool              | Description                                                                                    |
-| :---------------- | :--------------------------------------------------------------------------------------------- |
-| **Text Sample**   | A sample of the text you are styling.                                                          |
-| **Font Family**   | Select the font family you want to use for this selector, matching one of your preloaded fonts |
-| **Font Size**     | Set the font size in rem                                                                       |
-| **Unit**          | Switch between rem and px, output is in rem                                                    |
-| **Magic**         |                                                                                                |
-| **Line Height**   | Adjust the line height                                                                         |
-| **Top**           | Adjust the relative top of the selector                                                        |
-| **Padding Top**   |                                                                                                |
-| **Margin Bottom** |                                                                                                |
+This project uses [Vite](https://vitejs.dev/) for rapid development. To start a local development server with hot reloading:
 
-### Text Sample
+```bash
+npm run dev
+```
 
-- Adjusting multiline text will generate more usable results.
-- Type "Lorem" to automatically generate some sample text.
-- Supports html tags, so you can e.g. provide `li`s for your `ol` or `ul` selectors.
+The app will be available at the URL printed in your terminal (typically [http://localhost:5173](http://localhost:5173)).
 
-#### Line Height
+### Building for Production
 
-  - **Adjust until**
-  - Your sample baseline is parallel to the baseline grid
-  - Each line of text is equidistant from the baseline or subgrid, whichever matches your intent
-    - For comfortable reading consider somewhere between 120%-180% of the font-size
-  - At this stage your sample baseline does not have to be on the baseline grid, but it should be parallel
+To create an optimized production build:
 
-#### Top 
+```bash
+npm run build
+```
 
-  - Adjust the top offset (not margin) until the sample baseline is on the baseline grid
-  - This will more often than not be a negative value
+The build output will be in the `dist` directory.
 
-#### Padding Top
+### Previewing the Production Build
 
-  - Set the top padding in pixels
-  - Adjust the top padding to so the sample baseline is on the closest subgrid line to the top, without leaving the white space
+To preview the production build locally:
 
-#### Margin Bottom
+```bash
+npm run preview
+```
 
-  - Set the bottom margin in pixels
-  - Adjust the bottom margin until the sample baseline is on the red box
+### Linting
+
+To check for code style issues:
+
+```bash
+npm run lint
+```
+
+### Running Tests
+
+To run the test suite:
+
+```bash
+npm test
+```
+
+---
+
+## License 📜
+
+This project is licensed under the terms of the **GNU Affero General Public License v3.0**. See the **[LICENSE](LICENSE)** file for full details.

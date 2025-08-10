@@ -228,12 +228,17 @@ legend {
 
   code {
     font-family: JetBrains Mono;
-    font-size: 1rem;
+    font-size: 0.9rem;
     line-height: 16px;
     top: 0px;
-    padding-top: 0px;
+    padding: 0 5px;
     margin-bottom: 0px;
     position: relative;
+    background-color: var(--color-base-5);
+
+    .contrast & {
+      color: var(--color-background);
+    }
   }
 
   ul ul,
@@ -259,36 +264,16 @@ legend {
   }
 
   table {
-    top: 1px;
     position: relative;
-    margin-bottom: -0.75rem;
+    margin-bottom: calc(-0.75rem - 1px);
   }
 
   th,
   td {
-    padding: 5px 1rem 6px 0;
+    padding: 0.375rem 1rem calc(0.375rem - 1px) 0; /* include border */
+    border-top: 1px solid transparent;
     border-bottom: 1px solid var(--color-border);
+    position: relative;
+    vertical-align: top;
   }
 }
-
-/* typography */
-
-/* .first-color {
-  background: hsl(153, 47%, 49%);
-}
-
-.second-color {
-  background: hsl(180, 38%, 33%);
-}
-
-.third-color {
-  background: hsl(211, 28%, 29%);
-}
-
-.fourth-color {
-  background: hsl(9, 100%, 70%);
-}
-
-.color {
-  background: hsl(9, 100%, 70%);
-} */

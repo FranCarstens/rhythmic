@@ -46,7 +46,7 @@
   "fontLink": {
     "manageFonts": "Manage Fonts",
     "family": "Family",
-    "link": "Link",
+    "url": "URL",
     "add": "Add",
     "selected": "Selected Fonts",
     "setDefault": "Set Default",
