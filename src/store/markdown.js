@@ -1,6 +1,6 @@
 export default `# 1000 Things Worth Knowing
 
-Excerpts from “1000 Things Worth Knowing”<sup>1</sup> by Nathaniel C Fowler Jr. Published 1913. Published on Project Gutenberg<sup>2</sup> under the Public Domain.
+Excerpts from “1000 Things Worth Knowing” by Nathaniel C Fowler Jr. Published 1913. Published on Project Gutenberg under the Public Domain.
 
 ## Preface
 
