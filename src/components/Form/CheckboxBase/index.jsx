@@ -44,6 +44,7 @@ CheckboxBase.propTypes = {
     PropTypes.node,
     PropTypes.string
   ]).isRequired,
+  menuitemcheckbox: PropTypes.bool,
   name: PropTypes.string.isRequired,
   tooltip: PropTypes.string,
   type: PropTypes.string.isRequired,

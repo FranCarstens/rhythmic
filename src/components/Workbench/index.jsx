@@ -10,7 +10,7 @@ const Workbench = ({ current, sample }) => {
   const El = current || 'span'
 
   return (
-    <div className="Workbench typography">
+    <div className="Workbench typography" tabIndex={0}>
       <div className="Workbench__Box"></div>
       {sample && (
         <El className="Workbench__Sample">

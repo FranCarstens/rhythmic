@@ -75,7 +75,7 @@ const FontLink = ({ fonts, dispatch, i18 }) => {
         </FormItem>
 
         <Button id="add-font" modifiers="round" handleClick={handleAddFont} >
-          <Plus aria-hidden /><span className="sr-only">{i18?.fontLink?.Add}</span>
+          <Plus aria-hidden /><span className="sr-only">{i18?.fontLink?.add}</span>
         </Button>
       </Wrapper>
       <p><strong>{i18?.fontLink?.selected}</strong></p>

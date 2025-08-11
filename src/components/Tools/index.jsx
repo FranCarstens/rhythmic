@@ -19,15 +19,15 @@ const Tools = ({ tools, dispatch, i18 }) => {
   ]
 
   return (
-    <div className="Tools" role="menu">
-      <div className="Tools__Toggles" aria-label={i18?.toggles?.title} role="group">
+    <nav className="Tools">
+      <div className="Tools__Toggles" aria-label={i18?.toggles?.title}>
         {toggleSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} color toggle i18={i18} />)}
       </div>
 
-      <nav className="Tools__Menu" aria-label={i18?.toggles?.menu} role="group">
+      <div className="Tools__Menu" aria-label={i18?.toggles?.menu}>
         {menuSet.map((tool) => <Tool {...tool} tools={tools} dispatch={dispatch} key={tool.id} i18={i18} />)}
-      </nav>
-    </div>
+      </div>
+    </nav>
   )
 }
 

@@ -16,12 +16,12 @@ const Selector = ({ current, dispatch, el, i18 }) => {
   }
 
   return (
-    <span className={`Selector ${currentClass}`}>
+    <li className={`Selector ${currentClass}`}>
       <button className="Selector__Select" onClick={updateCurrent} value={el}>{el}</button>
       <button className="Selector__Remove" onClick={removeSelector} value={el}>
         <Close aria-hidden /><span className="sr-only">{i18?.selectors?.removeSelector}</span>
       </button>
-    </span>
+    </li>
   )
 }
 

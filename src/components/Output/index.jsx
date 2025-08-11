@@ -54,6 +54,8 @@ const Output = ({ className, styles, i18 }) => {
           {copied === 0 && (
             <Clipboard className="Output__Icon" aria-hidden />
           )}
+
+          <span className="sr-only">{copyText}</span>
         </Button>
       </span>
       <pre>{style}</pre>

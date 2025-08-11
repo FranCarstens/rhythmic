@@ -1,6 +1,6 @@
 export default `# 1000 Things Worth Knowing
 
-Excerpts from [“1000 Things Worth Knowing”](https://www.gutenberg.org/cache/epub/56796/pg56796-images.html) by Nathaniel C Fowler Jr. Published 1913. Published on [Project Gutenberg](https://www.gutenberg.org/) under the Public Domain.
+Excerpts from “1000 Things Worth Knowing”<sup>1</sup> by Nathaniel C Fowler Jr. Published 1913. Published on Project Gutenberg<sup>2</sup> under the Public Domain.
 
 ## Preface
 
@@ -40,4 +40,9 @@ Highest altitude reached, 17,881 feet; longest non-stop flight, 635-5/8 miles in
 
 ##### Long Distance
 50 miles, 35m., 52-1/2 s.; 100 miles, 1h., 12 m., 41 1-5 s.;  300 miles, 3 h., 53 m., 33-1/2 s.; 500 miles, 6 h., 21 m., 6 3-10 s.
+
+<small>
+1. 1000 Things Worth Knowing: https://www.gutenberg.org/cache/epub/56796/pg56796-images.html
+2. Project Gutenberg: https://www.gutenberg.org/
+</small>
 `
